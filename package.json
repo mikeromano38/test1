@@ -1,0 +1,24 @@
+{
+  "name": "jev-dashboard-generator",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Test project: generate declarative (Vega-Lite) dashboards from a component/connector library using the Jev decision model, over static thelook_ecommerce snapshots.",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "generate": "tsx src/cli.ts generate",
+    "catalog": "tsx src/cli.ts catalog",
+    "examples": "tsx src/cli.ts examples",
+    "gallery": "tsx src/cli.ts gallery",
+    "serve": "tsx scripts/serve.ts",
+    "extract": "tsx scripts/extract_thelook.ts",
+    "synth": "tsx scripts/synth_snapshot.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test test/*.test.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}

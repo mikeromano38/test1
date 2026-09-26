@@ -1,0 +1,5412 @@
+{
+  "version": "0.1",
+  "title": "Executive Overview",
+  "subtitle": "theLook eCommerce · last 12 months · monthly",
+  "generatedAt": "2026-09-26T20:36:11.937Z",
+  "request": "Give me an executive overview of the business for the last 12 months with revenue, orders and margin, compared to the prior period.",
+  "source": {
+    "connector": "static_snapshot",
+    "dataset": "thelook_ecommerce",
+    "asOf": "2026-09-25",
+    "snapshotSource": "synthetic-placeholder (thelook_ecommerce schema; replace with `npm run extract`)",
+    "cubes": [
+      "sales_monthly_brand",
+      "sales_monthly_customer",
+      "sales_monthly_geo"
+    ]
+  },
+  "theme": {
+    "id": "daylight",
+    "label": "Daylight",
+    "description": "Light, neutral, comfortable spacing. The safe default for analysts working at a desk.",
+    "mode": "light",
+    "density": "comfortable",
+    "fontFamily": "system-ui, -apple-system, \"Segoe UI\", sans-serif",
+    "baseFontPx": 14,
+    "radiusPx": 10,
+    "tokens": {
+      "surface": "#fcfcfb",
+      "page": "#f9f9f7",
+      "textPrimary": "#0b0b0b",
+      "textSecondary": "#52514e",
+      "textMuted": "#898781",
+      "grid": "#e1e0d9",
+      "axis": "#c3c2b7",
+      "border": "rgba(11,11,11,0.10)",
+      "categorical": [
+        "#2a78d6",
+        "#eb6834",
+        "#1baf7a",
+        "#eda100",
+        "#e87ba4",
+        "#008300",
+        "#4a3aa7",
+        "#e34948"
+      ],
+      "sequential": [
+        "#cde2fb",
+        "#9ec5f4",
+        "#6da7ec",
+        "#3987e5",
+        "#256abf",
+        "#184f95",
+        "#0d366b"
+      ],
+      "deltaGood": "#006300",
+      "deltaBad": "#d03b3b",
+      "emphasisGray": "#c3c2b7"
+    }
+  },
+  "layout": {
+    "template": "kpi_row_grid",
+    "columns": 12,
+    "rowHeightPx": 112,
+    "gapPx": 14
+  },
+  "filters": {
+    "window": "last_12_months",
+    "start": "2025-09-26",
+    "end": "2026-09-25",
+    "grain": "month",
+    "comparePrior": true
+  },
+  "presentation": {
+    "numberFormat": "compact",
+    "gridlines": false,
+    "directLabels": false,
+    "sortBreakdowns": "natural"
+  },
+  "tiles": [
+    {
+      "id": "kpi_0",
+      "role": "kpi",
+      "component": "kpi",
+      "importance": 1.783,
+      "confidence": 1,
+      "query": {
+        "metrics": [
+          "orders"
+        ],
+        "dimensions": [],
+        "window": "last_12_months"
+      },
+      "cube": "sales_monthly_brand",
+      "rowCount": 1,
+      "kpi": {
+        "value": 88537,
+        "prior": 79657,
+        "delta": 8880,
+        "deltaPct": 0.1114779617610505,
+        "format": "number",
+        "goodDirection": "up",
+        "spark": [
+          {
+            "period": "2025-10-01",
+            "value": 7148
+          },
+          {
+            "period": "2025-11-01",
+            "value": 7820
+          },
+          {
+            "period": "2025-12-01",
+            "value": 8378
+          },
+          {
+            "period": "2026-01-01",
+            "value": 6782
+          },
+          {
+            "period": "2026-02-01",
+            "value": 6639
+          },
+          {
+            "period": "2026-03-01",
+            "value": 8200
+          },
+          {
+            "period": "2026-04-01",
+            "value": 7767
+          },
+          {
+            "period": "2026-05-01",
+            "value": 7139
+          },
+          {
+            "period": "2026-06-01",
+            "value": 6785
+          },
+          {
+            "period": "2026-07-01",
+            "value": 7638
+          },
+          {
+            "period": "2026-08-01",
+            "value": 7833
+          },
+          {
+            "period": "2026-09-01",
+            "value": 6408
+          }
+        ]
+      },
+      "data": [
+        {
+          "orders": 88537
+        }
+      ],
+      "title": "Orders",
+      "size": "sm",
+      "placement": {
+        "colStart": 1,
+        "colSpan": 3,
+        "rowStart": 1,
+        "rowSpan": 1
+      }
+    },
+    {
+      "id": "kpi_1",
+      "role": "kpi",
+      "component": "kpi",
+      "importance": 1.783,
+      "confidence": 1,
+      "query": {
+        "metrics": [
+          "gross_margin_pct"
+        ],
+        "dimensions": [],
+        "window": "last_12_months"
+      },
+      "cube": "sales_monthly_brand",
+      "rowCount": 1,
+      "kpi": {
+        "value": 0.5143,
+        "prior": 0.5134,
+        "delta": 0.0009000000000000119,
+        "deltaPct": 0.0017530190884300972,
+        "format": "percent",
+        "goodDirection": "up",
+        "spark": [
+          {
+            "period": "2025-10-01",
+            "value": 0.524
+          },
+          {
+            "period": "2025-11-01",
+            "value": 0.5172
+          },
+          {
+            "period": "2025-12-01",
+            "value": 0.512
+          },
+          {
+            "period": "2026-01-01",
+            "value": 0.5219
+          },
+          {
+            "period": "2026-02-01",
+            "value": 0.5113
+          },
+          {
+            "period": "2026-03-01",
+            "value": 0.5041
+          },
+          {
+            "period": "2026-04-01",
+            "value": 0.5171
+          },
+          {
+            "period": "2026-05-01",
+            "value": 0.5089
+          },
+          {
+            "period": "2026-06-01",
+            "value": 0.5172
+          },
+          {
+            "period": "2026-07-01",
+            "value": 0.5091
+          },
+          {
+            "period": "2026-08-01",
+            "value": 0.5135
+          },
+          {
+            "period": "2026-09-01",
+            "value": 0.5177
+          }
+        ]
+      },
+      "data": [
+        {
+          "gross_margin_pct": 0.5143
+        }
+      ],
+      "title": "Gross margin %",
+      "size": "sm",
+      "placement": {
+        "colStart": 4,
+        "colSpan": 3,
+        "rowStart": 1,
+        "rowSpan": 1
+      }
+    },
+    {
+      "id": "kpi_2",
+      "role": "kpi",
+      "component": "kpi",
+      "importance": 1.783,
+      "confidence": 1,
+      "query": {
+        "metrics": [
+          "avg_order_value"
+        ],
+        "dimensions": [],
+        "window": "last_12_months"
+      },
+      "cube": "sales_monthly_brand",
+      "rowCount": 1,
+      "kpi": {
+        "value": 85.9707,
+        "prior": 85.6809,
+        "delta": 0.2897999999999996,
+        "deltaPct": 0.003382317412632216,
+        "format": "currency",
+        "goodDirection": "up",
+        "spark": [
+          {
+            "period": "2025-10-01",
+            "value": 87.3661
+          },
+          {
+            "period": "2025-11-01",
+            "value": 86.4179
+          },
+          {
+            "period": "2025-12-01",
+            "value": 85.3986
+          },
+          {
+            "period": "2026-01-01",
+            "value": 87.0866
+          },
+          {
+            "period": "2026-02-01",
+            "value": 85.5178
+          },
+          {
+            "period": "2026-03-01",
+            "value": 85.0767
+          },
+          {
+            "period": "2026-04-01",
+            "value": 86.6668
+          },
+          {
+            "period": "2026-05-01",
+            "value": 85.7225
+          },
+          {
+            "period": "2026-06-01",
+            "value": 85.9901
+          },
+          {
+            "period": "2026-07-01",
+            "value": 84.7851
+          },
+          {
+            "period": "2026-08-01",
+            "value": 86.3174
+          },
+          {
+            "period": "2026-09-01",
+            "value": 85.4506
+          }
+        ]
+      },
+      "data": [
+        {
+          "avg_order_value": 85.9707
+        }
+      ],
+      "title": "Average order value",
+      "size": "sm",
+      "placement": {
+        "colStart": 7,
+        "colSpan": 3,
+        "rowStart": 1,
+        "rowSpan": 1
+      }
+    },
+    {
+      "id": "kpi_3",
+      "role": "kpi",
+      "component": "kpi",
+      "importance": 1.783,
+      "confidence": 1,
+      "query": {
+        "metrics": [
+          "items_sold"
+        ],
+        "dimensions": [],
+        "window": "last_12_months"
+      },
+      "cube": "sales_monthly_brand",
+      "rowCount": 1,
+      "kpi": {
+        "value": 122959,
+        "prior": 110630,
+        "delta": 12329,
+        "deltaPct": 0.11144355057398536,
+        "format": "number",
+        "goodDirection": "up",
+        "spark": [
+          {
+            "period": "2025-10-01",
+            "value": 9926
+          },
+          {
+            "period": "2025-11-01",
+            "value": 10862
+          },
+          {
+            "period": "2025-12-01",
+            "value": 11634
+          },
+          {
+            "period": "2026-01-01",
+            "value": 9418
+          },
+          {
+            "period": "2026-02-01",
+            "value": 9222
+          },
+          {
+            "period": "2026-03-01",
+            "value": 11391
+          },
+          {
+            "period": "2026-04-01",
+            "value": 10786
+          },
+          {
+            "period": "2026-05-01",
+            "value": 9915
+          },
+          {
+            "period": "2026-06-01",
+            "value": 9424
+          },
+          {
+            "period": "2026-07-01",
+            "value": 10598
+          },
+          {
+            "period": "2026-08-01",
+            "value": 10880
+          },
+          {
+            "period": "2026-09-01",
+            "value": 8903
+          }
+        ]
+      },
+      "data": [
+        {
+          "items_sold": 122959
+        }
+      ],
+      "title": "Items sold",
+      "size": "sm",
+      "placement": {
+        "colStart": 10,
+        "colSpan": 3,
+        "rowStart": 1,
+        "rowSpan": 1
+      }
+    },
+    {
+      "id": "trend_0",
+      "role": "trend",
+      "component": "line",
+      "importance": 1.783,
+      "confidence": 0.132,
+      "query": {
+        "metrics": [
+          "orders"
+        ],
+        "dimensions": [],
+        "grain": "month",
+        "window": "last_12_months"
+      },
+      "cube": "sales_monthly_brand",
+      "rowCount": 12,
+      "vegaLite": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "width": "container",
+        "height": 260,
+        "autosize": {
+          "type": "fit-x",
+          "contains": "padding"
+        },
+        "data": {
+          "values": [
+            {
+              "period": "2025-10-01",
+              "orders": 7148
+            },
+            {
+              "period": "2025-11-01",
+              "orders": 7820
+            },
+            {
+              "period": "2025-12-01",
+              "orders": 8378
+            },
+            {
+              "period": "2026-01-01",
+              "orders": 6782
+            },
+            {
+              "period": "2026-02-01",
+              "orders": 6639
+            },
+            {
+              "period": "2026-03-01",
+              "orders": 8200
+            },
+            {
+              "period": "2026-04-01",
+              "orders": 7767
+            },
+            {
+              "period": "2026-05-01",
+              "orders": 7139
+            },
+            {
+              "period": "2026-06-01",
+              "orders": 6785
+            },
+            {
+              "period": "2026-07-01",
+              "orders": 7638
+            },
+            {
+              "period": "2026-08-01",
+              "orders": 7833
+            },
+            {
+              "period": "2026-09-01",
+              "orders": 6408
+            }
+          ]
+        },
+        "config": {
+          "background": "transparent",
+          "font": "system-ui, -apple-system, \"Segoe UI\", sans-serif",
+          "padding": 4,
+          "view": {
+            "stroke": null
+          },
+          "axis": {
+            "labelColor": "#898781",
+            "titleColor": "#52514e",
+            "labelFontSize": 12,
+            "titleFontSize": 12,
+            "titleFontWeight": "normal",
+            "gridColor": "#e1e0d9",
+            "gridWidth": 1,
+            "gridDash": [],
+            "domainColor": "#c3c2b7",
+            "tickColor": "#c3c2b7",
+            "labelPadding": 6
+          },
+          "axisX": {
+            "grid": false,
+            "labelAngle": 0
+          },
+          "axisY": {
+            "grid": false,
+            "domain": false,
+            "ticks": false
+          },
+          "legend": {
+            "labelColor": "#52514e",
+            "titleColor": "#52514e",
+            "labelFontSize": 12,
+            "titleFontSize": 12,
+            "orient": "top",
+            "direction": "horizontal",
+            "symbolType": "circle",
+            "symbolSize": 80,
+            "title": null
+          },
+          "title": {
+            "color": "#0b0b0b",
+            "subtitleColor": "#52514e",
+            "anchor": "start",
+            "fontSize": 14,
+            "fontWeight": 600
+          },
+          "range": {
+            "category": [
+              "#2a78d6",
+              "#eb6834",
+              "#1baf7a",
+              "#eda100",
+              "#e87ba4",
+              "#008300",
+              "#4a3aa7",
+              "#e34948"
+            ],
+            "ramp": [
+              "#cde2fb",
+              "#9ec5f4",
+              "#6da7ec",
+              "#3987e5",
+              "#256abf",
+              "#184f95",
+              "#0d366b"
+            ],
+            "heatmap": [
+              "#cde2fb",
+              "#9ec5f4",
+              "#6da7ec",
+              "#3987e5",
+              "#256abf",
+              "#184f95",
+              "#0d366b"
+            ]
+          },
+          "line": {
+            "strokeWidth": 2,
+            "strokeJoin": "round",
+            "strokeCap": "round"
+          },
+          "area": {
+            "line": true
+          },
+          "bar": {
+            "cornerRadiusEnd": 4
+          },
+          "rule": {
+            "color": "#c3c2b7"
+          },
+          "point": {
+            "filled": true,
+            "size": 64
+          },
+          "text": {
+            "color": "#52514e",
+            "fontSize": 12
+          }
+        },
+        "layer": [
+          {
+            "mark": {
+              "type": "line",
+              "color": "#2a78d6"
+            },
+            "encoding": {
+              "x": {
+                "field": "period",
+                "type": "temporal",
+                "timeUnit": "yearmonth",
+                "axis": {
+                  "title": null,
+                  "format": "%b %Y",
+                  "tickCount": 6,
+                  "labelOverlap": "greedy"
+                }
+              },
+              "y": {
+                "field": "orders",
+                "type": "quantitative",
+                "axis": {
+                  "title": null,
+                  "format": ".3~s",
+                  "tickCount": 4
+                }
+              }
+            }
+          },
+          {
+            "params": [
+              {
+                "name": "hover",
+                "select": {
+                  "type": "point",
+                  "fields": [
+                    "period"
+                  ],
+                  "nearest": true,
+                  "on": "pointermove",
+                  "clear": "pointerout"
+                }
+              }
+            ],
+            "mark": {
+              "type": "point",
+              "color": "#2a78d6",
+              "stroke": "#fcfcfb",
+              "strokeWidth": 2,
+              "size": 80
+            },
+            "encoding": {
+              "x": {
+                "field": "period",
+                "type": "temporal",
+                "timeUnit": "yearmonth",
+                "axis": {
+                  "title": null,
+                  "format": "%b %Y",
+                  "tickCount": 6,
+                  "labelOverlap": "greedy"
+                }
+              },
+              "y": {
+                "field": "orders",
+                "type": "quantitative",
+                "axis": {
+                  "title": null,
+                  "format": ".3~s",
+                  "tickCount": 4
+                }
+              },
+              "opacity": {
+                "condition": {
+                  "param": "hover",
+                  "empty": false,
+                  "value": 1
+                },
+                "value": 0
+              },
+              "tooltip": [
+                {
+                  "field": "period",
+                  "type": "temporal",
+                  "timeUnit": "yearmonth",
+                  "title": "Period",
+                  "format": "%b %Y"
+                },
+                {
+                  "field": "orders",
+                  "type": "quantitative",
+                  "title": "Orders",
+                  "format": ",.0f"
+                }
+              ]
+            }
+          },
+          {
+            "transform": [
+              {
+                "filter": {
+                  "param": "hover",
+                  "empty": false
+                }
+              }
+            ],
+            "mark": {
+              "type": "rule",
+              "color": "#c3c2b7"
+            },
+            "encoding": {
+              "x": {
+                "field": "period",
+                "type": "temporal",
+                "timeUnit": "yearmonth",
+                "axis": {
+                  "title": null,
+                  "format": "%b %Y",
+                  "tickCount": 6,
+                  "labelOverlap": "greedy"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "data": [
+        {
+          "period": "2025-10-01",
+          "orders": 7148
+        },
+        {
+          "period": "2025-11-01",
+          "orders": 7820
+        },
+        {
+          "period": "2025-12-01",
+          "orders": 8378
+        },
+        {
+          "period": "2026-01-01",
+          "orders": 6782
+        },
+        {
+          "period": "2026-02-01",
+          "orders": 6639
+        },
+        {
+          "period": "2026-03-01",
+          "orders": 8200
+        },
+        {
+          "period": "2026-04-01",
+          "orders": 7767
+        },
+        {
+          "period": "2026-05-01",
+          "orders": 7139
+        },
+        {
+          "period": "2026-06-01",
+          "orders": 6785
+        },
+        {
+          "period": "2026-07-01",
+          "orders": 7638
+        },
+        {
+          "period": "2026-08-01",
+          "orders": 7833
+        },
+        {
+          "period": "2026-09-01",
+          "orders": 6408
+        }
+      ],
+      "title": "Orders over time",
+      "size": "xl",
+      "placement": {
+        "colStart": 1,
+        "colSpan": 8,
+        "rowStart": 2,
+        "rowSpan": 3
+      }
+    },
+    {
+      "id": "trend_1",
+      "role": "trend",
+      "component": "line",
+      "importance": 1.783,
+      "confidence": 0.132,
+      "query": {
+        "metrics": [
+          "gross_margin_pct"
+        ],
+        "dimensions": [],
+        "grain": "month",
+        "window": "last_12_months"
+      },
+      "cube": "sales_monthly_brand",
+      "rowCount": 12,
+      "vegaLite": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "width": "container",
+        "height": 260,
+        "autosize": {
+          "type": "fit-x",
+          "contains": "padding"
+        },
+        "data": {
+          "values": [
+            {
+              "period": "2025-10-01",
+              "gross_margin_pct": 0.524
+            },
+            {
+              "period": "2025-11-01",
+              "gross_margin_pct": 0.5172
+            },
+            {
+              "period": "2025-12-01",
+              "gross_margin_pct": 0.512
+            },
+            {
+              "period": "2026-01-01",
+              "gross_margin_pct": 0.5219
+            },
+            {
+              "period": "2026-02-01",
+              "gross_margin_pct": 0.5113
+            },
+            {
+              "period": "2026-03-01",
+              "gross_margin_pct": 0.5041
+            },
+            {
+              "period": "2026-04-01",
+              "gross_margin_pct": 0.5171
+            },
+            {
+              "period": "2026-05-01",
+              "gross_margin_pct": 0.5089
+            },
+            {
+              "period": "2026-06-01",
+              "gross_margin_pct": 0.5172
+            },
+            {
+              "period": "2026-07-01",
+              "gross_margin_pct": 0.5091
+            },
+            {
+              "period": "2026-08-01",
+              "gross_margin_pct": 0.5135
+            },
+            {
+              "period": "2026-09-01",
+              "gross_margin_pct": 0.5177
+            }
+          ]
+        },
+        "config": {
+          "background": "transparent",
+          "font": "system-ui, -apple-system, \"Segoe UI\", sans-serif",
+          "padding": 4,
+          "view": {
+            "stroke": null
+          },
+          "axis": {
+            "labelColor": "#898781",
+            "titleColor": "#52514e",
+            "labelFontSize": 12,
+            "titleFontSize": 12,
+            "titleFontWeight": "normal",
+            "gridColor": "#e1e0d9",
+            "gridWidth": 1,
+            "gridDash": [],
+            "domainColor": "#c3c2b7",
+            "tickColor": "#c3c2b7",
+            "labelPadding": 6
+          },
+          "axisX": {
+            "grid": false,
+            "labelAngle": 0
+          },
+          "axisY": {
+            "grid": false,
+            "domain": false,
+            "ticks": false
+          },
+          "legend": {
+            "labelColor": "#52514e",
+            "titleColor": "#52514e",
+            "labelFontSize": 12,
+            "titleFontSize": 12,
+            "orient": "top",
+            "direction": "horizontal",
+            "symbolType": "circle",
+            "symbolSize": 80,
+            "title": null
+          },
+          "title": {
+            "color": "#0b0b0b",
+            "subtitleColor": "#52514e",
+            "anchor": "start",
+            "fontSize": 14,
+            "fontWeight": 600
+          },
+          "range": {
+            "category": [
+              "#2a78d6",
+              "#eb6834",
+              "#1baf7a",
+              "#eda100",
+              "#e87ba4",
+              "#008300",
+              "#4a3aa7",
+              "#e34948"
+            ],
+            "ramp": [
+              "#cde2fb",
+              "#9ec5f4",
+              "#6da7ec",
+              "#3987e5",
+              "#256abf",
+              "#184f95",
+              "#0d366b"
+            ],
+            "heatmap": [
+              "#cde2fb",
+              "#9ec5f4",
+              "#6da7ec",
+              "#3987e5",
+              "#256abf",
+              "#184f95",
+              "#0d366b"
+            ]
+          },
+          "line": {
+            "strokeWidth": 2,
+            "strokeJoin": "round",
+            "strokeCap": "round"
+          },
+          "area": {
+            "line": true
+          },
+          "bar": {
+            "cornerRadiusEnd": 4
+          },
+          "rule": {
+            "color": "#c3c2b7"
+          },
+          "point": {
+            "filled": true,
+            "size": 64
+          },
+          "text": {
+            "color": "#52514e",
+            "fontSize": 12
+          }
+        },
+        "layer": [
+          {
+            "mark": {
+              "type": "line",
+              "color": "#2a78d6"
+            },
+            "encoding": {
+              "x": {
+                "field": "period",
+                "type": "temporal",
+                "timeUnit": "yearmonth",
+                "axis": {
+                  "title": null,
+                  "format": "%b %Y",
+                  "tickCount": 6,
+                  "labelOverlap": "greedy"
+                }
+              },
+              "y": {
+                "field": "gross_margin_pct",
+                "type": "quantitative",
+                "axis": {
+                  "title": null,
+                  "format": ".1%",
+                  "tickCount": 4
+                }
+              }
+            }
+          },
+          {
+            "params": [
+              {
+                "name": "hover",
+                "select": {
+                  "type": "point",
+                  "fields": [
+                    "period"
+                  ],
+                  "nearest": true,
+                  "on": "pointermove",
+                  "clear": "pointerout"
+                }
+              }
+            ],
+            "mark": {
+              "type": "point",
+              "color": "#2a78d6",
+              "stroke": "#fcfcfb",
+              "strokeWidth": 2,
+              "size": 80
+            },
+            "encoding": {
+              "x": {
+                "field": "period",
+                "type": "temporal",
+                "timeUnit": "yearmonth",
+                "axis": {
+                  "title": null,
+                  "format": "%b %Y",
+                  "tickCount": 6,
+                  "labelOverlap": "greedy"
+                }
+              },
+              "y": {
+                "field": "gross_margin_pct",
+                "type": "quantitative",
+                "axis": {
+                  "title": null,
+                  "format": ".1%",
+                  "tickCount": 4
+                }
+              },
+              "opacity": {
+                "condition": {
+                  "param": "hover",
+                  "empty": false,
+                  "value": 1
+                },
+                "value": 0
+              },
+              "tooltip": [
+                {
+                  "field": "period",
+                  "type": "temporal",
+                  "timeUnit": "yearmonth",
+                  "title": "Period",
+                  "format": "%b %Y"
+                },
+                {
+                  "field": "gross_margin_pct",
+                  "type": "quantitative",
+                  "title": "Gross margin %",
+                  "format": ".1%"
+                }
+              ]
+            }
+          },
+          {
+            "transform": [
+              {
+                "filter": {
+                  "param": "hover",
+                  "empty": false
+                }
+              }
+            ],
+            "mark": {
+              "type": "rule",
+              "color": "#c3c2b7"
+            },
+            "encoding": {
+              "x": {
+                "field": "period",
+                "type": "temporal",
+                "timeUnit": "yearmonth",
+                "axis": {
+                  "title": null,
+                  "format": "%b %Y",
+                  "tickCount": 6,
+                  "labelOverlap": "greedy"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "data": [
+        {
+          "period": "2025-10-01",
+          "gross_margin_pct": 0.524
+        },
+        {
+          "period": "2025-11-01",
+          "gross_margin_pct": 0.5172
+        },
+        {
+          "period": "2025-12-01",
+          "gross_margin_pct": 0.512
+        },
+        {
+          "period": "2026-01-01",
+          "gross_margin_pct": 0.5219
+        },
+        {
+          "period": "2026-02-01",
+          "gross_margin_pct": 0.5113
+        },
+        {
+          "period": "2026-03-01",
+          "gross_margin_pct": 0.5041
+        },
+        {
+          "period": "2026-04-01",
+          "gross_margin_pct": 0.5171
+        },
+        {
+          "period": "2026-05-01",
+          "gross_margin_pct": 0.5089
+        },
+        {
+          "period": "2026-06-01",
+          "gross_margin_pct": 0.5172
+        },
+        {
+          "period": "2026-07-01",
+          "gross_margin_pct": 0.5091
+        },
+        {
+          "period": "2026-08-01",
+          "gross_margin_pct": 0.5135
+        },
+        {
+          "period": "2026-09-01",
+          "gross_margin_pct": 0.5177
+        }
+      ],
+      "title": "Gross margin % over time",
+      "size": "md",
+      "placement": {
+        "colStart": 9,
+        "colSpan": 4,
+        "rowStart": 2,
+        "rowSpan": 3
+      }
+    },
+    {
+      "id": "breakdown_0",
+      "role": "breakdown",
+      "component": "stacked_bar_time",
+      "importance": 1.783,
+      "confidence": 0.036,
+      "query": {
+        "metrics": [
+          "orders"
+        ],
+        "dimensions": [
+          "gender"
+        ],
+        "grain": "month",
+        "window": "last_12_months",
+        "topN": 6
+      },
+      "cube": "sales_monthly_customer",
+      "rowCount": 24,
+      "vegaLite": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "width": "container",
+        "height": 260,
+        "autosize": {
+          "type": "fit-x",
+          "contains": "padding"
+        },
+        "data": {
+          "values": [
+            {
+              "gender": "F",
+              "period": "2025-10-01",
+              "orders": 3420
+            },
+            {
+              "gender": "M",
+              "period": "2025-10-01",
+              "orders": 3715
+            },
+            {
+              "gender": "F",
+              "period": "2025-11-01",
+              "orders": 5473
+            },
+            {
+              "gender": "M",
+              "period": "2025-11-01",
+              "orders": 5686
+            },
+            {
+              "gender": "F",
+              "period": "2025-12-01",
+              "orders": 3671
+            },
+            {
+              "gender": "M",
+              "period": "2025-12-01",
+              "orders": 5925
+            },
+            {
+              "gender": "F",
+              "period": "2026-01-01",
+              "orders": 4177
+            },
+            {
+              "gender": "M",
+              "period": "2026-01-01",
+              "orders": 3239
+            },
+            {
+              "gender": "F",
+              "period": "2026-02-01",
+              "orders": 2977
+            },
+            {
+              "gender": "M",
+              "period": "2026-02-01",
+              "orders": 3614
+            },
+            {
+              "gender": "F",
+              "period": "2026-03-01",
+              "orders": 3954
+            },
+            {
+              "gender": "M",
+              "period": "2026-03-01",
+              "orders": 4666
+            },
+            {
+              "gender": "F",
+              "period": "2026-04-01",
+              "orders": 3168
+            },
+            {
+              "gender": "M",
+              "period": "2026-04-01",
+              "orders": 3361
+            },
+            {
+              "gender": "F",
+              "period": "2026-05-01",
+              "orders": 3358
+            },
+            {
+              "gender": "M",
+              "period": "2026-05-01",
+              "orders": 3744
+            },
+            {
+              "gender": "F",
+              "period": "2026-06-01",
+              "orders": 3883
+            },
+            {
+              "gender": "M",
+              "period": "2026-06-01",
+              "orders": 4426
+            },
+            {
+              "gender": "F",
+              "period": "2026-07-01",
+              "orders": 4452
+            },
+            {
+              "gender": "M",
+              "period": "2026-07-01",
+              "orders": 4960
+            },
+            {
+              "gender": "F",
+              "period": "2026-08-01",
+              "orders": 3372
+            },
+            {
+              "gender": "M",
+              "period": "2026-08-01",
+              "orders": 4439
+            },
+            {
+              "gender": "F",
+              "period": "2026-09-01",
+              "orders": 3119
+            },
+            {
+              "gender": "M",
+              "period": "2026-09-01",
+              "orders": 3365
+            }
+          ]
+        },
+        "config": {
+          "background": "transparent",
+          "font": "system-ui, -apple-system, \"Segoe UI\", sans-serif",
+          "padding": 4,
+          "view": {
+            "stroke": null
+          },
+          "axis": {
+            "labelColor": "#898781",
+            "titleColor": "#52514e",
+            "labelFontSize": 12,
+            "titleFontSize": 12,
+            "titleFontWeight": "normal",
+            "gridColor": "#e1e0d9",
+            "gridWidth": 1,
+            "gridDash": [],
+            "domainColor": "#c3c2b7",
+            "tickColor": "#c3c2b7",
+            "labelPadding": 6
+          },
+          "axisX": {
+            "grid": false,
+            "labelAngle": 0
+          },
+          "axisY": {
+            "grid": false,
+            "domain": false,
+            "ticks": false
+          },
+          "legend": {
+            "labelColor": "#52514e",
+            "titleColor": "#52514e",
+            "labelFontSize": 12,
+            "titleFontSize": 12,
+            "orient": "top",
+            "direction": "horizontal",
+            "symbolType": "circle",
+            "symbolSize": 80,
+            "title": null
+          },
+          "title": {
+            "color": "#0b0b0b",
+            "subtitleColor": "#52514e",
+            "anchor": "start",
+            "fontSize": 14,
+            "fontWeight": 600
+          },
+          "range": {
+            "category": [
+              "#2a78d6",
+              "#eb6834",
+              "#1baf7a",
+              "#eda100",
+              "#e87ba4",
+              "#008300",
+              "#4a3aa7",
+              "#e34948"
+            ],
+            "ramp": [
+              "#cde2fb",
+              "#9ec5f4",
+              "#6da7ec",
+              "#3987e5",
+              "#256abf",
+              "#184f95",
+              "#0d366b"
+            ],
+            "heatmap": [
+              "#cde2fb",
+              "#9ec5f4",
+              "#6da7ec",
+              "#3987e5",
+              "#256abf",
+              "#184f95",
+              "#0d366b"
+            ]
+          },
+          "line": {
+            "strokeWidth": 2,
+            "strokeJoin": "round",
+            "strokeCap": "round"
+          },
+          "area": {
+            "line": true
+          },
+          "bar": {
+            "cornerRadiusEnd": 4
+          },
+          "rule": {
+            "color": "#c3c2b7"
+          },
+          "point": {
+            "filled": true,
+            "size": 64
+          },
+          "text": {
+            "color": "#52514e",
+            "fontSize": 12
+          }
+        },
+        "mark": {
+          "type": "bar",
+          "stroke": "#fcfcfb",
+          "strokeWidth": 1,
+          "width": {
+            "band": 0.55
+          },
+          "cornerRadius": 2
+        },
+        "encoding": {
+          "x": {
+            "field": "period",
+            "type": "ordinal",
+            "timeUnit": "yearmonth",
+            "axis": {
+              "title": null,
+              "format": "%b %Y",
+              "labelAngle": 0,
+              "labelOverlap": "greedy"
+            }
+          },
+          "y": {
+            "field": "orders",
+            "type": "quantitative",
+            "axis": {
+              "title": null,
+              "format": ".3~s",
+              "tickCount": 4
+            },
+            "stack": "zero"
+          },
+          "color": {
+            "field": "gender",
+            "type": "nominal",
+            "scale": {
+              "domain": [
+                "F",
+                "M"
+              ]
+            },
+            "legend": {
+              "title": null
+            }
+          },
+          "order": {
+            "field": "_order",
+            "type": "quantitative"
+          },
+          "tooltip": [
+            {
+              "field": "period",
+              "type": "temporal",
+              "timeUnit": "yearmonth",
+              "title": "Period",
+              "format": "%b %Y"
+            },
+            {
+              "field": "gender",
+              "type": "nominal",
+              "title": "Customer gender"
+            },
+            {
+              "field": "orders",
+              "type": "quantitative",
+              "title": "Orders",
+              "format": ",.0f"
+            }
+          ]
+        },
+        "transform": [
+          {
+            "calculate": "indexof([\"F\",\"M\"], datum[\"gender\"])",
+            "as": "_order"
+          }
+        ]
+      },
+      "data": [
+        {
+          "gender": "F",
+          "period": "2025-10-01",
+          "orders": 3420
+        },
+        {
+          "gender": "M",
+          "period": "2025-10-01",
+          "orders": 3715
+        },
+        {
+          "gender": "F",
+          "period": "2025-11-01",
+          "orders": 5473
+        },
+        {
+          "gender": "M",
+          "period": "2025-11-01",
+          "orders": 5686
+        },
+        {
+          "gender": "F",
+          "period": "2025-12-01",
+          "orders": 3671
+        },
+        {
+          "gender": "M",
+          "period": "2025-12-01",
+          "orders": 5925
+        },
+        {
+          "gender": "F",
+          "period": "2026-01-01",
+          "orders": 4177
+        },
+        {
+          "gender": "M",
+          "period": "2026-01-01",
+          "orders": 3239
+        },
+        {
+          "gender": "F",
+          "period": "2026-02-01",
+          "orders": 2977
+        },
+        {
+          "gender": "M",
+          "period": "2026-02-01",
+          "orders": 3614
+        },
+        {
+          "gender": "F",
+          "period": "2026-03-01",
+          "orders": 3954
+        },
+        {
+          "gender": "M",
+          "period": "2026-03-01",
+          "orders": 4666
+        },
+        {
+          "gender": "F",
+          "period": "2026-04-01",
+          "orders": 3168
+        },
+        {
+          "gender": "M",
+          "period": "2026-04-01",
+          "orders": 3361
+        },
+        {
+          "gender": "F",
+          "period": "2026-05-01",
+          "orders": 3358
+        },
+        {
+          "gender": "M",
+          "period": "2026-05-01",
+          "orders": 3744
+        },
+        {
+          "gender": "F",
+          "period": "2026-06-01",
+          "orders": 3883
+        },
+        {
+          "gender": "M",
+          "period": "2026-06-01",
+          "orders": 4426
+        },
+        {
+          "gender": "F",
+          "period": "2026-07-01",
+          "orders": 4452
+        },
+        {
+          "gender": "M",
+          "period": "2026-07-01",
+          "orders": 4960
+        },
+        {
+          "gender": "F",
+          "period": "2026-08-01",
+          "orders": 3372
+        },
+        {
+          "gender": "M",
+          "period": "2026-08-01",
+          "orders": 4439
+        },
+        {
+          "gender": "F",
+          "period": "2026-09-01",
+          "orders": 3119
+        },
+        {
+          "gender": "M",
+          "period": "2026-09-01",
+          "orders": 3365
+        }
+      ],
+      "title": "Orders by customer gender over time",
+      "size": "lg",
+      "placement": {
+        "colStart": 1,
+        "colSpan": 12,
+        "rowStart": 5,
+        "rowSpan": 3
+      }
+    },
+    {
+      "id": "breakdown_1",
+      "role": "breakdown",
+      "component": "heatmap",
+      "importance": 1.783,
+      "confidence": 0.02,
+      "query": {
+        "metrics": [
+          "orders"
+        ],
+        "dimensions": [
+          "country"
+        ],
+        "grain": "month",
+        "window": "last_12_months",
+        "topN": 30
+      },
+      "cube": "sales_monthly_geo",
+      "rowCount": 108,
+      "vegaLite": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "width": "container",
+        "height": {
+          "step": 22
+        },
+        "autosize": {
+          "type": "fit-x",
+          "contains": "padding"
+        },
+        "data": {
+          "values": [
+            {
+              "country": "Brasil",
+              "period": "2025-10-01",
+              "orders": 1242
+            },
+            {
+              "country": "China",
+              "period": "2025-10-01",
+              "orders": 2585
+            },
+            {
+              "country": "France",
+              "period": "2025-10-01",
+              "orders": 309
+            },
+            {
+              "country": "Germany",
+              "period": "2025-10-01",
+              "orders": 320
+            },
+            {
+              "country": "Other",
+              "period": "2025-10-01",
+              "orders": 457
+            },
+            {
+              "country": "South Korea",
+              "period": "2025-10-01",
+              "orders": 415
+            },
+            {
+              "country": "Spain",
+              "period": "2025-10-01",
+              "orders": 203
+            },
+            {
+              "country": "United Kingdom",
+              "period": "2025-10-01",
+              "orders": 246
+            },
+            {
+              "country": "United States",
+              "period": "2025-10-01",
+              "orders": 1587
+            },
+            {
+              "country": "Brasil",
+              "period": "2025-11-01",
+              "orders": 1226
+            },
+            {
+              "country": "China",
+              "period": "2025-11-01",
+              "orders": 3234
+            },
+            {
+              "country": "France",
+              "period": "2025-11-01",
+              "orders": 499
+            },
+            {
+              "country": "Germany",
+              "period": "2025-11-01",
+              "orders": 283
+            },
+            {
+              "country": "Other",
+              "period": "2025-11-01",
+              "orders": 595
+            },
+            {
+              "country": "South Korea",
+              "period": "2025-11-01",
+              "orders": 514
+            },
+            {
+              "country": "Spain",
+              "period": "2025-11-01",
+              "orders": 228
+            },
+            {
+              "country": "United Kingdom",
+              "period": "2025-11-01",
+              "orders": 289
+            },
+            {
+              "country": "United States",
+              "period": "2025-11-01",
+              "orders": 1683
+            },
+            {
+              "country": "Brasil",
+              "period": "2025-12-01",
+              "orders": 1842
+            },
+            {
+              "country": "China",
+              "period": "2025-12-01",
+              "orders": 2836
+            },
+            {
+              "country": "France",
+              "period": "2025-12-01",
+              "orders": 420
+            },
+            {
+              "country": "Germany",
+              "period": "2025-12-01",
+              "orders": 408
+            },
+            {
+              "country": "Other",
+              "period": "2025-12-01",
+              "orders": 973
+            },
+            {
+              "country": "South Korea",
+              "period": "2025-12-01",
+              "orders": 540
+            },
+            {
+              "country": "Spain",
+              "period": "2025-12-01",
+              "orders": 256
+            },
+            {
+              "country": "United Kingdom",
+              "period": "2025-12-01",
+              "orders": 377
+            },
+            {
+              "country": "United States",
+              "period": "2025-12-01",
+              "orders": 2208
+            },
+            {
+              "country": "Brasil",
+              "period": "2026-01-01",
+              "orders": 903
+            },
+            {
+              "country": "China",
+              "period": "2026-01-01",
+              "orders": 1787
+            },
+            {
+              "country": "France",
+              "period": "2026-01-01",
+              "orders": 318
+            },
+            {
+              "country": "Germany",
+              "period": "2026-01-01",
+              "orders": 233
+            },
+            {
+              "country": "Other",
+              "period": "2026-01-01",
+              "orders": 506
+            },
+            {
+              "country": "South Korea",
+              "period": "2026-01-01",
+              "orders": 269
+            },
+            {
+              "country": "Spain",
+              "period": "2026-01-01",
+              "orders": 200
+            },
+            {
+              "country": "United Kingdom",
+              "period": "2026-01-01",
+              "orders": 251
+            },
+            {
+              "country": "United States",
+              "period": "2026-01-01",
+              "orders": 1545
+            },
+            {
+              "country": "Brasil",
+              "period": "2026-02-01",
+              "orders": 900
+            },
+            {
+              "country": "China",
+              "period": "2026-02-01",
+              "orders": 2001
+            },
+            {
+              "country": "France",
+              "period": "2026-02-01",
+              "orders": 363
+            },
+            {
+              "country": "Germany",
+              "period": "2026-02-01",
+              "orders": 220
+            },
+            {
+              "country": "Other",
+              "period": "2026-02-01",
+              "orders": 553
+            },
+            {
+              "country": "South Korea",
+              "period": "2026-02-01",
+              "orders": 380
+            },
+            {
+              "country": "Spain",
+              "period": "2026-02-01",
+              "orders": 186
+            },
+            {
+              "country": "United Kingdom",
+              "period": "2026-02-01",
+              "orders": 270
+            },
+            {
+              "country": "United States",
+              "period": "2026-02-01",
+              "orders": 1409
+            },
+            {
+              "country": "Brasil",
+              "period": "2026-03-01",
+              "orders": 919
+            },
+            {
+              "country": "China",
+              "period": "2026-03-01",
+              "orders": 2955
+            },
+            {
+              "country": "France",
+              "period": "2026-03-01",
+              "orders": 372
+            },
+            {
+              "country": "Germany",
+              "period": "2026-03-01",
+              "orders": 302
+            },
+            {
+              "country": "Other",
+              "period": "2026-03-01",
+              "orders": 680
+            },
+            {
+              "country": "South Korea",
+              "period": "2026-03-01",
+              "orders": 437
+            },
+            {
+              "country": "Spain",
+              "period": "2026-03-01",
+              "orders": 240
+            },
+            {
+              "country": "United Kingdom",
+              "period": "2026-03-01",
+              "orders": 244
+            },
+            {
+              "country": "United States",
+              "period": "2026-03-01",
+              "orders": 1304
+            },
+            {
+              "country": "Brasil",
+              "period": "2026-04-01",
+              "orders": 1235
+            },
+            {
+              "country": "China",
+              "period": "2026-04-01",
+              "orders": 3010
+            },
+            {
+              "country": "France",
+              "period": "2026-04-01",
+              "orders": 402
+            },
+            {
+              "country": "Germany",
+              "period": "2026-04-01",
+              "orders": 239
+            },
+            {
+              "country": "Other",
+              "period": "2026-04-01",
+              "orders": 508
+            },
+            {
+              "country": "South Korea",
+              "period": "2026-04-01",
+              "orders": 444
+            },
+            {
+              "country": "Spain",
+              "period": "2026-04-01",
+              "orders": 186
+            },
+            {
+              "country": "United Kingdom",
+              "period": "2026-04-01",
+              "orders": 279
+            },
+            {
+              "country": "United States",
+              "period": "2026-04-01",
+              "orders": 1642
+            },
+            {
+              "country": "Brasil",
+              "period": "2026-05-01",
+              "orders": 1362
+            },
+            {
+              "country": "China",
+              "period": "2026-05-01",
+              "orders": 2725
+            },
+            {
+              "country": "France",
+              "period": "2026-05-01",
+              "orders": 316
+            },
+            {
+              "country": "Germany",
+              "period": "2026-05-01",
+              "orders": 351
+            },
+            {
+              "country": "Other",
+              "period": "2026-05-01",
+              "orders": 664
+            },
+            {
+              "country": "South Korea",
+              "period": "2026-05-01",
+              "orders": 389
+            },
+            {
+              "country": "Spain",
+              "period": "2026-05-01",
+              "orders": 254
+            },
+            {
+              "country": "United Kingdom",
+              "period": "2026-05-01",
+              "orders": 340
+            },
+            {
+              "country": "United States",
+              "period": "2026-05-01",
+              "orders": 1759
+            },
+            {
+              "country": "Brasil",
+              "period": "2026-06-01",
+              "orders": 931
+            },
+            {
+              "country": "China",
+              "period": "2026-06-01",
+              "orders": 2732
+            },
+            {
+              "country": "France",
+              "period": "2026-06-01",
+              "orders": 324
+            },
+            {
+              "country": "Germany",
+              "period": "2026-06-01",
+              "orders": 326
+            },
+            {
+              "country": "Other",
+              "period": "2026-06-01",
+              "orders": 700
+            },
+            {
+              "country": "South Korea",
+              "period": "2026-06-01",
+              "orders": 348
+            },
+            {
+              "country": "Spain",
+              "period": "2026-06-01",
+              "orders": 199
+            },
+            {
+              "country": "United Kingdom",
+              "period": "2026-06-01",
+              "orders": 300
+            },
+            {
+              "country": "United States",
+              "period": "2026-06-01",
+              "orders": 1782
+            },
+            {
+              "country": "Brasil",
+              "period": "2026-07-01",
+              "orders": 1081
+            },
+            {
+              "country": "China",
+              "period": "2026-07-01",
+              "orders": 2473
+            },
+            {
+              "country": "France",
+              "period": "2026-07-01",
+              "orders": 449
+            },
+            {
+              "country": "Germany",
+              "period": "2026-07-01",
+              "orders": 295
+            },
+            {
+              "country": "Other",
+              "period": "2026-07-01",
+              "orders": 717
+            },
+            {
+              "country": "South Korea",
+              "period": "2026-07-01",
+              "orders": 433
+            },
+            {
+              "country": "Spain",
+              "period": "2026-07-01",
+              "orders": 230
+            },
+            {
+              "country": "United Kingdom",
+              "period": "2026-07-01",
+              "orders": 278
+            },
+            {
+              "country": "United States",
+              "period": "2026-07-01",
+              "orders": 1861
+            },
+            {
+              "country": "Brasil",
+              "period": "2026-08-01",
+              "orders": 925
+            },
+            {
+              "country": "China",
+              "period": "2026-08-01",
+              "orders": 2800
+            },
+            {
+              "country": "France",
+              "period": "2026-08-01",
+              "orders": 315
+            },
+            {
+              "country": "Germany",
+              "period": "2026-08-01",
+              "orders": 369
+            },
+            {
+              "country": "Other",
+              "period": "2026-08-01",
+              "orders": 708
+            },
+            {
+              "country": "South Korea",
+              "period": "2026-08-01",
+              "orders": 452
+            },
+            {
+              "country": "Spain",
+              "period": "2026-08-01",
+              "orders": 208
+            },
+            {
+              "country": "United Kingdom",
+              "period": "2026-08-01",
+              "orders": 344
+            },
+            {
+              "country": "United States",
+              "period": "2026-08-01",
+              "orders": 1637
+            },
+            {
+              "country": "Brasil",
+              "period": "2026-09-01",
+              "orders": 1099
+            },
+            {
+              "country": "China",
+              "period": "2026-09-01",
+              "orders": 2092
+            },
+            {
+              "country": "France",
+              "period": "2026-09-01",
+              "orders": 275
+            },
+            {
+              "country": "Germany",
+              "period": "2026-09-01",
+              "orders": 286
+            },
+            {
+              "country": "Other",
+              "period": "2026-09-01",
+              "orders": 519
+            },
+            {
+              "country": "South Korea",
+              "period": "2026-09-01",
+              "orders": 353
+            },
+            {
+              "country": "Spain",
+              "period": "2026-09-01",
+              "orders": 171
+            },
+            {
+              "country": "United Kingdom",
+              "period": "2026-09-01",
+              "orders": 279
+            },
+            {
+              "country": "United States",
+              "period": "2026-09-01",
+              "orders": 1469
+            }
+          ]
+        },
+        "config": {
+          "background": "transparent",
+          "font": "system-ui, -apple-system, \"Segoe UI\", sans-serif",
+          "padding": 4,
+          "view": {
+            "stroke": null
+          },
+          "axis": {
+            "labelColor": "#898781",
+            "titleColor": "#52514e",
+            "labelFontSize": 12,
+            "titleFontSize": 12,
+            "titleFontWeight": "normal",
+            "gridColor": "#e1e0d9",
+            "gridWidth": 1,
+            "gridDash": [],
+            "domainColor": "#c3c2b7",
+            "tickColor": "#c3c2b7",
+            "labelPadding": 6
+          },
+          "axisX": {
+            "grid": false,
+            "labelAngle": 0
+          },
+          "axisY": {
+            "grid": false,
+            "domain": false,
+            "ticks": false
+          },
+          "legend": {
+            "labelColor": "#52514e",
+            "titleColor": "#52514e",
+            "labelFontSize": 12,
+            "titleFontSize": 12,
+            "orient": "top",
+            "direction": "horizontal",
+            "symbolType": "circle",
+            "symbolSize": 80,
+            "title": null
+          },
+          "title": {
+            "color": "#0b0b0b",
+            "subtitleColor": "#52514e",
+            "anchor": "start",
+            "fontSize": 14,
+            "fontWeight": 600
+          },
+          "range": {
+            "category": [
+              "#2a78d6",
+              "#eb6834",
+              "#1baf7a",
+              "#eda100",
+              "#e87ba4",
+              "#008300",
+              "#4a3aa7",
+              "#e34948"
+            ],
+            "ramp": [
+              "#cde2fb",
+              "#9ec5f4",
+              "#6da7ec",
+              "#3987e5",
+              "#256abf",
+              "#184f95",
+              "#0d366b"
+            ],
+            "heatmap": [
+              "#cde2fb",
+              "#9ec5f4",
+              "#6da7ec",
+              "#3987e5",
+              "#256abf",
+              "#184f95",
+              "#0d366b"
+            ]
+          },
+          "line": {
+            "strokeWidth": 2,
+            "strokeJoin": "round",
+            "strokeCap": "round"
+          },
+          "area": {
+            "line": true
+          },
+          "bar": {
+            "cornerRadiusEnd": 4
+          },
+          "rule": {
+            "color": "#c3c2b7"
+          },
+          "point": {
+            "filled": true,
+            "size": 64
+          },
+          "text": {
+            "color": "#52514e",
+            "fontSize": 12
+          }
+        },
+        "mark": {
+          "type": "rect",
+          "stroke": "#fcfcfb",
+          "strokeWidth": 2,
+          "cornerRadius": 3
+        },
+        "encoding": {
+          "x": {
+            "field": "period",
+            "type": "ordinal",
+            "timeUnit": "yearmonth",
+            "axis": {
+              "title": null,
+              "format": "%b %Y",
+              "labelAngle": 0,
+              "labelOverlap": "greedy"
+            }
+          },
+          "y": {
+            "field": "country",
+            "type": "nominal",
+            "sort": [
+              "Brasil",
+              "China",
+              "France",
+              "Germany",
+              "South Korea",
+              "Spain",
+              "United Kingdom",
+              "United States",
+              "Other"
+            ],
+            "axis": {
+              "title": null,
+              "labelLimit": 160
+            }
+          },
+          "color": {
+            "field": "orders",
+            "type": "quantitative",
+            "scale": {
+              "range": [
+                "#cde2fb",
+                "#9ec5f4",
+                "#6da7ec",
+                "#3987e5",
+                "#256abf",
+                "#184f95",
+                "#0d366b"
+              ],
+              "interpolate": "lab"
+            },
+            "legend": {
+              "title": "Orders",
+              "format": ".3~s",
+              "orient": "top",
+              "direction": "horizontal",
+              "gradientLength": 160
+            }
+          },
+          "tooltip": [
+            {
+              "field": "period",
+              "type": "temporal",
+              "timeUnit": "yearmonth",
+              "title": "Period",
+              "format": "%b %Y"
+            },
+            {
+              "field": "country",
+              "type": "nominal",
+              "title": "Country"
+            },
+            {
+              "field": "orders",
+              "type": "quantitative",
+              "title": "Orders",
+              "format": ",.0f"
+            }
+          ]
+        }
+      },
+      "data": [
+        {
+          "country": "Brasil",
+          "period": "2025-10-01",
+          "orders": 1242
+        },
+        {
+          "country": "China",
+          "period": "2025-10-01",
+          "orders": 2585
+        },
+        {
+          "country": "France",
+          "period": "2025-10-01",
+          "orders": 309
+        },
+        {
+          "country": "Germany",
+          "period": "2025-10-01",
+          "orders": 320
+        },
+        {
+          "country": "Other",
+          "period": "2025-10-01",
+          "orders": 457
+        },
+        {
+          "country": "South Korea",
+          "period": "2025-10-01",
+          "orders": 415
+        },
+        {
+          "country": "Spain",
+          "period": "2025-10-01",
+          "orders": 203
+        },
+        {
+          "country": "United Kingdom",
+          "period": "2025-10-01",
+          "orders": 246
+        },
+        {
+          "country": "United States",
+          "period": "2025-10-01",
+          "orders": 1587
+        },
+        {
+          "country": "Brasil",
+          "period": "2025-11-01",
+          "orders": 1226
+        },
+        {
+          "country": "China",
+          "period": "2025-11-01",
+          "orders": 3234
+        },
+        {
+          "country": "France",
+          "period": "2025-11-01",
+          "orders": 499
+        },
+        {
+          "country": "Germany",
+          "period": "2025-11-01",
+          "orders": 283
+        },
+        {
+          "country": "Other",
+          "period": "2025-11-01",
+          "orders": 595
+        },
+        {
+          "country": "South Korea",
+          "period": "2025-11-01",
+          "orders": 514
+        },
+        {
+          "country": "Spain",
+          "period": "2025-11-01",
+          "orders": 228
+        },
+        {
+          "country": "United Kingdom",
+          "period": "2025-11-01",
+          "orders": 289
+        },
+        {
+          "country": "United States",
+          "period": "2025-11-01",
+          "orders": 1683
+        },
+        {
+          "country": "Brasil",
+          "period": "2025-12-01",
+          "orders": 1842
+        },
+        {
+          "country": "China",
+          "period": "2025-12-01",
+          "orders": 2836
+        },
+        {
+          "country": "France",
+          "period": "2025-12-01",
+          "orders": 420
+        },
+        {
+          "country": "Germany",
+          "period": "2025-12-01",
+          "orders": 408
+        },
+        {
+          "country": "Other",
+          "period": "2025-12-01",
+          "orders": 973
+        },
+        {
+          "country": "South Korea",
+          "period": "2025-12-01",
+          "orders": 540
+        },
+        {
+          "country": "Spain",
+          "period": "2025-12-01",
+          "orders": 256
+        },
+        {
+          "country": "United Kingdom",
+          "period": "2025-12-01",
+          "orders": 377
+        },
+        {
+          "country": "United States",
+          "period": "2025-12-01",
+          "orders": 2208
+        },
+        {
+          "country": "Brasil",
+          "period": "2026-01-01",
+          "orders": 903
+        },
+        {
+          "country": "China",
+          "period": "2026-01-01",
+          "orders": 1787
+        },
+        {
+          "country": "France",
+          "period": "2026-01-01",
+          "orders": 318
+        },
+        {
+          "country": "Germany",
+          "period": "2026-01-01",
+          "orders": 233
+        },
+        {
+          "country": "Other",
+          "period": "2026-01-01",
+          "orders": 506
+        },
+        {
+          "country": "South Korea",
+          "period": "2026-01-01",
+          "orders": 269
+        },
+        {
+          "country": "Spain",
+          "period": "2026-01-01",
+          "orders": 200
+        },
+        {
+          "country": "United Kingdom",
+          "period": "2026-01-01",
+          "orders": 251
+        },
+        {
+          "country": "United States",
+          "period": "2026-01-01",
+          "orders": 1545
+        },
+        {
+          "country": "Brasil",
+          "period": "2026-02-01",
+          "orders": 900
+        },
+        {
+          "country": "China",
+          "period": "2026-02-01",
+          "orders": 2001
+        },
+        {
+          "country": "France",
+          "period": "2026-02-01",
+          "orders": 363
+        },
+        {
+          "country": "Germany",
+          "period": "2026-02-01",
+          "orders": 220
+        },
+        {
+          "country": "Other",
+          "period": "2026-02-01",
+          "orders": 553
+        },
+        {
+          "country": "South Korea",
+          "period": "2026-02-01",
+          "orders": 380
+        },
+        {
+          "country": "Spain",
+          "period": "2026-02-01",
+          "orders": 186
+        },
+        {
+          "country": "United Kingdom",
+          "period": "2026-02-01",
+          "orders": 270
+        },
+        {
+          "country": "United States",
+          "period": "2026-02-01",
+          "orders": 1409
+        },
+        {
+          "country": "Brasil",
+          "period": "2026-03-01",
+          "orders": 919
+        },
+        {
+          "country": "China",
+          "period": "2026-03-01",
+          "orders": 2955
+        },
+        {
+          "country": "France",
+          "period": "2026-03-01",
+          "orders": 372
+        },
+        {
+          "country": "Germany",
+          "period": "2026-03-01",
+          "orders": 302
+        },
+        {
+          "country": "Other",
+          "period": "2026-03-01",
+          "orders": 680
+        },
+        {
+          "country": "South Korea",
+          "period": "2026-03-01",
+          "orders": 437
+        },
+        {
+          "country": "Spain",
+          "period": "2026-03-01",
+          "orders": 240
+        },
+        {
+          "country": "United Kingdom",
+          "period": "2026-03-01",
+          "orders": 244
+        },
+        {
+          "country": "United States",
+          "period": "2026-03-01",
+          "orders": 1304
+        },
+        {
+          "country": "Brasil",
+          "period": "2026-04-01",
+          "orders": 1235
+        },
+        {
+          "country": "China",
+          "period": "2026-04-01",
+          "orders": 3010
+        },
+        {
+          "country": "France",
+          "period": "2026-04-01",
+          "orders": 402
+        },
+        {
+          "country": "Germany",
+          "period": "2026-04-01",
+          "orders": 239
+        },
+        {
+          "country": "Other",
+          "period": "2026-04-01",
+          "orders": 508
+        },
+        {
+          "country": "South Korea",
+          "period": "2026-04-01",
+          "orders": 444
+        },
+        {
+          "country": "Spain",
+          "period": "2026-04-01",
+          "orders": 186
+        },
+        {
+          "country": "United Kingdom",
+          "period": "2026-04-01",
+          "orders": 279
+        },
+        {
+          "country": "United States",
+          "period": "2026-04-01",
+          "orders": 1642
+        },
+        {
+          "country": "Brasil",
+          "period": "2026-05-01",
+          "orders": 1362
+        },
+        {
+          "country": "China",
+          "period": "2026-05-01",
+          "orders": 2725
+        },
+        {
+          "country": "France",
+          "period": "2026-05-01",
+          "orders": 316
+        },
+        {
+          "country": "Germany",
+          "period": "2026-05-01",
+          "orders": 351
+        },
+        {
+          "country": "Other",
+          "period": "2026-05-01",
+          "orders": 664
+        },
+        {
+          "country": "South Korea",
+          "period": "2026-05-01",
+          "orders": 389
+        },
+        {
+          "country": "Spain",
+          "period": "2026-05-01",
+          "orders": 254
+        },
+        {
+          "country": "United Kingdom",
+          "period": "2026-05-01",
+          "orders": 340
+        },
+        {
+          "country": "United States",
+          "period": "2026-05-01",
+          "orders": 1759
+        },
+        {
+          "country": "Brasil",
+          "period": "2026-06-01",
+          "orders": 931
+        },
+        {
+          "country": "China",
+          "period": "2026-06-01",
+          "orders": 2732
+        },
+        {
+          "country": "France",
+          "period": "2026-06-01",
+          "orders": 324
+        },
+        {
+          "country": "Germany",
+          "period": "2026-06-01",
+          "orders": 326
+        },
+        {
+          "country": "Other",
+          "period": "2026-06-01",
+          "orders": 700
+        },
+        {
+          "country": "South Korea",
+          "period": "2026-06-01",
+          "orders": 348
+        },
+        {
+          "country": "Spain",
+          "period": "2026-06-01",
+          "orders": 199
+        },
+        {
+          "country": "United Kingdom",
+          "period": "2026-06-01",
+          "orders": 300
+        },
+        {
+          "country": "United States",
+          "period": "2026-06-01",
+          "orders": 1782
+        },
+        {
+          "country": "Brasil",
+          "period": "2026-07-01",
+          "orders": 1081
+        },
+        {
+          "country": "China",
+          "period": "2026-07-01",
+          "orders": 2473
+        },
+        {
+          "country": "France",
+          "period": "2026-07-01",
+          "orders": 449
+        },
+        {
+          "country": "Germany",
+          "period": "2026-07-01",
+          "orders": 295
+        },
+        {
+          "country": "Other",
+          "period": "2026-07-01",
+          "orders": 717
+        },
+        {
+          "country": "South Korea",
+          "period": "2026-07-01",
+          "orders": 433
+        },
+        {
+          "country": "Spain",
+          "period": "2026-07-01",
+          "orders": 230
+        },
+        {
+          "country": "United Kingdom",
+          "period": "2026-07-01",
+          "orders": 278
+        },
+        {
+          "country": "United States",
+          "period": "2026-07-01",
+          "orders": 1861
+        },
+        {
+          "country": "Brasil",
+          "period": "2026-08-01",
+          "orders": 925
+        },
+        {
+          "country": "China",
+          "period": "2026-08-01",
+          "orders": 2800
+        },
+        {
+          "country": "France",
+          "period": "2026-08-01",
+          "orders": 315
+        },
+        {
+          "country": "Germany",
+          "period": "2026-08-01",
+          "orders": 369
+        },
+        {
+          "country": "Other",
+          "period": "2026-08-01",
+          "orders": 708
+        },
+        {
+          "country": "South Korea",
+          "period": "2026-08-01",
+          "orders": 452
+        },
+        {
+          "country": "Spain",
+          "period": "2026-08-01",
+          "orders": 208
+        },
+        {
+          "country": "United Kingdom",
+          "period": "2026-08-01",
+          "orders": 344
+        },
+        {
+          "country": "United States",
+          "period": "2026-08-01",
+          "orders": 1637
+        },
+        {
+          "country": "Brasil",
+          "period": "2026-09-01",
+          "orders": 1099
+        },
+        {
+          "country": "China",
+          "period": "2026-09-01",
+          "orders": 2092
+        },
+        {
+          "country": "France",
+          "period": "2026-09-01",
+          "orders": 275
+        },
+        {
+          "country": "Germany",
+          "period": "2026-09-01",
+          "orders": 286
+        },
+        {
+          "country": "Other",
+          "period": "2026-09-01",
+          "orders": 519
+        },
+        {
+          "country": "South Korea",
+          "period": "2026-09-01",
+          "orders": 353
+        },
+        {
+          "country": "Spain",
+          "period": "2026-09-01",
+          "orders": 171
+        },
+        {
+          "country": "United Kingdom",
+          "period": "2026-09-01",
+          "orders": 279
+        },
+        {
+          "country": "United States",
+          "period": "2026-09-01",
+          "orders": 1469
+        }
+      ],
+      "title": "Orders by country over time",
+      "size": "xl",
+      "placement": {
+        "colStart": 1,
+        "colSpan": 12,
+        "rowStart": 8,
+        "rowSpan": 3
+      }
+    }
+  ],
+  "decisions": {
+    "client": "mock",
+    "stages": [
+      {
+        "stage": "scope",
+        "client": "mock",
+        "request": {
+          "state": {
+            "request": "Give me an executive overview of the business for the last 12 months with revenue, orders and margin, compared to the prior period."
+          },
+          "questions": {
+            "archetype": {
+              "type": "choice",
+              "instructions": "Which kind of dashboard does the request ask for?",
+              "criteria": {
+                "executive_overview": "A broad summary of the business: revenue, orders, margin, customers; a few headline numbers and one or two trends",
+                "sales_performance": "Sales results in depth: revenue and orders over time, by product category, department, brand",
+                "customer_acquisition": "Where customers come from and who they are: signups, traffic sources, demographics, geography",
+                "product_merchandising": "What is selling: categories, brands, margins, returns, product mix",
+                "fulfillment_operations": "Shipping and delivery: order status, days to ship and deliver, distribution centers",
+                "web_engagement": "Website behaviour: sessions, events, funnel steps, conversion, browsers",
+                "inventory_health": "Stock levels and inventory value by warehouse and category"
+              }
+            },
+            "time_window": {
+              "type": "choice",
+              "instructions": "Which time window does the request imply? If none is stated, pick the standard window for the kind of dashboard.",
+              "criteria": {
+                "last_30_days": "Last 30 days, the last month, recent weeks: a short-term operational view",
+                "last_90_days": "Last 90 days, the last quarter, the last three months: recent with enough history for a trend",
+                "last_12_months": "Last 12 months, the past year, trailing year: the standard window for trends and seasonality",
+                "year_to_date": "Year to date, YTD, since January 1st of the current year",
+                "all_time": "All time, all history, everything available (about two years)"
+              }
+            },
+            "grain": {
+              "type": "choice",
+              "instructions": "At which time granularity should trends be plotted?",
+              "criteria": {
+                "day": "Daily, by day: for short windows or operational monitoring",
+                "week": "Weekly, by week: smooths daily noise over a quarter or more",
+                "month": "Monthly, by month: the standard for yearly views and executives",
+                "quarter": "Quarterly, by quarter: only for multi-year, high-level views"
+              }
+            },
+            "compare_prior": {
+              "type": "noul",
+              "instructions": "The reader wants each number compared with the previous period (growth, change, versus last period)."
+            },
+            "density": {
+              "type": "score",
+              "instructions": "How much should be on the dashboard?",
+              "criteria": [
+                "A few headline numbers and one chart",
+                "A balanced overview: several numbers and a handful of charts",
+                "A dense analytical view with many charts and a table"
+              ]
+            },
+            "audience": {
+              "type": "choice",
+              "instructions": "Who will read this dashboard?",
+              "criteria": {
+                "executive": "Leadership: wants a few clear numbers and the overall trend",
+                "analyst": "Analyst: wants breakdowns, comparisons and the ability to dig in",
+                "operator": "Operations staff: wants current status and many signals at once"
+              }
+            },
+            "mode_preference": {
+              "type": "choice",
+              "instructions": "Does the request state a visual mode preference?",
+              "criteria": {
+                "light": "The request asks for a light, white or bright look",
+                "dark": "The request asks for a dark look, a wall screen or night use",
+                "no_preference": "The request says nothing about light or dark"
+              }
+            },
+            "wants_geo": {
+              "type": "noul",
+              "instructions": "The request is about geography: countries, states, regions or a map."
+            },
+            "wants_breakdowns": {
+              "type": "noul",
+              "instructions": "The request asks to break results down by a category (by product, by channel, by segment, etc.)."
+            }
+          }
+        },
+        "response": {
+          "model": "mock-jev-0",
+          "answers": {
+            "archetype": {
+              "type": "choice",
+              "choice": "executive_overview",
+              "probabilities": {
+                "executive_overview": 0.363,
+                "sales_performance": 0.195,
+                "customer_acquisition": 0.065,
+                "product_merchandising": 0.127,
+                "fulfillment_operations": 0.119,
+                "web_engagement": 0.065,
+                "inventory_health": 0.065
+              },
+              "confidence": 0.168
+            },
+            "time_window": {
+              "type": "choice",
+              "choice": "last_12_months",
+              "probabilities": {
+                "last_30_days": 0.227,
+                "last_90_days": 0.227,
+                "last_12_months": 0.392,
+                "year_to_date": 0.076,
+                "all_time": 0.076
+              },
+              "confidence": 0.165
+            },
+            "grain": {
+              "type": "choice",
+              "choice": "month",
+              "probabilities": {
+                "day": 0.175,
+                "week": 0.175,
+                "month": 0.475,
+                "quarter": 0.175
+              },
+              "confidence": 0.3
+            },
+            "compare_prior": {
+              "type": "noul",
+              "noul": 0.582
+            },
+            "density": {
+              "type": "score",
+              "score": 1,
+              "legend": {
+                "0": "A few headline numbers and one chart",
+                "1": "A balanced overview: several numbers and a handful of charts",
+                "2": "A dense analytical view with many charts and a table"
+              },
+              "probabilities": {
+                "0": 0.212,
+                "1": 0.576,
+                "2": 0.212
+              },
+              "confidence": 0.364
+            },
+            "audience": {
+              "type": "choice",
+              "choice": "executive",
+              "probabilities": {
+                "executive": 0.514,
+                "analyst": 0.243,
+                "operator": 0.243
+              },
+              "confidence": 0.271
+            },
+            "mode_preference": {
+              "type": "choice",
+              "choice": "light",
+              "probabilities": {
+                "light": 0.378,
+                "dark": 0.294,
+                "no_preference": 0.328
+              },
+              "confidence": 0.05
+            },
+            "wants_geo": {
+              "type": "noul",
+              "noul": 0.4
+            },
+            "wants_breakdowns": {
+              "type": "noul",
+              "noul": 0.34
+            }
+          },
+          "usage": {
+            "input_tokens": 14,
+            "output_tokens": 0
+          }
+        },
+        "decisions": [
+          {
+            "key": "density",
+            "type": "score",
+            "value": 1,
+            "confidence": 0.364,
+            "probabilities": {
+              "0": 0.212,
+              "1": 0.576,
+              "2": 0.212
+            }
+          },
+          {
+            "key": "archetype",
+            "type": "choice",
+            "value": "executive_overview",
+            "confidence": 0.168,
+            "probabilities": {
+              "executive_overview": 0.363,
+              "sales_performance": 0.195,
+              "customer_acquisition": 0.065,
+              "product_merchandising": 0.127,
+              "fulfillment_operations": 0.119,
+              "web_engagement": 0.065,
+              "inventory_health": 0.065
+            }
+          },
+          {
+            "key": "time_window",
+            "type": "choice",
+            "value": "last_12_months",
+            "confidence": 0.165,
+            "probabilities": {
+              "last_30_days": 0.227,
+              "last_90_days": 0.227,
+              "last_12_months": 0.392,
+              "year_to_date": 0.076,
+              "all_time": 0.076
+            }
+          },
+          {
+            "key": "grain",
+            "type": "choice",
+            "value": "month",
+            "confidence": 0.3,
+            "probabilities": {
+              "day": 0.175,
+              "week": 0.175,
+              "month": 0.475,
+              "quarter": 0.175
+            }
+          },
+          {
+            "key": "compare_prior",
+            "type": "noul",
+            "value": true,
+            "confidence": 0.582
+          },
+          {
+            "key": "audience",
+            "type": "choice",
+            "value": "executive",
+            "confidence": 0.271,
+            "probabilities": {
+              "executive": 0.514,
+              "analyst": 0.243,
+              "operator": 0.243
+            }
+          },
+          {
+            "key": "mode_preference",
+            "type": "choice",
+            "value": "light",
+            "confidence": 0.05,
+            "probabilities": {
+              "light": 0.378,
+              "dark": 0.294,
+              "no_preference": 0.328
+            }
+          },
+          {
+            "key": "wants_geo",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.4
+          },
+          {
+            "key": "wants_breakdowns",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.34
+          }
+        ],
+        "ms": 1
+      },
+      {
+        "stage": "fields",
+        "client": "mock",
+        "request": {
+          "state": {
+            "request": "Give me an executive overview of the business for the last 12 months with revenue, orders and margin, compared to the prior period.",
+            "dashboard_type": "executive overview: A broad summary of the business: revenue, orders, margin, customers; a few headline numbers and one or two trends",
+            "audience": "executive"
+          },
+          "questions": {
+            "metric:revenue": {
+              "type": "noul",
+              "instructions": "The metric \"Revenue\" (Sum of item sale prices (gross sales)) belongs on this dashboard."
+            },
+            "metric:orders": {
+              "type": "noul",
+              "instructions": "The metric \"Orders\" (Number of orders) belongs on this dashboard."
+            },
+            "metric:items_sold": {
+              "type": "noul",
+              "instructions": "The metric \"Items sold\" (Number of order line items) belongs on this dashboard."
+            },
+            "metric:gross_margin": {
+              "type": "noul",
+              "instructions": "The metric \"Gross margin\" (Revenue minus product cost) belongs on this dashboard."
+            },
+            "metric:gross_margin_pct": {
+              "type": "noul",
+              "instructions": "The metric \"Gross margin %\" (Gross margin as a share of revenue) belongs on this dashboard."
+            },
+            "metric:avg_order_value": {
+              "type": "noul",
+              "instructions": "The metric \"Average order value\" (Revenue per order) belongs on this dashboard."
+            },
+            "metric:return_rate": {
+              "type": "noul",
+              "instructions": "The metric \"Return rate\" (Share of items returned) belongs on this dashboard."
+            },
+            "metric:customers": {
+              "type": "noul",
+              "instructions": "The metric \"Customers\" (Distinct purchasing customers) belongs on this dashboard."
+            },
+            "metric:new_users": {
+              "type": "noul",
+              "instructions": "The metric \"New signups\" (New user accounts created) belongs on this dashboard."
+            },
+            "metric:sessions": {
+              "type": "noul",
+              "instructions": "The metric \"Sessions\" (Website sessions) belongs on this dashboard."
+            },
+            "metric:events": {
+              "type": "noul",
+              "instructions": "The metric \"Web events\" (Website page events) belongs on this dashboard."
+            },
+            "metric:conversion_rate": {
+              "type": "noul",
+              "instructions": "The metric \"Conversion rate\" (Purchase events per session) belongs on this dashboard."
+            },
+            "metric:cart_abandonment": {
+              "type": "noul",
+              "instructions": "The metric \"Cart adds\" (Add-to-cart events) belongs on this dashboard."
+            },
+            "metric:stock_on_hand": {
+              "type": "noul",
+              "instructions": "The metric \"Stock on hand\" (Inventory units currently unsold) belongs on this dashboard."
+            },
+            "metric:inventory_cost": {
+              "type": "noul",
+              "instructions": "The metric \"Inventory value\" (Cost value of unsold inventory) belongs on this dashboard."
+            },
+            "metric:avg_days_to_ship": {
+              "type": "noul",
+              "instructions": "The metric \"Days to ship\" (Average days from order to shipment) belongs on this dashboard."
+            },
+            "metric:avg_days_to_deliver": {
+              "type": "noul",
+              "instructions": "The metric \"Days to deliver\" (Average days from order to delivery) belongs on this dashboard."
+            },
+            "dimension:department": {
+              "type": "noul",
+              "instructions": "Breaking the numbers down by \"Department\" (Men or Women) helps answer this request."
+            },
+            "dimension:category": {
+              "type": "noul",
+              "instructions": "Breaking the numbers down by \"Product category\" (Product category such as Jeans, Dresses, Outerwear) helps answer this request."
+            },
+            "dimension:brand": {
+              "type": "noul",
+              "instructions": "Breaking the numbers down by \"Brand\" (Product brand (top 40, rest folded into Other)) helps answer this request."
+            },
+            "dimension:order_status": {
+              "type": "noul",
+              "instructions": "Breaking the numbers down by \"Order status\" (Complete, Shipped, Processing, Cancelled, Returned) helps answer this request."
+            },
+            "dimension:traffic_source": {
+              "type": "noul",
+              "instructions": "Breaking the numbers down by \"Traffic source\" (Acquisition channel: Search, Organic, Facebook, Email, Display) helps answer this request."
+            },
+            "dimension:gender": {
+              "type": "noul",
+              "instructions": "Breaking the numbers down by \"Customer gender\" (Customer gender M/F) helps answer this request."
+            },
+            "dimension:age_band": {
+              "type": "noul",
+              "instructions": "Breaking the numbers down by \"Customer age band\" (Customer age band: under 25, 25-34, 35-44, 45-54, 55+) helps answer this request."
+            },
+            "dimension:country": {
+              "type": "noul",
+              "instructions": "Breaking the numbers down by \"Country\" (Customer country) helps answer this request."
+            },
+            "dimension:state": {
+              "type": "noul",
+              "instructions": "Breaking the numbers down by \"US state\" (Customer US state (for maps)) helps answer this request."
+            },
+            "dimension:event_type": {
+              "type": "noul",
+              "instructions": "Breaking the numbers down by \"Web event type\" (Website event: home, department, product, cart, purchase, cancel) helps answer this request."
+            },
+            "dimension:browser": {
+              "type": "noul",
+              "instructions": "Breaking the numbers down by \"Browser\" (Visitor browser) helps answer this request."
+            },
+            "dimension:distribution_center": {
+              "type": "noul",
+              "instructions": "Breaking the numbers down by \"Distribution center\" (Fulfilment warehouse (10 US cities)) helps answer this request."
+            },
+            "primary_metric": {
+              "type": "choice",
+              "instructions": "Which single metric is the headline of this dashboard?",
+              "criteria": {
+                "revenue": "Revenue: Sum of item sale prices (gross sales)",
+                "orders": "Orders: Number of orders",
+                "items_sold": "Items sold: Number of order line items",
+                "gross_margin": "Gross margin: Revenue minus product cost",
+                "gross_margin_pct": "Gross margin %: Gross margin as a share of revenue",
+                "avg_order_value": "Average order value: Revenue per order",
+                "return_rate": "Return rate: Share of items returned",
+                "customers": "Customers: Distinct purchasing customers",
+                "new_users": "New signups: New user accounts created",
+                "sessions": "Sessions: Website sessions",
+                "events": "Web events: Website page events",
+                "conversion_rate": "Conversion rate: Purchase events per session",
+                "cart_abandonment": "Cart adds: Add-to-cart events",
+                "stock_on_hand": "Stock on hand: Inventory units currently unsold",
+                "inventory_cost": "Inventory value: Cost value of unsold inventory",
+                "avg_days_to_ship": "Days to ship: Average days from order to shipment",
+                "avg_days_to_deliver": "Days to deliver: Average days from order to delivery"
+              }
+            },
+            "primary_dimension": {
+              "type": "choice",
+              "instructions": "Which single breakdown matters most for this request?",
+              "criteria": {
+                "none": "No breakdown; totals over time are enough",
+                "department": "Department: Men or Women",
+                "category": "Product category: Product category such as Jeans, Dresses, Outerwear",
+                "brand": "Brand: Product brand (top 40, rest folded into Other)",
+                "order_status": "Order status: Complete, Shipped, Processing, Cancelled, Returned",
+                "traffic_source": "Traffic source: Acquisition channel: Search, Organic, Facebook, Email, Display",
+                "gender": "Customer gender: Customer gender M/F",
+                "age_band": "Customer age band: Customer age band: under 25, 25-34, 35-44, 45-54, 55+",
+                "country": "Country: Customer country",
+                "state": "US state: Customer US state (for maps)",
+                "event_type": "Web event type: Website event: home, department, product, cart, purchase, cancel",
+                "browser": "Browser: Visitor browser",
+                "distribution_center": "Distribution center: Fulfilment warehouse (10 US cities)"
+              }
+            }
+          }
+        },
+        "response": {
+          "model": "mock-jev-0",
+          "answers": {
+            "metric:revenue": {
+              "type": "noul",
+              "noul": 0.34
+            },
+            "metric:orders": {
+              "type": "noul",
+              "noul": 0.76
+            },
+            "metric:items_sold": {
+              "type": "noul",
+              "noul": 0.55
+            },
+            "metric:gross_margin": {
+              "type": "noul",
+              "noul": 0.511
+            },
+            "metric:gross_margin_pct": {
+              "type": "noul",
+              "noul": 0.6
+            },
+            "metric:avg_order_value": {
+              "type": "noul",
+              "noul": 0.6
+            },
+            "metric:return_rate": {
+              "type": "noul",
+              "noul": 0.2
+            },
+            "metric:customers": {
+              "type": "noul",
+              "noul": 0.433
+            },
+            "metric:new_users": {
+              "type": "noul",
+              "noul": 0.2
+            },
+            "metric:sessions": {
+              "type": "noul",
+              "noul": 0.2
+            },
+            "metric:events": {
+              "type": "noul",
+              "noul": 0.2
+            },
+            "metric:conversion_rate": {
+              "type": "noul",
+              "noul": 0.2
+            },
+            "metric:cart_abandonment": {
+              "type": "noul",
+              "noul": 0.2
+            },
+            "metric:stock_on_hand": {
+              "type": "noul",
+              "noul": 0.2
+            },
+            "metric:inventory_cost": {
+              "type": "noul",
+              "noul": 0.2
+            },
+            "metric:avg_days_to_ship": {
+              "type": "noul",
+              "noul": 0.375
+            },
+            "metric:avg_days_to_deliver": {
+              "type": "noul",
+              "noul": 0.375
+            },
+            "dimension:department": {
+              "type": "noul",
+              "noul": 0.511
+            },
+            "dimension:category": {
+              "type": "noul",
+              "noul": 0.433
+            },
+            "dimension:brand": {
+              "type": "noul",
+              "noul": 0.415
+            },
+            "dimension:order_status": {
+              "type": "noul",
+              "noul": 0.523
+            },
+            "dimension:traffic_source": {
+              "type": "noul",
+              "noul": 0.387
+            },
+            "dimension:gender": {
+              "type": "noul",
+              "noul": 0.725
+            },
+            "dimension:age_band": {
+              "type": "noul",
+              "noul": 0.447
+            },
+            "dimension:country": {
+              "type": "noul",
+              "noul": 0.725
+            },
+            "dimension:state": {
+              "type": "noul",
+              "noul": 0.62
+            },
+            "dimension:event_type": {
+              "type": "noul",
+              "noul": 0.375
+            },
+            "dimension:browser": {
+              "type": "noul",
+              "noul": 0.55
+            },
+            "dimension:distribution_center": {
+              "type": "noul",
+              "noul": 0.415
+            },
+            "primary_metric": {
+              "type": "choice",
+              "choice": "orders",
+              "probabilities": {
+                "revenue": 0.005,
+                "orders": 0.874,
+                "items_sold": 0.016,
+                "gross_margin": 0.012,
+                "gross_margin_pct": 0.024,
+                "avg_order_value": 0.024,
+                "return_rate": 0.002,
+                "customers": 0.016,
+                "new_users": 0.002,
+                "sessions": 0.002,
+                "events": 0.002,
+                "conversion_rate": 0.002,
+                "cart_abandonment": 0.002,
+                "stock_on_hand": 0.002,
+                "inventory_cost": 0.002,
+                "avg_days_to_ship": 0.006,
+                "avg_days_to_deliver": 0.006
+              },
+              "confidence": 0.85
+            },
+            "primary_dimension": {
+              "type": "choice",
+              "choice": "gender",
+              "probabilities": {
+                "none": 0.018,
+                "department": 0.018,
+                "category": 0.018,
+                "brand": 0.018,
+                "order_status": 0.038,
+                "traffic_source": 0.018,
+                "gender": 0.356,
+                "age_band": 0.029,
+                "country": 0.356,
+                "state": 0.079,
+                "event_type": 0.018,
+                "browser": 0.018,
+                "distribution_center": 0.018
+              },
+              "confidence": 0
+            }
+          },
+          "usage": {
+            "input_tokens": 32,
+            "output_tokens": 0
+          }
+        },
+        "decisions": [
+          {
+            "key": "metric:revenue",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.34
+          },
+          {
+            "key": "metric:orders",
+            "type": "noul",
+            "value": true,
+            "confidence": 0.76
+          },
+          {
+            "key": "metric:items_sold",
+            "type": "noul",
+            "value": true,
+            "confidence": 0.55
+          },
+          {
+            "key": "metric:gross_margin",
+            "type": "noul",
+            "value": true,
+            "confidence": 0.511
+          },
+          {
+            "key": "metric:gross_margin_pct",
+            "type": "noul",
+            "value": true,
+            "confidence": 0.6
+          },
+          {
+            "key": "metric:avg_order_value",
+            "type": "noul",
+            "value": true,
+            "confidence": 0.6
+          },
+          {
+            "key": "metric:return_rate",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.2
+          },
+          {
+            "key": "metric:customers",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.433
+          },
+          {
+            "key": "metric:new_users",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.2
+          },
+          {
+            "key": "metric:sessions",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.2
+          },
+          {
+            "key": "metric:events",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.2
+          },
+          {
+            "key": "metric:conversion_rate",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.2
+          },
+          {
+            "key": "metric:cart_abandonment",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.2
+          },
+          {
+            "key": "metric:stock_on_hand",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.2
+          },
+          {
+            "key": "metric:inventory_cost",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.2
+          },
+          {
+            "key": "metric:avg_days_to_ship",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.375
+          },
+          {
+            "key": "metric:avg_days_to_deliver",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.375
+          },
+          {
+            "key": "dimension:department",
+            "type": "noul",
+            "value": true,
+            "confidence": 0.511
+          },
+          {
+            "key": "dimension:category",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.433
+          },
+          {
+            "key": "dimension:brand",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.415
+          },
+          {
+            "key": "dimension:order_status",
+            "type": "noul",
+            "value": true,
+            "confidence": 0.523
+          },
+          {
+            "key": "dimension:traffic_source",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.387
+          },
+          {
+            "key": "dimension:gender",
+            "type": "noul",
+            "value": true,
+            "confidence": 0.725
+          },
+          {
+            "key": "dimension:age_band",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.447
+          },
+          {
+            "key": "dimension:country",
+            "type": "noul",
+            "value": true,
+            "confidence": 0.725
+          },
+          {
+            "key": "dimension:state",
+            "type": "noul",
+            "value": true,
+            "confidence": 0.62
+          },
+          {
+            "key": "dimension:event_type",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.375
+          },
+          {
+            "key": "dimension:browser",
+            "type": "noul",
+            "value": true,
+            "confidence": 0.55
+          },
+          {
+            "key": "dimension:distribution_center",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.415
+          },
+          {
+            "key": "primary_metric",
+            "type": "choice",
+            "value": "orders",
+            "confidence": 0.85,
+            "probabilities": {
+              "revenue": 0.005,
+              "orders": 0.874,
+              "items_sold": 0.016,
+              "gross_margin": 0.012,
+              "gross_margin_pct": 0.024,
+              "avg_order_value": 0.024,
+              "return_rate": 0.002,
+              "customers": 0.016,
+              "new_users": 0.002,
+              "sessions": 0.002,
+              "events": 0.002,
+              "conversion_rate": 0.002,
+              "cart_abandonment": 0.002,
+              "stock_on_hand": 0.002,
+              "inventory_cost": 0.002,
+              "avg_days_to_ship": 0.006,
+              "avg_days_to_deliver": 0.006
+            }
+          },
+          {
+            "key": "primary_dimension",
+            "type": "choice",
+            "value": "gender",
+            "confidence": 0,
+            "probabilities": {
+              "none": 0.018,
+              "department": 0.018,
+              "category": 0.018,
+              "brand": 0.018,
+              "order_status": 0.038,
+              "traffic_source": 0.018,
+              "gender": 0.356,
+              "age_band": 0.029,
+              "country": 0.356,
+              "state": 0.079,
+              "event_type": 0.018,
+              "browser": 0.018,
+              "distribution_center": 0.018
+            }
+          }
+        ],
+        "ms": 1
+      },
+      {
+        "stage": "tiles",
+        "client": "mock",
+        "request": {
+          "state": {
+            "request": "Give me an executive overview of the business for the last 12 months with revenue, orders and margin, compared to the prior period.",
+            "dashboard_type": "executive overview",
+            "audience": "executive",
+            "time_window": "last 12 months",
+            "tiles": [
+              {
+                "id": "kpi_0",
+                "shows": "Orders headline number"
+              },
+              {
+                "id": "kpi_1",
+                "shows": "Gross margin % headline number"
+              },
+              {
+                "id": "kpi_2",
+                "shows": "Average order value headline number"
+              },
+              {
+                "id": "kpi_3",
+                "shows": "Items sold headline number"
+              },
+              {
+                "id": "trend_0",
+                "shows": "Orders over time"
+              },
+              {
+                "id": "trend_1",
+                "shows": "Gross margin % over time"
+              },
+              {
+                "id": "breakdown_0",
+                "shows": "Orders by Customer gender"
+              },
+              {
+                "id": "breakdown_1",
+                "shows": "Orders by Country"
+              },
+              {
+                "id": "detail_0",
+                "shows": "Orders, Average order value, Items sold by Customer gender as a table"
+              }
+            ]
+          },
+          "questions": {
+            "kpi_0:size": {
+              "type": "choice",
+              "instructions": "How much of the row should tile \"kpi_0\" (Orders headline number) take?",
+              "criteria": {
+                "sm": "small: a quarter of the row; stat tiles and simple sparklines",
+                "md": "medium: a third of the row; secondary breakdowns"
+              }
+            },
+            "kpi_0:importance": {
+              "type": "score",
+              "instructions": "How important is tile \"kpi_0\" (Orders headline number) for this request?",
+              "criteria": [
+                "Leave it out: it does not help this request",
+                "Supporting detail: nice to have",
+                "Useful context for the request",
+                "Essential: the request cannot be answered without it"
+              ]
+            },
+            "kpi_1:size": {
+              "type": "choice",
+              "instructions": "How much of the row should tile \"kpi_1\" (Gross margin % headline number) take?",
+              "criteria": {
+                "sm": "small: a quarter of the row; stat tiles and simple sparklines",
+                "md": "medium: a third of the row; secondary breakdowns"
+              }
+            },
+            "kpi_1:importance": {
+              "type": "score",
+              "instructions": "How important is tile \"kpi_1\" (Gross margin % headline number) for this request?",
+              "criteria": [
+                "Leave it out: it does not help this request",
+                "Supporting detail: nice to have",
+                "Useful context for the request",
+                "Essential: the request cannot be answered without it"
+              ]
+            },
+            "kpi_2:size": {
+              "type": "choice",
+              "instructions": "How much of the row should tile \"kpi_2\" (Average order value headline number) take?",
+              "criteria": {
+                "sm": "small: a quarter of the row; stat tiles and simple sparklines",
+                "md": "medium: a third of the row; secondary breakdowns"
+              }
+            },
+            "kpi_2:importance": {
+              "type": "score",
+              "instructions": "How important is tile \"kpi_2\" (Average order value headline number) for this request?",
+              "criteria": [
+                "Leave it out: it does not help this request",
+                "Supporting detail: nice to have",
+                "Useful context for the request",
+                "Essential: the request cannot be answered without it"
+              ]
+            },
+            "kpi_3:size": {
+              "type": "choice",
+              "instructions": "How much of the row should tile \"kpi_3\" (Items sold headline number) take?",
+              "criteria": {
+                "sm": "small: a quarter of the row; stat tiles and simple sparklines",
+                "md": "medium: a third of the row; secondary breakdowns"
+              }
+            },
+            "kpi_3:importance": {
+              "type": "score",
+              "instructions": "How important is tile \"kpi_3\" (Items sold headline number) for this request?",
+              "criteria": [
+                "Leave it out: it does not help this request",
+                "Supporting detail: nice to have",
+                "Useful context for the request",
+                "Essential: the request cannot be answered without it"
+              ]
+            },
+            "trend_0:component": {
+              "type": "choice",
+              "instructions": "For tile \"trend_0\" (Orders over time), which presentation serves the reader best?",
+              "criteria": {
+                "line": "Line chart: One metric over time as a single line. The default for trend questions.",
+                "area": "Area chart: One metric over time with a light fill under the line. Emphasises accumulated volume; otherwise the same job as a line."
+              }
+            },
+            "trend_0:size": {
+              "type": "choice",
+              "instructions": "How much of the row should tile \"trend_0\" (Orders over time) take?",
+              "criteria": {
+                "md": "medium: a third of the row; secondary breakdowns",
+                "lg": "large: half the row; the standard chart size",
+                "xl": "extra large: two thirds of the row; the main trend chart",
+                "full": "full width: dense tables, heatmaps, maps and the single hero chart"
+              }
+            },
+            "trend_0:importance": {
+              "type": "score",
+              "instructions": "How important is tile \"trend_0\" (Orders over time) for this request?",
+              "criteria": [
+                "Leave it out: it does not help this request",
+                "Supporting detail: nice to have",
+                "Useful context for the request",
+                "Essential: the request cannot be answered without it"
+              ]
+            },
+            "trend_1:component": {
+              "type": "choice",
+              "instructions": "For tile \"trend_1\" (Gross margin % over time), which presentation serves the reader best?",
+              "criteria": {
+                "line": "Line chart: One metric over time as a single line. The default for trend questions.",
+                "area": "Area chart: One metric over time with a light fill under the line. Emphasises accumulated volume; otherwise the same job as a line."
+              }
+            },
+            "trend_1:size": {
+              "type": "choice",
+              "instructions": "How much of the row should tile \"trend_1\" (Gross margin % over time) take?",
+              "criteria": {
+                "md": "medium: a third of the row; secondary breakdowns",
+                "lg": "large: half the row; the standard chart size",
+                "xl": "extra large: two thirds of the row; the main trend chart",
+                "full": "full width: dense tables, heatmaps, maps and the single hero chart"
+              }
+            },
+            "trend_1:importance": {
+              "type": "score",
+              "instructions": "How important is tile \"trend_1\" (Gross margin % over time) for this request?",
+              "criteria": [
+                "Leave it out: it does not help this request",
+                "Supporting detail: nice to have",
+                "Useful context for the request",
+                "Essential: the request cannot be answered without it"
+              ]
+            },
+            "breakdown_0:component": {
+              "type": "choice",
+              "instructions": "For tile \"breakdown_0\" (Orders by Customer gender), which presentation serves the reader best?",
+              "criteria": {
+                "multi_line": "Multi-series line: One metric over time, one line per category (up to 6 categories). Use when the reader must compare how categories trend against each other.",
+                "small_multiples": "Small multiples: One metric over time as a grid of tiny line charts, one per category (up to 12). Use for many categories where a multi-line chart would tangle.",
+                "stacked_bar_time": "Stacked bars over time: One metric over time as stacked bars split by category (up to 6). Use for how the mix changes period to period.",
+                "heatmap": "Heatmap: A grid of category (rows) by time period (columns) shaded by one metric. Use for spotting seasonality or hot spots across many categories.",
+                "bar_ranked": "Ranked bar chart: Horizontal bars ranking categories by one metric, largest first (up to 15 categories, the rest folded into Other). Use for 'which categories are biggest'.",
+                "donut": "Donut chart: Share of one metric across at most 5 categories, with the total in the middle. Only for an at-a-glance part-to-whole; never for comparing close values.",
+                "table": "Table: A sortable table of one or more metrics by one or two categories. Use when exact values matter or there are too many categories for a chart."
+              }
+            },
+            "breakdown_0:size": {
+              "type": "choice",
+              "instructions": "How much of the row should tile \"breakdown_0\" (Orders by Customer gender) take?",
+              "criteria": {
+                "lg": "large: half the row; the standard chart size",
+                "xl": "extra large: two thirds of the row; the main trend chart",
+                "full": "full width: dense tables, heatmaps, maps and the single hero chart",
+                "md": "medium: a third of the row; secondary breakdowns"
+              }
+            },
+            "breakdown_0:importance": {
+              "type": "score",
+              "instructions": "How important is tile \"breakdown_0\" (Orders by Customer gender) for this request?",
+              "criteria": [
+                "Leave it out: it does not help this request",
+                "Supporting detail: nice to have",
+                "Useful context for the request",
+                "Essential: the request cannot be answered without it"
+              ]
+            },
+            "breakdown_1:component": {
+              "type": "choice",
+              "instructions": "For tile \"breakdown_1\" (Orders by Country), which presentation serves the reader best?",
+              "criteria": {
+                "small_multiples": "Small multiples: One metric over time as a grid of tiny line charts, one per category (up to 12). Use for many categories where a multi-line chart would tangle.",
+                "heatmap": "Heatmap: A grid of category (rows) by time period (columns) shaded by one metric. Use for spotting seasonality or hot spots across many categories.",
+                "bar_ranked": "Ranked bar chart: Horizontal bars ranking categories by one metric, largest first (up to 15 categories, the rest folded into Other). Use for 'which categories are biggest'.",
+                "table": "Table: A sortable table of one or more metrics by one or two categories. Use when exact values matter or there are too many categories for a chart."
+              }
+            },
+            "breakdown_1:size": {
+              "type": "choice",
+              "instructions": "How much of the row should tile \"breakdown_1\" (Orders by Country) take?",
+              "criteria": {
+                "xl": "extra large: two thirds of the row; the main trend chart",
+                "full": "full width: dense tables, heatmaps, maps and the single hero chart",
+                "md": "medium: a third of the row; secondary breakdowns",
+                "lg": "large: half the row; the standard chart size"
+              }
+            },
+            "breakdown_1:importance": {
+              "type": "score",
+              "instructions": "How important is tile \"breakdown_1\" (Orders by Country) for this request?",
+              "criteria": [
+                "Leave it out: it does not help this request",
+                "Supporting detail: nice to have",
+                "Useful context for the request",
+                "Essential: the request cannot be answered without it"
+              ]
+            },
+            "detail_0:size": {
+              "type": "choice",
+              "instructions": "How much of the row should tile \"detail_0\" (Orders, Average order value, Items sold by Customer gender as a table) take?",
+              "criteria": {
+                "lg": "large: half the row; the standard chart size",
+                "xl": "extra large: two thirds of the row; the main trend chart",
+                "full": "full width: dense tables, heatmaps, maps and the single hero chart"
+              }
+            },
+            "detail_0:importance": {
+              "type": "score",
+              "instructions": "How important is tile \"detail_0\" (Orders, Average order value, Items sold by Customer gender as a table) for this request?",
+              "criteria": [
+                "Leave it out: it does not help this request",
+                "Supporting detail: nice to have",
+                "Useful context for the request",
+                "Essential: the request cannot be answered without it"
+              ]
+            }
+          }
+        },
+        "response": {
+          "model": "mock-jev-0",
+          "answers": {
+            "kpi_0:size": {
+              "type": "choice",
+              "choice": "sm",
+              "probabilities": {
+                "sm": 0.679,
+                "md": 0.321
+              },
+              "confidence": 0.358
+            },
+            "kpi_0:importance": {
+              "type": "score",
+              "score": 1.783,
+              "legend": {
+                "0": "Leave it out: it does not help this request",
+                "1": "Supporting detail: nice to have",
+                "2": "Useful context for the request",
+                "3": "Essential: the request cannot be answered without it"
+              },
+              "probabilities": {
+                "0": 0.188,
+                "1": 0.069,
+                "2": 0.512,
+                "3": 0.23
+              },
+              "confidence": 0.282
+            },
+            "kpi_1:size": {
+              "type": "choice",
+              "choice": "sm",
+              "probabilities": {
+                "sm": 0.679,
+                "md": 0.321
+              },
+              "confidence": 0.358
+            },
+            "kpi_1:importance": {
+              "type": "score",
+              "score": 1.783,
+              "legend": {
+                "0": "Leave it out: it does not help this request",
+                "1": "Supporting detail: nice to have",
+                "2": "Useful context for the request",
+                "3": "Essential: the request cannot be answered without it"
+              },
+              "probabilities": {
+                "0": 0.188,
+                "1": 0.069,
+                "2": 0.512,
+                "3": 0.23
+              },
+              "confidence": 0.282
+            },
+            "kpi_2:size": {
+              "type": "choice",
+              "choice": "sm",
+              "probabilities": {
+                "sm": 0.679,
+                "md": 0.321
+              },
+              "confidence": 0.358
+            },
+            "kpi_2:importance": {
+              "type": "score",
+              "score": 1.783,
+              "legend": {
+                "0": "Leave it out: it does not help this request",
+                "1": "Supporting detail: nice to have",
+                "2": "Useful context for the request",
+                "3": "Essential: the request cannot be answered without it"
+              },
+              "probabilities": {
+                "0": 0.188,
+                "1": 0.069,
+                "2": 0.512,
+                "3": 0.23
+              },
+              "confidence": 0.282
+            },
+            "kpi_3:size": {
+              "type": "choice",
+              "choice": "sm",
+              "probabilities": {
+                "sm": 0.679,
+                "md": 0.321
+              },
+              "confidence": 0.358
+            },
+            "kpi_3:importance": {
+              "type": "score",
+              "score": 1.783,
+              "legend": {
+                "0": "Leave it out: it does not help this request",
+                "1": "Supporting detail: nice to have",
+                "2": "Useful context for the request",
+                "3": "Essential: the request cannot be answered without it"
+              },
+              "probabilities": {
+                "0": 0.188,
+                "1": 0.069,
+                "2": 0.512,
+                "3": 0.23
+              },
+              "confidence": 0.282
+            },
+            "trend_0:component": {
+              "type": "choice",
+              "choice": "line",
+              "probabilities": {
+                "line": 0.566,
+                "area": 0.434
+              },
+              "confidence": 0.132
+            },
+            "trend_0:size": {
+              "type": "choice",
+              "choice": "md",
+              "probabilities": {
+                "md": 0.25,
+                "lg": 0.25,
+                "xl": 0.25,
+                "full": 0.25
+              },
+              "confidence": 0
+            },
+            "trend_0:importance": {
+              "type": "score",
+              "score": 1.783,
+              "legend": {
+                "0": "Leave it out: it does not help this request",
+                "1": "Supporting detail: nice to have",
+                "2": "Useful context for the request",
+                "3": "Essential: the request cannot be answered without it"
+              },
+              "probabilities": {
+                "0": 0.188,
+                "1": 0.069,
+                "2": 0.512,
+                "3": 0.23
+              },
+              "confidence": 0.282
+            },
+            "trend_1:component": {
+              "type": "choice",
+              "choice": "line",
+              "probabilities": {
+                "line": 0.566,
+                "area": 0.434
+              },
+              "confidence": 0.132
+            },
+            "trend_1:size": {
+              "type": "choice",
+              "choice": "md",
+              "probabilities": {
+                "md": 0.25,
+                "lg": 0.25,
+                "xl": 0.25,
+                "full": 0.25
+              },
+              "confidence": 0
+            },
+            "trend_1:importance": {
+              "type": "score",
+              "score": 1.783,
+              "legend": {
+                "0": "Leave it out: it does not help this request",
+                "1": "Supporting detail: nice to have",
+                "2": "Useful context for the request",
+                "3": "Essential: the request cannot be answered without it"
+              },
+              "probabilities": {
+                "0": 0.188,
+                "1": 0.069,
+                "2": 0.512,
+                "3": 0.23
+              },
+              "confidence": 0.282
+            },
+            "breakdown_0:component": {
+              "type": "choice",
+              "choice": "stacked_bar_time",
+              "probabilities": {
+                "multi_line": 0.119,
+                "small_multiples": 0.161,
+                "stacked_bar_time": 0.208,
+                "heatmap": 0.172,
+                "bar_ranked": 0.088,
+                "donut": 0.123,
+                "table": 0.128
+              },
+              "confidence": 0.036
+            },
+            "breakdown_0:size": {
+              "type": "choice",
+              "choice": "lg",
+              "probabilities": {
+                "lg": 0.25,
+                "xl": 0.25,
+                "full": 0.25,
+                "md": 0.25
+              },
+              "confidence": 0
+            },
+            "breakdown_0:importance": {
+              "type": "score",
+              "score": 1.783,
+              "legend": {
+                "0": "Leave it out: it does not help this request",
+                "1": "Supporting detail: nice to have",
+                "2": "Useful context for the request",
+                "3": "Essential: the request cannot be answered without it"
+              },
+              "probabilities": {
+                "0": 0.188,
+                "1": 0.069,
+                "2": 0.512,
+                "3": 0.23
+              },
+              "confidence": 0.282
+            },
+            "breakdown_1:component": {
+              "type": "choice",
+              "choice": "heatmap",
+              "probabilities": {
+                "small_multiples": 0.293,
+                "heatmap": 0.313,
+                "bar_ranked": 0.161,
+                "table": 0.234
+              },
+              "confidence": 0.02
+            },
+            "breakdown_1:size": {
+              "type": "choice",
+              "choice": "xl",
+              "probabilities": {
+                "xl": 0.25,
+                "full": 0.25,
+                "md": 0.25,
+                "lg": 0.25
+              },
+              "confidence": 0
+            },
+            "breakdown_1:importance": {
+              "type": "score",
+              "score": 1.783,
+              "legend": {
+                "0": "Leave it out: it does not help this request",
+                "1": "Supporting detail: nice to have",
+                "2": "Useful context for the request",
+                "3": "Essential: the request cannot be answered without it"
+              },
+              "probabilities": {
+                "0": 0.188,
+                "1": 0.069,
+                "2": 0.512,
+                "3": 0.23
+              },
+              "confidence": 0.282
+            },
+            "detail_0:size": {
+              "type": "choice",
+              "choice": "lg",
+              "probabilities": {
+                "lg": 0.333,
+                "xl": 0.333,
+                "full": 0.333
+              },
+              "confidence": 0
+            },
+            "detail_0:importance": {
+              "type": "score",
+              "score": 1.783,
+              "legend": {
+                "0": "Leave it out: it does not help this request",
+                "1": "Supporting detail: nice to have",
+                "2": "Useful context for the request",
+                "3": "Essential: the request cannot be answered without it"
+              },
+              "probabilities": {
+                "0": 0.188,
+                "1": 0.069,
+                "2": 0.512,
+                "3": 0.23
+              },
+              "confidence": 0.282
+            }
+          },
+          "usage": {
+            "input_tokens": 86,
+            "output_tokens": 0
+          }
+        },
+        "decisions": [
+          {
+            "key": "kpi_0:size",
+            "type": "choice",
+            "value": "sm",
+            "confidence": 0.358,
+            "probabilities": {
+              "sm": 0.679,
+              "md": 0.321
+            }
+          },
+          {
+            "key": "kpi_0:importance",
+            "type": "score",
+            "value": 1.783,
+            "confidence": 0.282,
+            "probabilities": {
+              "0": 0.188,
+              "1": 0.069,
+              "2": 0.512,
+              "3": 0.23
+            }
+          },
+          {
+            "key": "kpi_1:size",
+            "type": "choice",
+            "value": "sm",
+            "confidence": 0.358,
+            "probabilities": {
+              "sm": 0.679,
+              "md": 0.321
+            }
+          },
+          {
+            "key": "kpi_1:importance",
+            "type": "score",
+            "value": 1.783,
+            "confidence": 0.282,
+            "probabilities": {
+              "0": 0.188,
+              "1": 0.069,
+              "2": 0.512,
+              "3": 0.23
+            }
+          },
+          {
+            "key": "kpi_2:size",
+            "type": "choice",
+            "value": "sm",
+            "confidence": 0.358,
+            "probabilities": {
+              "sm": 0.679,
+              "md": 0.321
+            }
+          },
+          {
+            "key": "kpi_2:importance",
+            "type": "score",
+            "value": 1.783,
+            "confidence": 0.282,
+            "probabilities": {
+              "0": 0.188,
+              "1": 0.069,
+              "2": 0.512,
+              "3": 0.23
+            }
+          },
+          {
+            "key": "kpi_3:size",
+            "type": "choice",
+            "value": "sm",
+            "confidence": 0.358,
+            "probabilities": {
+              "sm": 0.679,
+              "md": 0.321
+            }
+          },
+          {
+            "key": "kpi_3:importance",
+            "type": "score",
+            "value": 1.783,
+            "confidence": 0.282,
+            "probabilities": {
+              "0": 0.188,
+              "1": 0.069,
+              "2": 0.512,
+              "3": 0.23
+            }
+          },
+          {
+            "key": "trend_0:component",
+            "type": "choice",
+            "value": "line",
+            "confidence": 0.132,
+            "probabilities": {
+              "line": 0.566,
+              "area": 0.434
+            }
+          },
+          {
+            "key": "trend_0:size",
+            "type": "choice",
+            "value": "md",
+            "confidence": 0,
+            "probabilities": {
+              "md": 0.25,
+              "lg": 0.25,
+              "xl": 0.25,
+              "full": 0.25
+            }
+          },
+          {
+            "key": "trend_0:importance",
+            "type": "score",
+            "value": 1.783,
+            "confidence": 0.282,
+            "probabilities": {
+              "0": 0.188,
+              "1": 0.069,
+              "2": 0.512,
+              "3": 0.23
+            }
+          },
+          {
+            "key": "trend_1:component",
+            "type": "choice",
+            "value": "line",
+            "confidence": 0.132,
+            "probabilities": {
+              "line": 0.566,
+              "area": 0.434
+            }
+          },
+          {
+            "key": "trend_1:size",
+            "type": "choice",
+            "value": "md",
+            "confidence": 0,
+            "probabilities": {
+              "md": 0.25,
+              "lg": 0.25,
+              "xl": 0.25,
+              "full": 0.25
+            }
+          },
+          {
+            "key": "trend_1:importance",
+            "type": "score",
+            "value": 1.783,
+            "confidence": 0.282,
+            "probabilities": {
+              "0": 0.188,
+              "1": 0.069,
+              "2": 0.512,
+              "3": 0.23
+            }
+          },
+          {
+            "key": "breakdown_0:component",
+            "type": "choice",
+            "value": "stacked_bar_time",
+            "confidence": 0.036,
+            "probabilities": {
+              "multi_line": 0.119,
+              "small_multiples": 0.161,
+              "stacked_bar_time": 0.208,
+              "heatmap": 0.172,
+              "bar_ranked": 0.088,
+              "donut": 0.123,
+              "table": 0.128
+            }
+          },
+          {
+            "key": "breakdown_0:size",
+            "type": "choice",
+            "value": "lg",
+            "confidence": 0,
+            "probabilities": {
+              "lg": 0.25,
+              "xl": 0.25,
+              "full": 0.25,
+              "md": 0.25
+            }
+          },
+          {
+            "key": "breakdown_0:importance",
+            "type": "score",
+            "value": 1.783,
+            "confidence": 0.282,
+            "probabilities": {
+              "0": 0.188,
+              "1": 0.069,
+              "2": 0.512,
+              "3": 0.23
+            }
+          },
+          {
+            "key": "breakdown_1:component",
+            "type": "choice",
+            "value": "heatmap",
+            "confidence": 0.02,
+            "probabilities": {
+              "small_multiples": 0.293,
+              "heatmap": 0.313,
+              "bar_ranked": 0.161,
+              "table": 0.234
+            }
+          },
+          {
+            "key": "breakdown_1:size",
+            "type": "choice",
+            "value": "xl",
+            "confidence": 0,
+            "probabilities": {
+              "xl": 0.25,
+              "full": 0.25,
+              "md": 0.25,
+              "lg": 0.25
+            }
+          },
+          {
+            "key": "breakdown_1:importance",
+            "type": "score",
+            "value": 1.783,
+            "confidence": 0.282,
+            "probabilities": {
+              "0": 0.188,
+              "1": 0.069,
+              "2": 0.512,
+              "3": 0.23
+            }
+          },
+          {
+            "key": "detail_0:size",
+            "type": "choice",
+            "value": "lg",
+            "confidence": 0,
+            "probabilities": {
+              "lg": 0.333,
+              "xl": 0.333,
+              "full": 0.333
+            }
+          },
+          {
+            "key": "detail_0:importance",
+            "type": "score",
+            "value": 1.783,
+            "confidence": 0.282,
+            "probabilities": {
+              "0": 0.188,
+              "1": 0.069,
+              "2": 0.512,
+              "3": 0.23
+            }
+          }
+        ],
+        "ms": 1
+      },
+      {
+        "stage": "presentation",
+        "client": "mock",
+        "request": {
+          "state": {
+            "request": "Give me an executive overview of the business for the last 12 months with revenue, orders and margin, compared to the prior period.",
+            "audience": "executive",
+            "density": "balanced",
+            "stated_mode_preference": "light",
+            "tile_count": 8,
+            "has_table": false,
+            "environment": {
+              "warehouse_credentials_available": false,
+              "offline": true
+            }
+          },
+          "questions": {
+            "layout": {
+              "type": "choice",
+              "instructions": "Which layout template fits this dashboard?",
+              "criteria": {
+                "kpi_row_grid": "KPI row + grid: Headline stat tiles across the top, then charts packed into a grid below. The conventional overview dashboard.",
+                "hero_focus": "Hero focus: One large main chart with stat tiles down the left side and a few small supporting charts. When one trend is the whole story.",
+                "two_column": "Two columns: Every chart at half width in two even columns, stat tiles inline. Balanced comparison of several equally important views.",
+                "narrative": "Single column narrative: Full-width tiles stacked in reading order, one idea per screen height. For a report that is read top to bottom rather than scanned."
+              }
+            },
+            "theme": {
+              "type": "choice",
+              "instructions": "Which theme preset fits the audience and any stated mode preference?",
+              "criteria": {
+                "daylight": "Daylight (light, comfortable): Light, neutral, comfortable spacing. The safe default for analysts working at a desk.",
+                "midnight": "Midnight (dark, comfortable): Dark surface with the same palette re-stepped for dark mode. For wall screens, dark-mode users and evening monitoring.",
+                "boardroom": "Boardroom (light, spacious): Light, spacious, larger type, fewer tiles per row. For executives and presentations where a few numbers must be readable from a distance.",
+                "ops_dense": "Ops dense (dark, compact): Dark, compact, small type, many tiles per screen. For operators watching many signals at once."
+              }
+            },
+            "number_format": {
+              "type": "choice",
+              "instructions": "How should numbers be formatted?",
+              "criteria": {
+                "compact": "Abbreviated figures such as $1.2M or 34K; scan-friendly",
+                "precise": "Full figures such as $1,234,567; when exact values matter"
+              }
+            },
+            "gridlines": {
+              "type": "noul",
+              "instructions": "The reader benefits from horizontal gridlines to read values off the charts."
+            },
+            "direct_labels": {
+              "type": "noul",
+              "instructions": "The reader wants values written directly on the bars and line ends rather than reading the axis."
+            },
+            "sort_breakdowns": {
+              "type": "choice",
+              "instructions": "How should categories be ordered in breakdown charts?",
+              "criteria": {
+                "by_value": "Largest value first; for ranking questions",
+                "natural": "The category's own order (alphabetical, or ordered bands); for lookup and comparison"
+              }
+            },
+            "connector": {
+              "type": "choice",
+              "instructions": "Which data connector should back this dashboard, given the environment?",
+              "criteria": {
+                "static_snapshot": "Static snapshot: Pre-aggregated JSON cubes extracted from BigQuery and embedded in the dashboard. Works offline, no credentials, data as of the snapshot date.",
+                "bigquery_live": "BigQuery live: Run each tile's query against bigquery-public-data.thelook_ecommerce at view time. Always current, needs a billable GCP project and credentials. (not yet implemented)",
+                "csv_upload": "CSV upload: The viewer supplies a CSV export matching the cube schema. For sharing a dashboard with people who lack warehouse access. (not yet implemented)"
+              }
+            }
+          }
+        },
+        "response": {
+          "model": "mock-jev-0",
+          "answers": {
+            "layout": {
+              "type": "choice",
+              "choice": "kpi_row_grid",
+              "probabilities": {
+                "kpi_row_grid": 0.277,
+                "hero_focus": 0.19,
+                "two_column": 0.271,
+                "narrative": 0.261
+              },
+              "confidence": 0.006
+            },
+            "theme": {
+              "type": "choice",
+              "choice": "daylight",
+              "probabilities": {
+                "daylight": 0.345,
+                "midnight": 0.189,
+                "boardroom": 0.276,
+                "ops_dense": 0.189
+              },
+              "confidence": 0.069
+            },
+            "number_format": {
+              "type": "choice",
+              "choice": "compact",
+              "probabilities": {
+                "compact": 0.5,
+                "precise": 0.5
+              },
+              "confidence": 0
+            },
+            "gridlines": {
+              "type": "noul",
+              "noul": 0.2
+            },
+            "direct_labels": {
+              "type": "noul",
+              "noul": 0.2
+            },
+            "sort_breakdowns": {
+              "type": "choice",
+              "choice": "natural",
+              "probabilities": {
+                "by_value": 0.321,
+                "natural": 0.679
+              },
+              "confidence": 0.358
+            },
+            "connector": {
+              "type": "choice",
+              "choice": "static_snapshot",
+              "probabilities": {
+                "static_snapshot": 0.416,
+                "bigquery_live": 0.292,
+                "csv_upload": 0.292
+              },
+              "confidence": 0.124
+            }
+          },
+          "usage": {
+            "input_tokens": 28,
+            "output_tokens": 0
+          }
+        },
+        "decisions": [
+          {
+            "key": "theme",
+            "type": "choice",
+            "value": "daylight",
+            "confidence": 0.069,
+            "probabilities": {
+              "daylight": 0.345,
+              "midnight": 0.189,
+              "boardroom": 0.276,
+              "ops_dense": 0.189
+            }
+          },
+          {
+            "key": "connector",
+            "type": "choice",
+            "value": "static_snapshot",
+            "confidence": 0.124,
+            "probabilities": {
+              "static_snapshot": 0.416,
+              "bigquery_live": 0.292,
+              "csv_upload": 0.292
+            }
+          },
+          {
+            "key": "layout",
+            "type": "choice",
+            "value": "kpi_row_grid",
+            "confidence": 0.006,
+            "probabilities": {
+              "kpi_row_grid": 0.277,
+              "hero_focus": 0.19,
+              "two_column": 0.271,
+              "narrative": 0.261
+            }
+          },
+          {
+            "key": "number_format",
+            "type": "choice",
+            "value": "compact",
+            "confidence": 0,
+            "probabilities": {
+              "compact": 0.5,
+              "precise": 0.5
+            }
+          },
+          {
+            "key": "gridlines",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.2
+          },
+          {
+            "key": "direct_labels",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.2
+          },
+          {
+            "key": "sort_breakdowns",
+            "type": "choice",
+            "value": "natural",
+            "confidence": 0.358,
+            "probabilities": {
+              "by_value": 0.321,
+              "natural": 0.679
+            }
+          }
+        ],
+        "ms": 0
+      }
+    ],
+    "summary": [
+      {
+        "key": "density",
+        "type": "score",
+        "value": 1,
+        "confidence": 0.364,
+        "probabilities": {
+          "0": 0.212,
+          "1": 0.576,
+          "2": 0.212
+        }
+      },
+      {
+        "key": "archetype",
+        "type": "choice",
+        "value": "executive_overview",
+        "confidence": 0.168,
+        "probabilities": {
+          "executive_overview": 0.363,
+          "sales_performance": 0.195,
+          "customer_acquisition": 0.065,
+          "product_merchandising": 0.127,
+          "fulfillment_operations": 0.119,
+          "web_engagement": 0.065,
+          "inventory_health": 0.065
+        }
+      },
+      {
+        "key": "time_window",
+        "type": "choice",
+        "value": "last_12_months",
+        "confidence": 0.165,
+        "probabilities": {
+          "last_30_days": 0.227,
+          "last_90_days": 0.227,
+          "last_12_months": 0.392,
+          "year_to_date": 0.076,
+          "all_time": 0.076
+        }
+      },
+      {
+        "key": "grain",
+        "type": "choice",
+        "value": "month",
+        "confidence": 0.3,
+        "probabilities": {
+          "day": 0.175,
+          "week": 0.175,
+          "month": 0.475,
+          "quarter": 0.175
+        }
+      },
+      {
+        "key": "compare_prior",
+        "type": "noul",
+        "value": true,
+        "confidence": 0.582
+      },
+      {
+        "key": "audience",
+        "type": "choice",
+        "value": "executive",
+        "confidence": 0.271,
+        "probabilities": {
+          "executive": 0.514,
+          "analyst": 0.243,
+          "operator": 0.243
+        }
+      },
+      {
+        "key": "mode_preference",
+        "type": "choice",
+        "value": "light",
+        "confidence": 0.05,
+        "probabilities": {
+          "light": 0.378,
+          "dark": 0.294,
+          "no_preference": 0.328
+        }
+      },
+      {
+        "key": "wants_geo",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.4
+      },
+      {
+        "key": "wants_breakdowns",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.34
+      },
+      {
+        "key": "metric:revenue",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.34
+      },
+      {
+        "key": "metric:orders",
+        "type": "noul",
+        "value": true,
+        "confidence": 0.76
+      },
+      {
+        "key": "metric:items_sold",
+        "type": "noul",
+        "value": true,
+        "confidence": 0.55
+      },
+      {
+        "key": "metric:gross_margin",
+        "type": "noul",
+        "value": true,
+        "confidence": 0.511
+      },
+      {
+        "key": "metric:gross_margin_pct",
+        "type": "noul",
+        "value": true,
+        "confidence": 0.6
+      },
+      {
+        "key": "metric:avg_order_value",
+        "type": "noul",
+        "value": true,
+        "confidence": 0.6
+      },
+      {
+        "key": "metric:return_rate",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.2
+      },
+      {
+        "key": "metric:customers",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.433
+      },
+      {
+        "key": "metric:new_users",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.2
+      },
+      {
+        "key": "metric:sessions",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.2
+      },
+      {
+        "key": "metric:events",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.2
+      },
+      {
+        "key": "metric:conversion_rate",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.2
+      },
+      {
+        "key": "metric:cart_abandonment",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.2
+      },
+      {
+        "key": "metric:stock_on_hand",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.2
+      },
+      {
+        "key": "metric:inventory_cost",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.2
+      },
+      {
+        "key": "metric:avg_days_to_ship",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.375
+      },
+      {
+        "key": "metric:avg_days_to_deliver",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.375
+      },
+      {
+        "key": "dimension:department",
+        "type": "noul",
+        "value": true,
+        "confidence": 0.511
+      },
+      {
+        "key": "dimension:category",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.433
+      },
+      {
+        "key": "dimension:brand",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.415
+      },
+      {
+        "key": "dimension:order_status",
+        "type": "noul",
+        "value": true,
+        "confidence": 0.523
+      },
+      {
+        "key": "dimension:traffic_source",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.387
+      },
+      {
+        "key": "dimension:gender",
+        "type": "noul",
+        "value": true,
+        "confidence": 0.725
+      },
+      {
+        "key": "dimension:age_band",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.447
+      },
+      {
+        "key": "dimension:country",
+        "type": "noul",
+        "value": true,
+        "confidence": 0.725
+      },
+      {
+        "key": "dimension:state",
+        "type": "noul",
+        "value": true,
+        "confidence": 0.62
+      },
+      {
+        "key": "dimension:event_type",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.375
+      },
+      {
+        "key": "dimension:browser",
+        "type": "noul",
+        "value": true,
+        "confidence": 0.55
+      },
+      {
+        "key": "dimension:distribution_center",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.415
+      },
+      {
+        "key": "primary_metric",
+        "type": "choice",
+        "value": "orders",
+        "confidence": 0.85,
+        "probabilities": {
+          "revenue": 0.005,
+          "orders": 0.874,
+          "items_sold": 0.016,
+          "gross_margin": 0.012,
+          "gross_margin_pct": 0.024,
+          "avg_order_value": 0.024,
+          "return_rate": 0.002,
+          "customers": 0.016,
+          "new_users": 0.002,
+          "sessions": 0.002,
+          "events": 0.002,
+          "conversion_rate": 0.002,
+          "cart_abandonment": 0.002,
+          "stock_on_hand": 0.002,
+          "inventory_cost": 0.002,
+          "avg_days_to_ship": 0.006,
+          "avg_days_to_deliver": 0.006
+        }
+      },
+      {
+        "key": "primary_dimension",
+        "type": "choice",
+        "value": "gender",
+        "confidence": 0,
+        "probabilities": {
+          "none": 0.018,
+          "department": 0.018,
+          "category": 0.018,
+          "brand": 0.018,
+          "order_status": 0.038,
+          "traffic_source": 0.018,
+          "gender": 0.356,
+          "age_band": 0.029,
+          "country": 0.356,
+          "state": 0.079,
+          "event_type": 0.018,
+          "browser": 0.018,
+          "distribution_center": 0.018
+        }
+      },
+      {
+        "key": "kpi_0:size",
+        "type": "choice",
+        "value": "sm",
+        "confidence": 0.358,
+        "probabilities": {
+          "sm": 0.679,
+          "md": 0.321
+        }
+      },
+      {
+        "key": "kpi_0:importance",
+        "type": "score",
+        "value": 1.783,
+        "confidence": 0.282,
+        "probabilities": {
+          "0": 0.188,
+          "1": 0.069,
+          "2": 0.512,
+          "3": 0.23
+        }
+      },
+      {
+        "key": "kpi_1:size",
+        "type": "choice",
+        "value": "sm",
+        "confidence": 0.358,
+        "probabilities": {
+          "sm": 0.679,
+          "md": 0.321
+        }
+      },
+      {
+        "key": "kpi_1:importance",
+        "type": "score",
+        "value": 1.783,
+        "confidence": 0.282,
+        "probabilities": {
+          "0": 0.188,
+          "1": 0.069,
+          "2": 0.512,
+          "3": 0.23
+        }
+      },
+      {
+        "key": "kpi_2:size",
+        "type": "choice",
+        "value": "sm",
+        "confidence": 0.358,
+        "probabilities": {
+          "sm": 0.679,
+          "md": 0.321
+        }
+      },
+      {
+        "key": "kpi_2:importance",
+        "type": "score",
+        "value": 1.783,
+        "confidence": 0.282,
+        "probabilities": {
+          "0": 0.188,
+          "1": 0.069,
+          "2": 0.512,
+          "3": 0.23
+        }
+      },
+      {
+        "key": "kpi_3:size",
+        "type": "choice",
+        "value": "sm",
+        "confidence": 0.358,
+        "probabilities": {
+          "sm": 0.679,
+          "md": 0.321
+        }
+      },
+      {
+        "key": "kpi_3:importance",
+        "type": "score",
+        "value": 1.783,
+        "confidence": 0.282,
+        "probabilities": {
+          "0": 0.188,
+          "1": 0.069,
+          "2": 0.512,
+          "3": 0.23
+        }
+      },
+      {
+        "key": "trend_0:component",
+        "type": "choice",
+        "value": "line",
+        "confidence": 0.132,
+        "probabilities": {
+          "line": 0.566,
+          "area": 0.434
+        }
+      },
+      {
+        "key": "trend_0:size",
+        "type": "choice",
+        "value": "md",
+        "confidence": 0,
+        "probabilities": {
+          "md": 0.25,
+          "lg": 0.25,
+          "xl": 0.25,
+          "full": 0.25
+        }
+      },
+      {
+        "key": "trend_0:importance",
+        "type": "score",
+        "value": 1.783,
+        "confidence": 0.282,
+        "probabilities": {
+          "0": 0.188,
+          "1": 0.069,
+          "2": 0.512,
+          "3": 0.23
+        }
+      },
+      {
+        "key": "trend_1:component",
+        "type": "choice",
+        "value": "line",
+        "confidence": 0.132,
+        "probabilities": {
+          "line": 0.566,
+          "area": 0.434
+        }
+      },
+      {
+        "key": "trend_1:size",
+        "type": "choice",
+        "value": "md",
+        "confidence": 0,
+        "probabilities": {
+          "md": 0.25,
+          "lg": 0.25,
+          "xl": 0.25,
+          "full": 0.25
+        }
+      },
+      {
+        "key": "trend_1:importance",
+        "type": "score",
+        "value": 1.783,
+        "confidence": 0.282,
+        "probabilities": {
+          "0": 0.188,
+          "1": 0.069,
+          "2": 0.512,
+          "3": 0.23
+        }
+      },
+      {
+        "key": "breakdown_0:component",
+        "type": "choice",
+        "value": "stacked_bar_time",
+        "confidence": 0.036,
+        "probabilities": {
+          "multi_line": 0.119,
+          "small_multiples": 0.161,
+          "stacked_bar_time": 0.208,
+          "heatmap": 0.172,
+          "bar_ranked": 0.088,
+          "donut": 0.123,
+          "table": 0.128
+        }
+      },
+      {
+        "key": "breakdown_0:size",
+        "type": "choice",
+        "value": "lg",
+        "confidence": 0,
+        "probabilities": {
+          "lg": 0.25,
+          "xl": 0.25,
+          "full": 0.25,
+          "md": 0.25
+        }
+      },
+      {
+        "key": "breakdown_0:importance",
+        "type": "score",
+        "value": 1.783,
+        "confidence": 0.282,
+        "probabilities": {
+          "0": 0.188,
+          "1": 0.069,
+          "2": 0.512,
+          "3": 0.23
+        }
+      },
+      {
+        "key": "breakdown_1:component",
+        "type": "choice",
+        "value": "heatmap",
+        "confidence": 0.02,
+        "probabilities": {
+          "small_multiples": 0.293,
+          "heatmap": 0.313,
+          "bar_ranked": 0.161,
+          "table": 0.234
+        }
+      },
+      {
+        "key": "breakdown_1:size",
+        "type": "choice",
+        "value": "xl",
+        "confidence": 0,
+        "probabilities": {
+          "xl": 0.25,
+          "full": 0.25,
+          "md": 0.25,
+          "lg": 0.25
+        }
+      },
+      {
+        "key": "breakdown_1:importance",
+        "type": "score",
+        "value": 1.783,
+        "confidence": 0.282,
+        "probabilities": {
+          "0": 0.188,
+          "1": 0.069,
+          "2": 0.512,
+          "3": 0.23
+        }
+      },
+      {
+        "key": "detail_0:size",
+        "type": "choice",
+        "value": "lg",
+        "confidence": 0,
+        "probabilities": {
+          "lg": 0.333,
+          "xl": 0.333,
+          "full": 0.333
+        }
+      },
+      {
+        "key": "detail_0:importance",
+        "type": "score",
+        "value": 1.783,
+        "confidence": 0.282,
+        "probabilities": {
+          "0": 0.188,
+          "1": 0.069,
+          "2": 0.512,
+          "3": 0.23
+        }
+      },
+      {
+        "key": "theme",
+        "type": "choice",
+        "value": "daylight",
+        "confidence": 0.069,
+        "probabilities": {
+          "daylight": 0.345,
+          "midnight": 0.189,
+          "boardroom": 0.276,
+          "ops_dense": 0.189
+        }
+      },
+      {
+        "key": "connector",
+        "type": "choice",
+        "value": "static_snapshot",
+        "confidence": 0.124,
+        "probabilities": {
+          "static_snapshot": 0.416,
+          "bigquery_live": 0.292,
+          "csv_upload": 0.292
+        }
+      },
+      {
+        "key": "layout",
+        "type": "choice",
+        "value": "kpi_row_grid",
+        "confidence": 0.006,
+        "probabilities": {
+          "kpi_row_grid": 0.277,
+          "hero_focus": 0.19,
+          "two_column": 0.271,
+          "narrative": 0.261
+        }
+      },
+      {
+        "key": "number_format",
+        "type": "choice",
+        "value": "compact",
+        "confidence": 0,
+        "probabilities": {
+          "compact": 0.5,
+          "precise": 0.5
+        }
+      },
+      {
+        "key": "gridlines",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.2
+      },
+      {
+        "key": "direct_labels",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.2
+      },
+      {
+        "key": "sort_breakdowns",
+        "type": "choice",
+        "value": "natural",
+        "confidence": 0.358,
+        "probabilities": {
+          "by_value": 0.321,
+          "natural": 0.679
+        }
+      }
+    ]
+  }
+}

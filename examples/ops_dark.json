@@ -1,0 +1,4364 @@
+{
+  "version": "0.1",
+  "title": "Fulfillment Operations",
+  "subtitle": "theLook eCommerce · last 30 days · daily",
+  "generatedAt": "2026-09-26T20:36:12.057Z",
+  "request": "A dark dashboard for the fulfilment team: days to ship and deliver by distribution center for the last 30 days, dense, daily.",
+  "source": {
+    "connector": "static_snapshot",
+    "dataset": "thelook_ecommerce",
+    "asOf": "2026-09-25",
+    "snapshotSource": "synthetic-placeholder (thelook_ecommerce schema; replace with `npm run extract`)",
+    "cubes": [
+      "fulfillment_daily",
+      "sales_monthly_brand"
+    ]
+  },
+  "theme": {
+    "id": "ops_dense",
+    "label": "Ops dense",
+    "description": "Dark, compact, small type, many tiles per screen. For operators watching many signals at once.",
+    "mode": "dark",
+    "density": "compact",
+    "fontFamily": "system-ui, -apple-system, \"Segoe UI\", sans-serif",
+    "baseFontPx": 12,
+    "radiusPx": 6,
+    "tokens": {
+      "surface": "#1a1a19",
+      "page": "#0d0d0d",
+      "textPrimary": "#ffffff",
+      "textSecondary": "#c3c2b7",
+      "textMuted": "#898781",
+      "grid": "#2c2c2a",
+      "axis": "#383835",
+      "border": "rgba(255,255,255,0.10)",
+      "categorical": [
+        "#3987e5",
+        "#d95926",
+        "#199e70",
+        "#c98500",
+        "#d55181",
+        "#008300",
+        "#9085e9",
+        "#e66767"
+      ],
+      "sequential": [
+        "#184f95",
+        "#1c5cab",
+        "#256abf",
+        "#2a78d6",
+        "#3987e5",
+        "#6da7ec",
+        "#9ec5f4"
+      ],
+      "deltaGood": "#0ca30c",
+      "deltaBad": "#e66767",
+      "emphasisGray": "#52514e"
+    }
+  },
+  "layout": {
+    "template": "kpi_row_grid",
+    "columns": 12,
+    "rowHeightPx": 96,
+    "gapPx": 10
+  },
+  "filters": {
+    "window": "last_30_days",
+    "start": "2026-08-27",
+    "end": "2026-09-25",
+    "grain": "day",
+    "comparePrior": false
+  },
+  "presentation": {
+    "numberFormat": "compact",
+    "gridlines": false,
+    "directLabels": false,
+    "sortBreakdowns": "by_value"
+  },
+  "tiles": [
+    {
+      "id": "kpi_0",
+      "role": "kpi",
+      "component": "kpi",
+      "importance": 1.783,
+      "confidence": 1,
+      "query": {
+        "metrics": [
+          "avg_days_to_deliver"
+        ],
+        "dimensions": [],
+        "window": "last_30_days"
+      },
+      "cube": "fulfillment_daily",
+      "rowCount": 1,
+      "kpi": {
+        "value": 4.3951,
+        "prior": null,
+        "delta": null,
+        "deltaPct": null,
+        "format": "days",
+        "goodDirection": "down",
+        "spark": [
+          {
+            "period": "2026-08-27",
+            "value": 4.6061
+          },
+          {
+            "period": "2026-08-28",
+            "value": 4.2346
+          },
+          {
+            "period": "2026-08-29",
+            "value": 4.3994
+          },
+          {
+            "period": "2026-08-30",
+            "value": 4.2869
+          },
+          {
+            "period": "2026-08-31",
+            "value": 4.0578
+          },
+          {
+            "period": "2026-09-01",
+            "value": 4.3526
+          },
+          {
+            "period": "2026-09-02",
+            "value": 4.7043
+          },
+          {
+            "period": "2026-09-03",
+            "value": 4.6169
+          },
+          {
+            "period": "2026-09-04",
+            "value": 4.4401
+          },
+          {
+            "period": "2026-09-05",
+            "value": 4.2827
+          },
+          {
+            "period": "2026-09-06",
+            "value": 4.4893
+          },
+          {
+            "period": "2026-09-07",
+            "value": 4.5325
+          },
+          {
+            "period": "2026-09-08",
+            "value": 4.5847
+          },
+          {
+            "period": "2026-09-09",
+            "value": 3.982
+          },
+          {
+            "period": "2026-09-10",
+            "value": 4.401
+          },
+          {
+            "period": "2026-09-11",
+            "value": 4.358
+          },
+          {
+            "period": "2026-09-12",
+            "value": 4.4273
+          },
+          {
+            "period": "2026-09-13",
+            "value": 4.3193
+          },
+          {
+            "period": "2026-09-14",
+            "value": 4.4872
+          },
+          {
+            "period": "2026-09-15",
+            "value": 4.3112
+          },
+          {
+            "period": "2026-09-16",
+            "value": 4.5304
+          },
+          {
+            "period": "2026-09-17",
+            "value": 4.0838
+          },
+          {
+            "period": "2026-09-18",
+            "value": 4.412
+          },
+          {
+            "period": "2026-09-19",
+            "value": 4.3824
+          },
+          {
+            "period": "2026-09-20",
+            "value": 4.4874
+          },
+          {
+            "period": "2026-09-21",
+            "value": 4.3567
+          },
+          {
+            "period": "2026-09-22",
+            "value": 4.5218
+          },
+          {
+            "period": "2026-09-23",
+            "value": 4.4687
+          },
+          {
+            "period": "2026-09-24",
+            "value": 4.4566
+          },
+          {
+            "period": "2026-09-25",
+            "value": 4.3224
+          }
+        ]
+      },
+      "data": [
+        {
+          "avg_days_to_deliver": 4.3951
+        }
+      ],
+      "title": "Days to deliver",
+      "size": "sm",
+      "placement": {
+        "colStart": 1,
+        "colSpan": 3,
+        "rowStart": 1,
+        "rowSpan": 1
+      }
+    },
+    {
+      "id": "kpi_1",
+      "role": "kpi",
+      "component": "kpi",
+      "importance": 1.783,
+      "confidence": 1,
+      "query": {
+        "metrics": [
+          "avg_days_to_ship"
+        ],
+        "dimensions": [],
+        "window": "last_30_days"
+      },
+      "cube": "fulfillment_daily",
+      "rowCount": 1,
+      "kpi": {
+        "value": 2.03,
+        "prior": null,
+        "delta": null,
+        "deltaPct": null,
+        "format": "days",
+        "goodDirection": "down",
+        "spark": [
+          {
+            "period": "2026-08-27",
+            "value": 2.0093
+          },
+          {
+            "period": "2026-08-28",
+            "value": 2.0384
+          },
+          {
+            "period": "2026-08-29",
+            "value": 2.0096
+          },
+          {
+            "period": "2026-08-30",
+            "value": 1.9648
+          },
+          {
+            "period": "2026-08-31",
+            "value": 1.9922
+          },
+          {
+            "period": "2026-09-01",
+            "value": 2.1181
+          },
+          {
+            "period": "2026-09-02",
+            "value": 1.9029
+          },
+          {
+            "period": "2026-09-03",
+            "value": 2.0041
+          },
+          {
+            "period": "2026-09-04",
+            "value": 2.0518
+          },
+          {
+            "period": "2026-09-05",
+            "value": 2.0227
+          },
+          {
+            "period": "2026-09-06",
+            "value": 2.1153
+          },
+          {
+            "period": "2026-09-07",
+            "value": 2.092
+          },
+          {
+            "period": "2026-09-08",
+            "value": 1.9128
+          },
+          {
+            "period": "2026-09-09",
+            "value": 2.0205
+          },
+          {
+            "period": "2026-09-10",
+            "value": 1.9567
+          },
+          {
+            "period": "2026-09-11",
+            "value": 1.918
+          },
+          {
+            "period": "2026-09-12",
+            "value": 1.9314
+          },
+          {
+            "period": "2026-09-13",
+            "value": 2.1204
+          },
+          {
+            "period": "2026-09-14",
+            "value": 2.0675
+          },
+          {
+            "period": "2026-09-15",
+            "value": 2.1303
+          },
+          {
+            "period": "2026-09-16",
+            "value": 2.0268
+          },
+          {
+            "period": "2026-09-17",
+            "value": 2.0996
+          },
+          {
+            "period": "2026-09-18",
+            "value": 1.9936
+          },
+          {
+            "period": "2026-09-19",
+            "value": 2.1222
+          },
+          {
+            "period": "2026-09-20",
+            "value": 2.1075
+          },
+          {
+            "period": "2026-09-21",
+            "value": 1.9376
+          },
+          {
+            "period": "2026-09-22",
+            "value": 2.1169
+          },
+          {
+            "period": "2026-09-23",
+            "value": 2.0435
+          },
+          {
+            "period": "2026-09-24",
+            "value": 2.0093
+          },
+          {
+            "period": "2026-09-25",
+            "value": 2.0288
+          }
+        ]
+      },
+      "data": [
+        {
+          "avg_days_to_ship": 2.03
+        }
+      ],
+      "title": "Days to ship",
+      "size": "sm",
+      "placement": {
+        "colStart": 4,
+        "colSpan": 3,
+        "rowStart": 1,
+        "rowSpan": 1
+      }
+    },
+    {
+      "id": "kpi_2",
+      "role": "kpi",
+      "component": "kpi",
+      "importance": 1.783,
+      "confidence": 1,
+      "query": {
+        "metrics": [
+          "orders"
+        ],
+        "dimensions": [],
+        "window": "last_30_days"
+      },
+      "cube": "sales_monthly_brand",
+      "rowCount": 1,
+      "kpi": {
+        "value": 6408,
+        "prior": null,
+        "delta": null,
+        "deltaPct": null,
+        "format": "number",
+        "goodDirection": "up",
+        "spark": [
+          {
+            "period": "2026-08-27",
+            "value": 254
+          },
+          {
+            "period": "2026-08-28",
+            "value": 210
+          },
+          {
+            "period": "2026-08-29",
+            "value": 318
+          },
+          {
+            "period": "2026-08-30",
+            "value": 276
+          },
+          {
+            "period": "2026-08-31",
+            "value": 294
+          },
+          {
+            "period": "2026-09-01",
+            "value": 243
+          },
+          {
+            "period": "2026-09-02",
+            "value": 250
+          },
+          {
+            "period": "2026-09-03",
+            "value": 226
+          },
+          {
+            "period": "2026-09-04",
+            "value": 261
+          },
+          {
+            "period": "2026-09-05",
+            "value": 268
+          },
+          {
+            "period": "2026-09-06",
+            "value": 289
+          },
+          {
+            "period": "2026-09-07",
+            "value": 203
+          },
+          {
+            "period": "2026-09-08",
+            "value": 249
+          },
+          {
+            "period": "2026-09-09",
+            "value": 252
+          },
+          {
+            "period": "2026-09-10",
+            "value": 225
+          },
+          {
+            "period": "2026-09-11",
+            "value": 250
+          },
+          {
+            "period": "2026-09-12",
+            "value": 360
+          },
+          {
+            "period": "2026-09-13",
+            "value": 292
+          },
+          {
+            "period": "2026-09-14",
+            "value": 226
+          },
+          {
+            "period": "2026-09-15",
+            "value": 271
+          },
+          {
+            "period": "2026-09-16",
+            "value": 255
+          },
+          {
+            "period": "2026-09-17",
+            "value": 240
+          },
+          {
+            "period": "2026-09-18",
+            "value": 243
+          },
+          {
+            "period": "2026-09-19",
+            "value": 300
+          },
+          {
+            "period": "2026-09-20",
+            "value": 342
+          },
+          {
+            "period": "2026-09-21",
+            "value": 205
+          },
+          {
+            "period": "2026-09-22",
+            "value": 281
+          },
+          {
+            "period": "2026-09-23",
+            "value": 215
+          },
+          {
+            "period": "2026-09-24",
+            "value": 245
+          },
+          {
+            "period": "2026-09-25",
+            "value": 237
+          }
+        ]
+      },
+      "data": [
+        {
+          "orders": 6408
+        }
+      ],
+      "title": "Orders",
+      "size": "sm",
+      "placement": {
+        "colStart": 7,
+        "colSpan": 3,
+        "rowStart": 1,
+        "rowSpan": 1
+      }
+    },
+    {
+      "id": "kpi_3",
+      "role": "kpi",
+      "component": "kpi",
+      "importance": 1.783,
+      "confidence": 1,
+      "query": {
+        "metrics": [
+          "avg_order_value"
+        ],
+        "dimensions": [],
+        "window": "last_30_days"
+      },
+      "cube": "sales_monthly_brand",
+      "rowCount": 1,
+      "kpi": {
+        "value": 85.4506,
+        "prior": null,
+        "delta": null,
+        "deltaPct": null,
+        "format": "currency",
+        "goodDirection": "up",
+        "spark": [
+          {
+            "period": "2026-08-27",
+            "value": 86.6359
+          },
+          {
+            "period": "2026-08-28",
+            "value": 85.4231
+          },
+          {
+            "period": "2026-08-29",
+            "value": 86.9945
+          },
+          {
+            "period": "2026-08-30",
+            "value": 90.1419
+          },
+          {
+            "period": "2026-08-31",
+            "value": 87.1549
+          },
+          {
+            "period": "2026-09-01",
+            "value": 85.5284
+          },
+          {
+            "period": "2026-09-02",
+            "value": 85.5546
+          },
+          {
+            "period": "2026-09-03",
+            "value": 85.5155
+          },
+          {
+            "period": "2026-09-04",
+            "value": 88.8155
+          },
+          {
+            "period": "2026-09-05",
+            "value": 87.236
+          },
+          {
+            "period": "2026-09-06",
+            "value": 87.482
+          },
+          {
+            "period": "2026-09-07",
+            "value": 86.5207
+          },
+          {
+            "period": "2026-09-08",
+            "value": 83.4967
+          },
+          {
+            "period": "2026-09-09",
+            "value": 88.2762
+          },
+          {
+            "period": "2026-09-10",
+            "value": 84.3812
+          },
+          {
+            "period": "2026-09-11",
+            "value": 85.1989
+          },
+          {
+            "period": "2026-09-12",
+            "value": 86.9653
+          },
+          {
+            "period": "2026-09-13",
+            "value": 87.0035
+          },
+          {
+            "period": "2026-09-14",
+            "value": 85.2437
+          },
+          {
+            "period": "2026-09-15",
+            "value": 88.6883
+          },
+          {
+            "period": "2026-09-16",
+            "value": 87.2058
+          },
+          {
+            "period": "2026-09-17",
+            "value": 83.7138
+          },
+          {
+            "period": "2026-09-18",
+            "value": 89.4685
+          },
+          {
+            "period": "2026-09-19",
+            "value": 87.0291
+          },
+          {
+            "period": "2026-09-20",
+            "value": 87.5419
+          },
+          {
+            "period": "2026-09-21",
+            "value": 86.0622
+          },
+          {
+            "period": "2026-09-22",
+            "value": 82.3231
+          },
+          {
+            "period": "2026-09-23",
+            "value": 87.126
+          },
+          {
+            "period": "2026-09-24",
+            "value": 86.4071
+          },
+          {
+            "period": "2026-09-25",
+            "value": 83.5669
+          }
+        ]
+      },
+      "data": [
+        {
+          "avg_order_value": 85.4506
+        }
+      ],
+      "title": "Average order value",
+      "size": "sm",
+      "placement": {
+        "colStart": 10,
+        "colSpan": 3,
+        "rowStart": 1,
+        "rowSpan": 1
+      }
+    },
+    {
+      "id": "trend_0",
+      "role": "trend",
+      "component": "line",
+      "importance": 1.783,
+      "confidence": 0.132,
+      "query": {
+        "metrics": [
+          "avg_days_to_deliver"
+        ],
+        "dimensions": [],
+        "grain": "day",
+        "window": "last_30_days"
+      },
+      "cube": "fulfillment_daily",
+      "rowCount": 30,
+      "vegaLite": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "width": "container",
+        "height": 204,
+        "autosize": {
+          "type": "fit-x",
+          "contains": "padding"
+        },
+        "data": {
+          "values": [
+            {
+              "period": "2026-08-27",
+              "avg_days_to_deliver": 4.6061
+            },
+            {
+              "period": "2026-08-28",
+              "avg_days_to_deliver": 4.2346
+            },
+            {
+              "period": "2026-08-29",
+              "avg_days_to_deliver": 4.3994
+            },
+            {
+              "period": "2026-08-30",
+              "avg_days_to_deliver": 4.2869
+            },
+            {
+              "period": "2026-08-31",
+              "avg_days_to_deliver": 4.0578
+            },
+            {
+              "period": "2026-09-01",
+              "avg_days_to_deliver": 4.3526
+            },
+            {
+              "period": "2026-09-02",
+              "avg_days_to_deliver": 4.7043
+            },
+            {
+              "period": "2026-09-03",
+              "avg_days_to_deliver": 4.6169
+            },
+            {
+              "period": "2026-09-04",
+              "avg_days_to_deliver": 4.4401
+            },
+            {
+              "period": "2026-09-05",
+              "avg_days_to_deliver": 4.2827
+            },
+            {
+              "period": "2026-09-06",
+              "avg_days_to_deliver": 4.4893
+            },
+            {
+              "period": "2026-09-07",
+              "avg_days_to_deliver": 4.5325
+            },
+            {
+              "period": "2026-09-08",
+              "avg_days_to_deliver": 4.5847
+            },
+            {
+              "period": "2026-09-09",
+              "avg_days_to_deliver": 3.982
+            },
+            {
+              "period": "2026-09-10",
+              "avg_days_to_deliver": 4.401
+            },
+            {
+              "period": "2026-09-11",
+              "avg_days_to_deliver": 4.358
+            },
+            {
+              "period": "2026-09-12",
+              "avg_days_to_deliver": 4.4273
+            },
+            {
+              "period": "2026-09-13",
+              "avg_days_to_deliver": 4.3193
+            },
+            {
+              "period": "2026-09-14",
+              "avg_days_to_deliver": 4.4872
+            },
+            {
+              "period": "2026-09-15",
+              "avg_days_to_deliver": 4.3112
+            },
+            {
+              "period": "2026-09-16",
+              "avg_days_to_deliver": 4.5304
+            },
+            {
+              "period": "2026-09-17",
+              "avg_days_to_deliver": 4.0838
+            },
+            {
+              "period": "2026-09-18",
+              "avg_days_to_deliver": 4.412
+            },
+            {
+              "period": "2026-09-19",
+              "avg_days_to_deliver": 4.3824
+            },
+            {
+              "period": "2026-09-20",
+              "avg_days_to_deliver": 4.4874
+            },
+            {
+              "period": "2026-09-21",
+              "avg_days_to_deliver": 4.3567
+            },
+            {
+              "period": "2026-09-22",
+              "avg_days_to_deliver": 4.5218
+            },
+            {
+              "period": "2026-09-23",
+              "avg_days_to_deliver": 4.4687
+            },
+            {
+              "period": "2026-09-24",
+              "avg_days_to_deliver": 4.4566
+            },
+            {
+              "period": "2026-09-25",
+              "avg_days_to_deliver": 4.3224
+            }
+          ]
+        },
+        "config": {
+          "background": "transparent",
+          "font": "system-ui, -apple-system, \"Segoe UI\", sans-serif",
+          "padding": 4,
+          "view": {
+            "stroke": null
+          },
+          "axis": {
+            "labelColor": "#898781",
+            "titleColor": "#c3c2b7",
+            "labelFontSize": 10,
+            "titleFontSize": 10,
+            "titleFontWeight": "normal",
+            "gridColor": "#2c2c2a",
+            "gridWidth": 1,
+            "gridDash": [],
+            "domainColor": "#383835",
+            "tickColor": "#383835",
+            "labelPadding": 6
+          },
+          "axisX": {
+            "grid": false,
+            "labelAngle": 0
+          },
+          "axisY": {
+            "grid": false,
+            "domain": false,
+            "ticks": false
+          },
+          "legend": {
+            "labelColor": "#c3c2b7",
+            "titleColor": "#c3c2b7",
+            "labelFontSize": 10,
+            "titleFontSize": 10,
+            "orient": "top",
+            "direction": "horizontal",
+            "symbolType": "circle",
+            "symbolSize": 80,
+            "title": null
+          },
+          "title": {
+            "color": "#ffffff",
+            "subtitleColor": "#c3c2b7",
+            "anchor": "start",
+            "fontSize": 12,
+            "fontWeight": 600
+          },
+          "range": {
+            "category": [
+              "#3987e5",
+              "#d95926",
+              "#199e70",
+              "#c98500",
+              "#d55181",
+              "#008300",
+              "#9085e9",
+              "#e66767"
+            ],
+            "ramp": [
+              "#184f95",
+              "#1c5cab",
+              "#256abf",
+              "#2a78d6",
+              "#3987e5",
+              "#6da7ec",
+              "#9ec5f4"
+            ],
+            "heatmap": [
+              "#184f95",
+              "#1c5cab",
+              "#256abf",
+              "#2a78d6",
+              "#3987e5",
+              "#6da7ec",
+              "#9ec5f4"
+            ]
+          },
+          "line": {
+            "strokeWidth": 2,
+            "strokeJoin": "round",
+            "strokeCap": "round"
+          },
+          "area": {
+            "line": true
+          },
+          "bar": {
+            "cornerRadiusEnd": 4
+          },
+          "rule": {
+            "color": "#383835"
+          },
+          "point": {
+            "filled": true,
+            "size": 64
+          },
+          "text": {
+            "color": "#c3c2b7",
+            "fontSize": 10
+          }
+        },
+        "layer": [
+          {
+            "mark": {
+              "type": "line",
+              "color": "#3987e5"
+            },
+            "encoding": {
+              "x": {
+                "field": "period",
+                "type": "temporal",
+                "timeUnit": "yearmonthdate",
+                "axis": {
+                  "title": null,
+                  "format": "%b %d",
+                  "tickCount": 6,
+                  "labelOverlap": "greedy"
+                }
+              },
+              "y": {
+                "field": "avg_days_to_deliver",
+                "type": "quantitative",
+                "axis": {
+                  "title": null,
+                  "format": ".1f",
+                  "tickCount": 4
+                }
+              }
+            }
+          },
+          {
+            "params": [
+              {
+                "name": "hover",
+                "select": {
+                  "type": "point",
+                  "fields": [
+                    "period"
+                  ],
+                  "nearest": true,
+                  "on": "pointermove",
+                  "clear": "pointerout"
+                }
+              }
+            ],
+            "mark": {
+              "type": "point",
+              "color": "#3987e5",
+              "stroke": "#1a1a19",
+              "strokeWidth": 2,
+              "size": 80
+            },
+            "encoding": {
+              "x": {
+                "field": "period",
+                "type": "temporal",
+                "timeUnit": "yearmonthdate",
+                "axis": {
+                  "title": null,
+                  "format": "%b %d",
+                  "tickCount": 6,
+                  "labelOverlap": "greedy"
+                }
+              },
+              "y": {
+                "field": "avg_days_to_deliver",
+                "type": "quantitative",
+                "axis": {
+                  "title": null,
+                  "format": ".1f",
+                  "tickCount": 4
+                }
+              },
+              "opacity": {
+                "condition": {
+                  "param": "hover",
+                  "empty": false,
+                  "value": 1
+                },
+                "value": 0
+              },
+              "tooltip": [
+                {
+                  "field": "period",
+                  "type": "temporal",
+                  "timeUnit": "yearmonthdate",
+                  "title": "Period",
+                  "format": "%b %d"
+                },
+                {
+                  "field": "avg_days_to_deliver",
+                  "type": "quantitative",
+                  "title": "Days to deliver",
+                  "format": ".1f"
+                }
+              ]
+            }
+          },
+          {
+            "transform": [
+              {
+                "filter": {
+                  "param": "hover",
+                  "empty": false
+                }
+              }
+            ],
+            "mark": {
+              "type": "rule",
+              "color": "#383835"
+            },
+            "encoding": {
+              "x": {
+                "field": "period",
+                "type": "temporal",
+                "timeUnit": "yearmonthdate",
+                "axis": {
+                  "title": null,
+                  "format": "%b %d",
+                  "tickCount": 6,
+                  "labelOverlap": "greedy"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "data": [
+        {
+          "period": "2026-08-27",
+          "avg_days_to_deliver": 4.6061
+        },
+        {
+          "period": "2026-08-28",
+          "avg_days_to_deliver": 4.2346
+        },
+        {
+          "period": "2026-08-29",
+          "avg_days_to_deliver": 4.3994
+        },
+        {
+          "period": "2026-08-30",
+          "avg_days_to_deliver": 4.2869
+        },
+        {
+          "period": "2026-08-31",
+          "avg_days_to_deliver": 4.0578
+        },
+        {
+          "period": "2026-09-01",
+          "avg_days_to_deliver": 4.3526
+        },
+        {
+          "period": "2026-09-02",
+          "avg_days_to_deliver": 4.7043
+        },
+        {
+          "period": "2026-09-03",
+          "avg_days_to_deliver": 4.6169
+        },
+        {
+          "period": "2026-09-04",
+          "avg_days_to_deliver": 4.4401
+        },
+        {
+          "period": "2026-09-05",
+          "avg_days_to_deliver": 4.2827
+        },
+        {
+          "period": "2026-09-06",
+          "avg_days_to_deliver": 4.4893
+        },
+        {
+          "period": "2026-09-07",
+          "avg_days_to_deliver": 4.5325
+        },
+        {
+          "period": "2026-09-08",
+          "avg_days_to_deliver": 4.5847
+        },
+        {
+          "period": "2026-09-09",
+          "avg_days_to_deliver": 3.982
+        },
+        {
+          "period": "2026-09-10",
+          "avg_days_to_deliver": 4.401
+        },
+        {
+          "period": "2026-09-11",
+          "avg_days_to_deliver": 4.358
+        },
+        {
+          "period": "2026-09-12",
+          "avg_days_to_deliver": 4.4273
+        },
+        {
+          "period": "2026-09-13",
+          "avg_days_to_deliver": 4.3193
+        },
+        {
+          "period": "2026-09-14",
+          "avg_days_to_deliver": 4.4872
+        },
+        {
+          "period": "2026-09-15",
+          "avg_days_to_deliver": 4.3112
+        },
+        {
+          "period": "2026-09-16",
+          "avg_days_to_deliver": 4.5304
+        },
+        {
+          "period": "2026-09-17",
+          "avg_days_to_deliver": 4.0838
+        },
+        {
+          "period": "2026-09-18",
+          "avg_days_to_deliver": 4.412
+        },
+        {
+          "period": "2026-09-19",
+          "avg_days_to_deliver": 4.3824
+        },
+        {
+          "period": "2026-09-20",
+          "avg_days_to_deliver": 4.4874
+        },
+        {
+          "period": "2026-09-21",
+          "avg_days_to_deliver": 4.3567
+        },
+        {
+          "period": "2026-09-22",
+          "avg_days_to_deliver": 4.5218
+        },
+        {
+          "period": "2026-09-23",
+          "avg_days_to_deliver": 4.4687
+        },
+        {
+          "period": "2026-09-24",
+          "avg_days_to_deliver": 4.4566
+        },
+        {
+          "period": "2026-09-25",
+          "avg_days_to_deliver": 4.3224
+        }
+      ],
+      "title": "Days to deliver over time",
+      "size": "xl",
+      "placement": {
+        "colStart": 1,
+        "colSpan": 12,
+        "rowStart": 2,
+        "rowSpan": 3
+      }
+    },
+    {
+      "id": "trend_1",
+      "role": "trend",
+      "component": "line",
+      "importance": 1.783,
+      "confidence": 0.132,
+      "query": {
+        "metrics": [
+          "avg_days_to_ship"
+        ],
+        "dimensions": [],
+        "grain": "day",
+        "window": "last_30_days"
+      },
+      "cube": "fulfillment_daily",
+      "rowCount": 30,
+      "vegaLite": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "width": "container",
+        "height": 310,
+        "autosize": {
+          "type": "fit-x",
+          "contains": "padding"
+        },
+        "data": {
+          "values": [
+            {
+              "period": "2026-08-27",
+              "avg_days_to_ship": 2.0093
+            },
+            {
+              "period": "2026-08-28",
+              "avg_days_to_ship": 2.0384
+            },
+            {
+              "period": "2026-08-29",
+              "avg_days_to_ship": 2.0096
+            },
+            {
+              "period": "2026-08-30",
+              "avg_days_to_ship": 1.9648
+            },
+            {
+              "period": "2026-08-31",
+              "avg_days_to_ship": 1.9922
+            },
+            {
+              "period": "2026-09-01",
+              "avg_days_to_ship": 2.1181
+            },
+            {
+              "period": "2026-09-02",
+              "avg_days_to_ship": 1.9029
+            },
+            {
+              "period": "2026-09-03",
+              "avg_days_to_ship": 2.0041
+            },
+            {
+              "period": "2026-09-04",
+              "avg_days_to_ship": 2.0518
+            },
+            {
+              "period": "2026-09-05",
+              "avg_days_to_ship": 2.0227
+            },
+            {
+              "period": "2026-09-06",
+              "avg_days_to_ship": 2.1153
+            },
+            {
+              "period": "2026-09-07",
+              "avg_days_to_ship": 2.092
+            },
+            {
+              "period": "2026-09-08",
+              "avg_days_to_ship": 1.9128
+            },
+            {
+              "period": "2026-09-09",
+              "avg_days_to_ship": 2.0205
+            },
+            {
+              "period": "2026-09-10",
+              "avg_days_to_ship": 1.9567
+            },
+            {
+              "period": "2026-09-11",
+              "avg_days_to_ship": 1.918
+            },
+            {
+              "period": "2026-09-12",
+              "avg_days_to_ship": 1.9314
+            },
+            {
+              "period": "2026-09-13",
+              "avg_days_to_ship": 2.1204
+            },
+            {
+              "period": "2026-09-14",
+              "avg_days_to_ship": 2.0675
+            },
+            {
+              "period": "2026-09-15",
+              "avg_days_to_ship": 2.1303
+            },
+            {
+              "period": "2026-09-16",
+              "avg_days_to_ship": 2.0268
+            },
+            {
+              "period": "2026-09-17",
+              "avg_days_to_ship": 2.0996
+            },
+            {
+              "period": "2026-09-18",
+              "avg_days_to_ship": 1.9936
+            },
+            {
+              "period": "2026-09-19",
+              "avg_days_to_ship": 2.1222
+            },
+            {
+              "period": "2026-09-20",
+              "avg_days_to_ship": 2.1075
+            },
+            {
+              "period": "2026-09-21",
+              "avg_days_to_ship": 1.9376
+            },
+            {
+              "period": "2026-09-22",
+              "avg_days_to_ship": 2.1169
+            },
+            {
+              "period": "2026-09-23",
+              "avg_days_to_ship": 2.0435
+            },
+            {
+              "period": "2026-09-24",
+              "avg_days_to_ship": 2.0093
+            },
+            {
+              "period": "2026-09-25",
+              "avg_days_to_ship": 2.0288
+            }
+          ]
+        },
+        "config": {
+          "background": "transparent",
+          "font": "system-ui, -apple-system, \"Segoe UI\", sans-serif",
+          "padding": 4,
+          "view": {
+            "stroke": null
+          },
+          "axis": {
+            "labelColor": "#898781",
+            "titleColor": "#c3c2b7",
+            "labelFontSize": 10,
+            "titleFontSize": 10,
+            "titleFontWeight": "normal",
+            "gridColor": "#2c2c2a",
+            "gridWidth": 1,
+            "gridDash": [],
+            "domainColor": "#383835",
+            "tickColor": "#383835",
+            "labelPadding": 6
+          },
+          "axisX": {
+            "grid": false,
+            "labelAngle": 0
+          },
+          "axisY": {
+            "grid": false,
+            "domain": false,
+            "ticks": false
+          },
+          "legend": {
+            "labelColor": "#c3c2b7",
+            "titleColor": "#c3c2b7",
+            "labelFontSize": 10,
+            "titleFontSize": 10,
+            "orient": "top",
+            "direction": "horizontal",
+            "symbolType": "circle",
+            "symbolSize": 80,
+            "title": null
+          },
+          "title": {
+            "color": "#ffffff",
+            "subtitleColor": "#c3c2b7",
+            "anchor": "start",
+            "fontSize": 12,
+            "fontWeight": 600
+          },
+          "range": {
+            "category": [
+              "#3987e5",
+              "#d95926",
+              "#199e70",
+              "#c98500",
+              "#d55181",
+              "#008300",
+              "#9085e9",
+              "#e66767"
+            ],
+            "ramp": [
+              "#184f95",
+              "#1c5cab",
+              "#256abf",
+              "#2a78d6",
+              "#3987e5",
+              "#6da7ec",
+              "#9ec5f4"
+            ],
+            "heatmap": [
+              "#184f95",
+              "#1c5cab",
+              "#256abf",
+              "#2a78d6",
+              "#3987e5",
+              "#6da7ec",
+              "#9ec5f4"
+            ]
+          },
+          "line": {
+            "strokeWidth": 2,
+            "strokeJoin": "round",
+            "strokeCap": "round"
+          },
+          "area": {
+            "line": true
+          },
+          "bar": {
+            "cornerRadiusEnd": 4
+          },
+          "rule": {
+            "color": "#383835"
+          },
+          "point": {
+            "filled": true,
+            "size": 64
+          },
+          "text": {
+            "color": "#c3c2b7",
+            "fontSize": 10
+          }
+        },
+        "layer": [
+          {
+            "mark": {
+              "type": "line",
+              "color": "#3987e5"
+            },
+            "encoding": {
+              "x": {
+                "field": "period",
+                "type": "temporal",
+                "timeUnit": "yearmonthdate",
+                "axis": {
+                  "title": null,
+                  "format": "%b %d",
+                  "tickCount": 6,
+                  "labelOverlap": "greedy"
+                }
+              },
+              "y": {
+                "field": "avg_days_to_ship",
+                "type": "quantitative",
+                "axis": {
+                  "title": null,
+                  "format": ".1f",
+                  "tickCount": 4
+                }
+              }
+            }
+          },
+          {
+            "params": [
+              {
+                "name": "hover",
+                "select": {
+                  "type": "point",
+                  "fields": [
+                    "period"
+                  ],
+                  "nearest": true,
+                  "on": "pointermove",
+                  "clear": "pointerout"
+                }
+              }
+            ],
+            "mark": {
+              "type": "point",
+              "color": "#3987e5",
+              "stroke": "#1a1a19",
+              "strokeWidth": 2,
+              "size": 80
+            },
+            "encoding": {
+              "x": {
+                "field": "period",
+                "type": "temporal",
+                "timeUnit": "yearmonthdate",
+                "axis": {
+                  "title": null,
+                  "format": "%b %d",
+                  "tickCount": 6,
+                  "labelOverlap": "greedy"
+                }
+              },
+              "y": {
+                "field": "avg_days_to_ship",
+                "type": "quantitative",
+                "axis": {
+                  "title": null,
+                  "format": ".1f",
+                  "tickCount": 4
+                }
+              },
+              "opacity": {
+                "condition": {
+                  "param": "hover",
+                  "empty": false,
+                  "value": 1
+                },
+                "value": 0
+              },
+              "tooltip": [
+                {
+                  "field": "period",
+                  "type": "temporal",
+                  "timeUnit": "yearmonthdate",
+                  "title": "Period",
+                  "format": "%b %d"
+                },
+                {
+                  "field": "avg_days_to_ship",
+                  "type": "quantitative",
+                  "title": "Days to ship",
+                  "format": ".1f"
+                }
+              ]
+            }
+          },
+          {
+            "transform": [
+              {
+                "filter": {
+                  "param": "hover",
+                  "empty": false
+                }
+              }
+            ],
+            "mark": {
+              "type": "rule",
+              "color": "#383835"
+            },
+            "encoding": {
+              "x": {
+                "field": "period",
+                "type": "temporal",
+                "timeUnit": "yearmonthdate",
+                "axis": {
+                  "title": null,
+                  "format": "%b %d",
+                  "tickCount": 6,
+                  "labelOverlap": "greedy"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "data": [
+        {
+          "period": "2026-08-27",
+          "avg_days_to_ship": 2.0093
+        },
+        {
+          "period": "2026-08-28",
+          "avg_days_to_ship": 2.0384
+        },
+        {
+          "period": "2026-08-29",
+          "avg_days_to_ship": 2.0096
+        },
+        {
+          "period": "2026-08-30",
+          "avg_days_to_ship": 1.9648
+        },
+        {
+          "period": "2026-08-31",
+          "avg_days_to_ship": 1.9922
+        },
+        {
+          "period": "2026-09-01",
+          "avg_days_to_ship": 2.1181
+        },
+        {
+          "period": "2026-09-02",
+          "avg_days_to_ship": 1.9029
+        },
+        {
+          "period": "2026-09-03",
+          "avg_days_to_ship": 2.0041
+        },
+        {
+          "period": "2026-09-04",
+          "avg_days_to_ship": 2.0518
+        },
+        {
+          "period": "2026-09-05",
+          "avg_days_to_ship": 2.0227
+        },
+        {
+          "period": "2026-09-06",
+          "avg_days_to_ship": 2.1153
+        },
+        {
+          "period": "2026-09-07",
+          "avg_days_to_ship": 2.092
+        },
+        {
+          "period": "2026-09-08",
+          "avg_days_to_ship": 1.9128
+        },
+        {
+          "period": "2026-09-09",
+          "avg_days_to_ship": 2.0205
+        },
+        {
+          "period": "2026-09-10",
+          "avg_days_to_ship": 1.9567
+        },
+        {
+          "period": "2026-09-11",
+          "avg_days_to_ship": 1.918
+        },
+        {
+          "period": "2026-09-12",
+          "avg_days_to_ship": 1.9314
+        },
+        {
+          "period": "2026-09-13",
+          "avg_days_to_ship": 2.1204
+        },
+        {
+          "period": "2026-09-14",
+          "avg_days_to_ship": 2.0675
+        },
+        {
+          "period": "2026-09-15",
+          "avg_days_to_ship": 2.1303
+        },
+        {
+          "period": "2026-09-16",
+          "avg_days_to_ship": 2.0268
+        },
+        {
+          "period": "2026-09-17",
+          "avg_days_to_ship": 2.0996
+        },
+        {
+          "period": "2026-09-18",
+          "avg_days_to_ship": 1.9936
+        },
+        {
+          "period": "2026-09-19",
+          "avg_days_to_ship": 2.1222
+        },
+        {
+          "period": "2026-09-20",
+          "avg_days_to_ship": 2.1075
+        },
+        {
+          "period": "2026-09-21",
+          "avg_days_to_ship": 1.9376
+        },
+        {
+          "period": "2026-09-22",
+          "avg_days_to_ship": 2.1169
+        },
+        {
+          "period": "2026-09-23",
+          "avg_days_to_ship": 2.0435
+        },
+        {
+          "period": "2026-09-24",
+          "avg_days_to_ship": 2.0093
+        },
+        {
+          "period": "2026-09-25",
+          "avg_days_to_ship": 2.0288
+        }
+      ],
+      "title": "Days to ship over time",
+      "size": "full",
+      "placement": {
+        "colStart": 1,
+        "colSpan": 12,
+        "rowStart": 5,
+        "rowSpan": 4
+      }
+    },
+    {
+      "id": "breakdown_0",
+      "role": "breakdown",
+      "component": "table",
+      "importance": 1.783,
+      "confidence": 0.012,
+      "query": {
+        "metrics": [
+          "avg_days_to_deliver"
+        ],
+        "dimensions": [
+          "distribution_center"
+        ],
+        "window": "last_30_days"
+      },
+      "cube": "fulfillment_daily",
+      "rowCount": 10,
+      "table": {
+        "columns": [
+          {
+            "key": "distribution_center",
+            "label": "Distribution center"
+          },
+          {
+            "key": "avg_days_to_deliver",
+            "label": "Days to deliver",
+            "format": "days"
+          }
+        ],
+        "rows": [
+          {
+            "distribution_center": "Port Authority of New York/New Jersey NY/NJ",
+            "avg_days_to_deliver": 5.2515
+          },
+          {
+            "distribution_center": "Charleston SC",
+            "avg_days_to_deliver": 4.5498
+          },
+          {
+            "distribution_center": "Philadelphia PA",
+            "avg_days_to_deliver": 4.4587
+          },
+          {
+            "distribution_center": "Memphis TN",
+            "avg_days_to_deliver": 4.4545
+          },
+          {
+            "distribution_center": "Savannah GA",
+            "avg_days_to_deliver": 4.3576
+          },
+          {
+            "distribution_center": "New Orleans LA",
+            "avg_days_to_deliver": 4.2789
+          },
+          {
+            "distribution_center": "Chicago IL",
+            "avg_days_to_deliver": 4.276
+          },
+          {
+            "distribution_center": "Mobile AL",
+            "avg_days_to_deliver": 4.2656
+          },
+          {
+            "distribution_center": "Los Angeles CA",
+            "avg_days_to_deliver": 4.2408
+          },
+          {
+            "distribution_center": "Houston TX",
+            "avg_days_to_deliver": 4.0199
+          }
+        ]
+      },
+      "data": [
+        {
+          "distribution_center": "Charleston SC",
+          "avg_days_to_deliver": 4.5498
+        },
+        {
+          "distribution_center": "Chicago IL",
+          "avg_days_to_deliver": 4.276
+        },
+        {
+          "distribution_center": "Houston TX",
+          "avg_days_to_deliver": 4.0199
+        },
+        {
+          "distribution_center": "Los Angeles CA",
+          "avg_days_to_deliver": 4.2408
+        },
+        {
+          "distribution_center": "Memphis TN",
+          "avg_days_to_deliver": 4.4545
+        },
+        {
+          "distribution_center": "Mobile AL",
+          "avg_days_to_deliver": 4.2656
+        },
+        {
+          "distribution_center": "New Orleans LA",
+          "avg_days_to_deliver": 4.2789
+        },
+        {
+          "distribution_center": "Philadelphia PA",
+          "avg_days_to_deliver": 4.4587
+        },
+        {
+          "distribution_center": "Port Authority of New York/New Jersey NY/NJ",
+          "avg_days_to_deliver": 5.2515
+        },
+        {
+          "distribution_center": "Savannah GA",
+          "avg_days_to_deliver": 4.3576
+        }
+      ],
+      "title": "Days to deliver by distribution center",
+      "size": "full",
+      "placement": {
+        "colStart": 1,
+        "colSpan": 12,
+        "rowStart": 9,
+        "rowSpan": 4
+      }
+    },
+    {
+      "id": "detail_0",
+      "role": "detail",
+      "component": "table",
+      "importance": 1.783,
+      "confidence": 1,
+      "query": {
+        "metrics": [
+          "avg_days_to_deliver",
+          "avg_days_to_ship",
+          "orders"
+        ],
+        "dimensions": [
+          "distribution_center"
+        ],
+        "window": "last_30_days"
+      },
+      "cube": "fulfillment_daily",
+      "rowCount": 10,
+      "table": {
+        "columns": [
+          {
+            "key": "distribution_center",
+            "label": "Distribution center"
+          },
+          {
+            "key": "avg_days_to_deliver",
+            "label": "Days to deliver",
+            "format": "days"
+          },
+          {
+            "key": "avg_days_to_ship",
+            "label": "Days to ship",
+            "format": "days"
+          },
+          {
+            "key": "orders",
+            "label": "Orders",
+            "format": "number"
+          }
+        ],
+        "rows": [
+          {
+            "distribution_center": "Port Authority of New York/New Jersey NY/NJ",
+            "avg_days_to_deliver": 5.2515,
+            "avg_days_to_ship": 2.6761,
+            "orders": 740
+          },
+          {
+            "distribution_center": "Charleston SC",
+            "avg_days_to_deliver": 4.5498,
+            "avg_days_to_ship": 2.007,
+            "orders": 476
+          },
+          {
+            "distribution_center": "Philadelphia PA",
+            "avg_days_to_deliver": 4.4587,
+            "avg_days_to_ship": 2.0188,
+            "orders": 641
+          },
+          {
+            "distribution_center": "Memphis TN",
+            "avg_days_to_deliver": 4.4545,
+            "avg_days_to_ship": 2.0575,
+            "orders": 1177
+          },
+          {
+            "distribution_center": "Savannah GA",
+            "avg_days_to_deliver": 4.3576,
+            "avg_days_to_ship": 1.977,
+            "orders": 415
+          },
+          {
+            "distribution_center": "New Orleans LA",
+            "avg_days_to_deliver": 4.2789,
+            "avg_days_to_ship": 2.0326,
+            "orders": 827
+          },
+          {
+            "distribution_center": "Chicago IL",
+            "avg_days_to_deliver": 4.276,
+            "avg_days_to_ship": 2.0015,
+            "orders": 1069
+          },
+          {
+            "distribution_center": "Mobile AL",
+            "avg_days_to_deliver": 4.2656,
+            "avg_days_to_ship": 2.0199,
+            "orders": 567
+          },
+          {
+            "distribution_center": "Los Angeles CA",
+            "avg_days_to_deliver": 4.2408,
+            "avg_days_to_ship": 2.0337,
+            "orders": 869
+          },
+          {
+            "distribution_center": "Houston TX",
+            "avg_days_to_deliver": 4.0199,
+            "avg_days_to_ship": 1.5914,
+            "orders": 999
+          }
+        ]
+      },
+      "data": [
+        {
+          "distribution_center": "Charleston SC",
+          "avg_days_to_deliver": 4.5498,
+          "avg_days_to_ship": 2.007,
+          "orders": 476
+        },
+        {
+          "distribution_center": "Chicago IL",
+          "avg_days_to_deliver": 4.276,
+          "avg_days_to_ship": 2.0015,
+          "orders": 1069
+        },
+        {
+          "distribution_center": "Houston TX",
+          "avg_days_to_deliver": 4.0199,
+          "avg_days_to_ship": 1.5914,
+          "orders": 999
+        },
+        {
+          "distribution_center": "Los Angeles CA",
+          "avg_days_to_deliver": 4.2408,
+          "avg_days_to_ship": 2.0337,
+          "orders": 869
+        },
+        {
+          "distribution_center": "Memphis TN",
+          "avg_days_to_deliver": 4.4545,
+          "avg_days_to_ship": 2.0575,
+          "orders": 1177
+        },
+        {
+          "distribution_center": "Mobile AL",
+          "avg_days_to_deliver": 4.2656,
+          "avg_days_to_ship": 2.0199,
+          "orders": 567
+        },
+        {
+          "distribution_center": "New Orleans LA",
+          "avg_days_to_deliver": 4.2789,
+          "avg_days_to_ship": 2.0326,
+          "orders": 827
+        },
+        {
+          "distribution_center": "Philadelphia PA",
+          "avg_days_to_deliver": 4.4587,
+          "avg_days_to_ship": 2.0188,
+          "orders": 641
+        },
+        {
+          "distribution_center": "Port Authority of New York/New Jersey NY/NJ",
+          "avg_days_to_deliver": 5.2515,
+          "avg_days_to_ship": 2.6761,
+          "orders": 740
+        },
+        {
+          "distribution_center": "Savannah GA",
+          "avg_days_to_deliver": 4.3576,
+          "avg_days_to_ship": 1.977,
+          "orders": 415
+        }
+      ],
+      "title": "Distribution center table",
+      "size": "full",
+      "placement": {
+        "colStart": 1,
+        "colSpan": 12,
+        "rowStart": 13,
+        "rowSpan": 4
+      }
+    }
+  ],
+  "decisions": {
+    "client": "mock",
+    "stages": [
+      {
+        "stage": "scope",
+        "client": "mock",
+        "request": {
+          "state": {
+            "request": "A dark dashboard for the fulfilment team: days to ship and deliver by distribution center for the last 30 days, dense, daily."
+          },
+          "questions": {
+            "archetype": {
+              "type": "choice",
+              "instructions": "Which kind of dashboard does the request ask for?",
+              "criteria": {
+                "executive_overview": "A broad summary of the business: revenue, orders, margin, customers; a few headline numbers and one or two trends",
+                "sales_performance": "Sales results in depth: revenue and orders over time, by product category, department, brand",
+                "customer_acquisition": "Where customers come from and who they are: signups, traffic sources, demographics, geography",
+                "product_merchandising": "What is selling: categories, brands, margins, returns, product mix",
+                "fulfillment_operations": "Shipping and delivery: order status, days to ship and deliver, distribution centers",
+                "web_engagement": "Website behaviour: sessions, events, funnel steps, conversion, browsers",
+                "inventory_health": "Stock levels and inventory value by warehouse and category"
+              }
+            },
+            "time_window": {
+              "type": "choice",
+              "instructions": "Which time window does the request imply? If none is stated, pick the standard window for the kind of dashboard.",
+              "criteria": {
+                "last_30_days": "Last 30 days, the last month, recent weeks: a short-term operational view",
+                "last_90_days": "Last 90 days, the last quarter, the last three months: recent with enough history for a trend",
+                "last_12_months": "Last 12 months, the past year, trailing year: the standard window for trends and seasonality",
+                "year_to_date": "Year to date, YTD, since January 1st of the current year",
+                "all_time": "All time, all history, everything available (about two years)"
+              }
+            },
+            "grain": {
+              "type": "choice",
+              "instructions": "At which time granularity should trends be plotted?",
+              "criteria": {
+                "day": "Daily, by day: for short windows or operational monitoring",
+                "week": "Weekly, by week: smooths daily noise over a quarter or more",
+                "month": "Monthly, by month: the standard for yearly views and executives",
+                "quarter": "Quarterly, by quarter: only for multi-year, high-level views"
+              }
+            },
+            "compare_prior": {
+              "type": "noul",
+              "instructions": "The reader wants each number compared with the previous period (growth, change, versus last period)."
+            },
+            "density": {
+              "type": "score",
+              "instructions": "How much should be on the dashboard?",
+              "criteria": [
+                "A few headline numbers and one chart",
+                "A balanced overview: several numbers and a handful of charts",
+                "A dense analytical view with many charts and a table"
+              ]
+            },
+            "audience": {
+              "type": "choice",
+              "instructions": "Who will read this dashboard?",
+              "criteria": {
+                "executive": "Leadership: wants a few clear numbers and the overall trend",
+                "analyst": "Analyst: wants breakdowns, comparisons and the ability to dig in",
+                "operator": "Operations staff: wants current status and many signals at once"
+              }
+            },
+            "mode_preference": {
+              "type": "choice",
+              "instructions": "Does the request state a visual mode preference?",
+              "criteria": {
+                "light": "The request asks for a light, white or bright look",
+                "dark": "The request asks for a dark look, a wall screen or night use",
+                "no_preference": "The request says nothing about light or dark"
+              }
+            },
+            "wants_geo": {
+              "type": "noul",
+              "instructions": "The request is about geography: countries, states, regions or a map."
+            },
+            "wants_breakdowns": {
+              "type": "noul",
+              "instructions": "The request asks to break results down by a category (by product, by channel, by segment, etc.)."
+            }
+          }
+        },
+        "response": {
+          "model": "mock-jev-0",
+          "answers": {
+            "archetype": {
+              "type": "choice",
+              "choice": "fulfillment_operations",
+              "probabilities": {
+                "executive_overview": 0.038,
+                "sales_performance": 0.038,
+                "customer_acquisition": 0.038,
+                "product_merchandising": 0.038,
+                "fulfillment_operations": 0.77,
+                "web_engagement": 0.038,
+                "inventory_health": 0.038
+              },
+              "confidence": 0.732
+            },
+            "time_window": {
+              "type": "choice",
+              "choice": "last_30_days",
+              "probabilities": {
+                "last_30_days": 0.434,
+                "last_90_days": 0.251,
+                "last_12_months": 0.146,
+                "year_to_date": 0.084,
+                "all_time": 0.084
+              },
+              "confidence": 0.183
+            },
+            "grain": {
+              "type": "choice",
+              "choice": "day",
+              "probabilities": {
+                "day": 0.629,
+                "week": 0.201,
+                "month": 0.085,
+                "quarter": 0.085
+              },
+              "confidence": 0.428
+            },
+            "compare_prior": {
+              "type": "noul",
+              "noul": 0.327
+            },
+            "density": {
+              "type": "score",
+              "score": 1.3639999999999999,
+              "legend": {
+                "0": "A few headline numbers and one chart",
+                "1": "A balanced overview: several numbers and a handful of charts",
+                "2": "A dense analytical view with many charts and a table"
+              },
+              "probabilities": {
+                "0": 0.212,
+                "1": 0.212,
+                "2": 0.576
+              },
+              "confidence": 0.364
+            },
+            "audience": {
+              "type": "choice",
+              "choice": "executive",
+              "probabilities": {
+                "executive": 0.333,
+                "analyst": 0.333,
+                "operator": 0.333
+              },
+              "confidence": 0
+            },
+            "mode_preference": {
+              "type": "choice",
+              "choice": "no_preference",
+              "probabilities": {
+                "light": 0.213,
+                "dark": 0.351,
+                "no_preference": 0.435
+              },
+              "confidence": 0.084
+            },
+            "wants_geo": {
+              "type": "noul",
+              "noul": 0.4
+            },
+            "wants_breakdowns": {
+              "type": "noul",
+              "noul": 0.34
+            }
+          },
+          "usage": {
+            "input_tokens": 15,
+            "output_tokens": 0
+          }
+        },
+        "decisions": [
+          {
+            "key": "density",
+            "type": "score",
+            "value": 1.3639999999999999,
+            "confidence": 0.364,
+            "probabilities": {
+              "0": 0.212,
+              "1": 0.212,
+              "2": 0.576
+            }
+          },
+          {
+            "key": "archetype",
+            "type": "choice",
+            "value": "fulfillment_operations",
+            "confidence": 0.732,
+            "probabilities": {
+              "executive_overview": 0.038,
+              "sales_performance": 0.038,
+              "customer_acquisition": 0.038,
+              "product_merchandising": 0.038,
+              "fulfillment_operations": 0.77,
+              "web_engagement": 0.038,
+              "inventory_health": 0.038
+            }
+          },
+          {
+            "key": "time_window",
+            "type": "choice",
+            "value": "last_30_days",
+            "confidence": 0.183,
+            "probabilities": {
+              "last_30_days": 0.434,
+              "last_90_days": 0.251,
+              "last_12_months": 0.146,
+              "year_to_date": 0.084,
+              "all_time": 0.084
+            }
+          },
+          {
+            "key": "grain",
+            "type": "choice",
+            "value": "day",
+            "confidence": 0.428,
+            "probabilities": {
+              "day": 0.629,
+              "week": 0.201,
+              "month": 0.085,
+              "quarter": 0.085
+            }
+          },
+          {
+            "key": "compare_prior",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.327
+          },
+          {
+            "key": "audience",
+            "type": "choice",
+            "value": "executive",
+            "confidence": 0,
+            "probabilities": {
+              "executive": 0.333,
+              "analyst": 0.333,
+              "operator": 0.333
+            }
+          },
+          {
+            "key": "mode_preference",
+            "type": "choice",
+            "value": "no_preference",
+            "confidence": 0.084,
+            "probabilities": {
+              "light": 0.213,
+              "dark": 0.351,
+              "no_preference": 0.435
+            }
+          },
+          {
+            "key": "wants_geo",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.4
+          },
+          {
+            "key": "wants_breakdowns",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.34
+          }
+        ],
+        "ms": 1
+      },
+      {
+        "stage": "fields",
+        "client": "mock",
+        "request": {
+          "state": {
+            "request": "A dark dashboard for the fulfilment team: days to ship and deliver by distribution center for the last 30 days, dense, daily.",
+            "dashboard_type": "fulfillment operations: Shipping and delivery: order status, days to ship and deliver, distribution centers",
+            "audience": "executive"
+          },
+          "questions": {
+            "metric:revenue": {
+              "type": "noul",
+              "instructions": "The metric \"Revenue\" (Sum of item sale prices (gross sales)) belongs on this dashboard."
+            },
+            "metric:orders": {
+              "type": "noul",
+              "instructions": "The metric \"Orders\" (Number of orders) belongs on this dashboard."
+            },
+            "metric:items_sold": {
+              "type": "noul",
+              "instructions": "The metric \"Items sold\" (Number of order line items) belongs on this dashboard."
+            },
+            "metric:gross_margin": {
+              "type": "noul",
+              "instructions": "The metric \"Gross margin\" (Revenue minus product cost) belongs on this dashboard."
+            },
+            "metric:gross_margin_pct": {
+              "type": "noul",
+              "instructions": "The metric \"Gross margin %\" (Gross margin as a share of revenue) belongs on this dashboard."
+            },
+            "metric:avg_order_value": {
+              "type": "noul",
+              "instructions": "The metric \"Average order value\" (Revenue per order) belongs on this dashboard."
+            },
+            "metric:return_rate": {
+              "type": "noul",
+              "instructions": "The metric \"Return rate\" (Share of items returned) belongs on this dashboard."
+            },
+            "metric:customers": {
+              "type": "noul",
+              "instructions": "The metric \"Customers\" (Distinct purchasing customers) belongs on this dashboard."
+            },
+            "metric:new_users": {
+              "type": "noul",
+              "instructions": "The metric \"New signups\" (New user accounts created) belongs on this dashboard."
+            },
+            "metric:sessions": {
+              "type": "noul",
+              "instructions": "The metric \"Sessions\" (Website sessions) belongs on this dashboard."
+            },
+            "metric:events": {
+              "type": "noul",
+              "instructions": "The metric \"Web events\" (Website page events) belongs on this dashboard."
+            },
+            "metric:conversion_rate": {
+              "type": "noul",
+              "instructions": "The metric \"Conversion rate\" (Purchase events per session) belongs on this dashboard."
+            },
+            "metric:cart_abandonment": {
+              "type": "noul",
+              "instructions": "The metric \"Cart adds\" (Add-to-cart events) belongs on this dashboard."
+            },
+            "metric:stock_on_hand": {
+              "type": "noul",
+              "instructions": "The metric \"Stock on hand\" (Inventory units currently unsold) belongs on this dashboard."
+            },
+            "metric:inventory_cost": {
+              "type": "noul",
+              "instructions": "The metric \"Inventory value\" (Cost value of unsold inventory) belongs on this dashboard."
+            },
+            "metric:avg_days_to_ship": {
+              "type": "noul",
+              "instructions": "The metric \"Days to ship\" (Average days from order to shipment) belongs on this dashboard."
+            },
+            "metric:avg_days_to_deliver": {
+              "type": "noul",
+              "instructions": "The metric \"Days to deliver\" (Average days from order to delivery) belongs on this dashboard."
+            },
+            "dimension:department": {
+              "type": "noul",
+              "instructions": "Breaking the numbers down by \"Department\" (Men or Women) helps answer this request."
+            },
+            "dimension:category": {
+              "type": "noul",
+              "instructions": "Breaking the numbers down by \"Product category\" (Product category such as Jeans, Dresses, Outerwear) helps answer this request."
+            },
+            "dimension:brand": {
+              "type": "noul",
+              "instructions": "Breaking the numbers down by \"Brand\" (Product brand (top 40, rest folded into Other)) helps answer this request."
+            },
+            "dimension:order_status": {
+              "type": "noul",
+              "instructions": "Breaking the numbers down by \"Order status\" (Complete, Shipped, Processing, Cancelled, Returned) helps answer this request."
+            },
+            "dimension:traffic_source": {
+              "type": "noul",
+              "instructions": "Breaking the numbers down by \"Traffic source\" (Acquisition channel: Search, Organic, Facebook, Email, Display) helps answer this request."
+            },
+            "dimension:gender": {
+              "type": "noul",
+              "instructions": "Breaking the numbers down by \"Customer gender\" (Customer gender M/F) helps answer this request."
+            },
+            "dimension:age_band": {
+              "type": "noul",
+              "instructions": "Breaking the numbers down by \"Customer age band\" (Customer age band: under 25, 25-34, 35-44, 45-54, 55+) helps answer this request."
+            },
+            "dimension:country": {
+              "type": "noul",
+              "instructions": "Breaking the numbers down by \"Country\" (Customer country) helps answer this request."
+            },
+            "dimension:state": {
+              "type": "noul",
+              "instructions": "Breaking the numbers down by \"US state\" (Customer US state (for maps)) helps answer this request."
+            },
+            "dimension:event_type": {
+              "type": "noul",
+              "instructions": "Breaking the numbers down by \"Web event type\" (Website event: home, department, product, cart, purchase, cancel) helps answer this request."
+            },
+            "dimension:browser": {
+              "type": "noul",
+              "instructions": "Breaking the numbers down by \"Browser\" (Visitor browser) helps answer this request."
+            },
+            "dimension:distribution_center": {
+              "type": "noul",
+              "instructions": "Breaking the numbers down by \"Distribution center\" (Fulfilment warehouse (10 US cities)) helps answer this request."
+            },
+            "primary_metric": {
+              "type": "choice",
+              "instructions": "Which single metric is the headline of this dashboard?",
+              "criteria": {
+                "revenue": "Revenue: Sum of item sale prices (gross sales)",
+                "orders": "Orders: Number of orders",
+                "items_sold": "Items sold: Number of order line items",
+                "gross_margin": "Gross margin: Revenue minus product cost",
+                "gross_margin_pct": "Gross margin %: Gross margin as a share of revenue",
+                "avg_order_value": "Average order value: Revenue per order",
+                "return_rate": "Return rate: Share of items returned",
+                "customers": "Customers: Distinct purchasing customers",
+                "new_users": "New signups: New user accounts created",
+                "sessions": "Sessions: Website sessions",
+                "events": "Web events: Website page events",
+                "conversion_rate": "Conversion rate: Purchase events per session",
+                "cart_abandonment": "Cart adds: Add-to-cart events",
+                "stock_on_hand": "Stock on hand: Inventory units currently unsold",
+                "inventory_cost": "Inventory value: Cost value of unsold inventory",
+                "avg_days_to_ship": "Days to ship: Average days from order to shipment",
+                "avg_days_to_deliver": "Days to deliver: Average days from order to delivery"
+              }
+            },
+            "primary_dimension": {
+              "type": "choice",
+              "instructions": "Which single breakdown matters most for this request?",
+              "criteria": {
+                "none": "No breakdown; totals over time are enough",
+                "department": "Department: Men or Women",
+                "category": "Product category: Product category such as Jeans, Dresses, Outerwear",
+                "brand": "Brand: Product brand (top 40, rest folded into Other)",
+                "order_status": "Order status: Complete, Shipped, Processing, Cancelled, Returned",
+                "traffic_source": "Traffic source: Acquisition channel: Search, Organic, Facebook, Email, Display",
+                "gender": "Customer gender: Customer gender M/F",
+                "age_band": "Customer age band: Customer age band: under 25, 25-34, 35-44, 45-54, 55+",
+                "country": "Country: Customer country",
+                "state": "US state: Customer US state (for maps)",
+                "event_type": "Web event type: Website event: home, department, product, cart, purchase, cancel",
+                "browser": "Browser: Visitor browser",
+                "distribution_center": "Distribution center: Fulfilment warehouse (10 US cities)"
+              }
+            }
+          }
+        },
+        "response": {
+          "model": "mock-jev-0",
+          "answers": {
+            "metric:revenue": {
+              "type": "noul",
+              "noul": 0.34
+            },
+            "metric:orders": {
+              "type": "noul",
+              "noul": 0.76
+            },
+            "metric:items_sold": {
+              "type": "noul",
+              "noul": 0.55
+            },
+            "metric:gross_margin": {
+              "type": "noul",
+              "noul": 0.356
+            },
+            "metric:gross_margin_pct": {
+              "type": "noul",
+              "noul": 0.4
+            },
+            "metric:avg_order_value": {
+              "type": "noul",
+              "noul": 0.6
+            },
+            "metric:return_rate": {
+              "type": "noul",
+              "noul": 0.4
+            },
+            "metric:customers": {
+              "type": "noul",
+              "noul": 0.433
+            },
+            "metric:new_users": {
+              "type": "noul",
+              "noul": 0.375
+            },
+            "metric:sessions": {
+              "type": "noul",
+              "noul": 0.48
+            },
+            "metric:events": {
+              "type": "noul",
+              "noul": 0.4
+            },
+            "metric:conversion_rate": {
+              "type": "noul",
+              "noul": 0.375
+            },
+            "metric:cart_abandonment": {
+              "type": "noul",
+              "noul": 0.433
+            },
+            "metric:stock_on_hand": {
+              "type": "noul",
+              "noul": 0.356
+            },
+            "metric:inventory_cost": {
+              "type": "noul",
+              "noul": 0.4
+            },
+            "metric:avg_days_to_ship": {
+              "type": "noul",
+              "noul": 0.9
+            },
+            "metric:avg_days_to_deliver": {
+              "type": "noul",
+              "noul": 0.95
+            },
+            "dimension:department": {
+              "type": "noul",
+              "noul": 0.356
+            },
+            "dimension:category": {
+              "type": "noul",
+              "noul": 0.317
+            },
+            "dimension:brand": {
+              "type": "noul",
+              "noul": 0.308
+            },
+            "dimension:order_status": {
+              "type": "noul",
+              "noul": 0.631
+            },
+            "dimension:traffic_source": {
+              "type": "noul",
+              "noul": 0.293
+            },
+            "dimension:gender": {
+              "type": "noul",
+              "noul": 0.375
+            },
+            "dimension:age_band": {
+              "type": "noul",
+              "noul": 0.282
+            },
+            "dimension:country": {
+              "type": "noul",
+              "noul": 0.375
+            },
+            "dimension:state": {
+              "type": "noul",
+              "noul": 0.34
+            },
+            "dimension:event_type": {
+              "type": "noul",
+              "noul": 0.288
+            },
+            "dimension:browser": {
+              "type": "noul",
+              "noul": 0.375
+            },
+            "dimension:distribution_center": {
+              "type": "noul",
+              "noul": 0.631
+            },
+            "primary_metric": {
+              "type": "choice",
+              "choice": "avg_days_to_deliver",
+              "probabilities": {
+                "revenue": 0.009,
+                "orders": 0.178,
+                "items_sold": 0.024,
+                "gross_margin": 0.009,
+                "gross_margin_pct": 0.009,
+                "avg_order_value": 0.029,
+                "return_rate": 0.009,
+                "customers": 0.009,
+                "new_users": 0.009,
+                "sessions": 0.009,
+                "events": 0.009,
+                "conversion_rate": 0.009,
+                "cart_abandonment": 0.009,
+                "stock_on_hand": 0.009,
+                "inventory_cost": 0.009,
+                "avg_days_to_ship": 0.178,
+                "avg_days_to_deliver": 0.484
+              },
+              "confidence": 0.306
+            },
+            "primary_dimension": {
+              "type": "choice",
+              "choice": "order_status",
+              "probabilities": {
+                "none": 0.033,
+                "department": 0.033,
+                "category": 0.033,
+                "brand": 0.033,
+                "order_status": 0.317,
+                "traffic_source": 0.033,
+                "gender": 0.033,
+                "age_band": 0.033,
+                "country": 0.033,
+                "state": 0.033,
+                "event_type": 0.033,
+                "browser": 0.033,
+                "distribution_center": 0.317
+              },
+              "confidence": 0
+            }
+          },
+          "usage": {
+            "input_tokens": 29,
+            "output_tokens": 0
+          }
+        },
+        "decisions": [
+          {
+            "key": "metric:revenue",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.34
+          },
+          {
+            "key": "metric:orders",
+            "type": "noul",
+            "value": true,
+            "confidence": 0.76
+          },
+          {
+            "key": "metric:items_sold",
+            "type": "noul",
+            "value": true,
+            "confidence": 0.55
+          },
+          {
+            "key": "metric:gross_margin",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.356
+          },
+          {
+            "key": "metric:gross_margin_pct",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.4
+          },
+          {
+            "key": "metric:avg_order_value",
+            "type": "noul",
+            "value": true,
+            "confidence": 0.6
+          },
+          {
+            "key": "metric:return_rate",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.4
+          },
+          {
+            "key": "metric:customers",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.433
+          },
+          {
+            "key": "metric:new_users",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.375
+          },
+          {
+            "key": "metric:sessions",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.48
+          },
+          {
+            "key": "metric:events",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.4
+          },
+          {
+            "key": "metric:conversion_rate",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.375
+          },
+          {
+            "key": "metric:cart_abandonment",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.433
+          },
+          {
+            "key": "metric:stock_on_hand",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.356
+          },
+          {
+            "key": "metric:inventory_cost",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.4
+          },
+          {
+            "key": "metric:avg_days_to_ship",
+            "type": "noul",
+            "value": true,
+            "confidence": 0.9
+          },
+          {
+            "key": "metric:avg_days_to_deliver",
+            "type": "noul",
+            "value": true,
+            "confidence": 0.95
+          },
+          {
+            "key": "dimension:department",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.356
+          },
+          {
+            "key": "dimension:category",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.317
+          },
+          {
+            "key": "dimension:brand",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.308
+          },
+          {
+            "key": "dimension:order_status",
+            "type": "noul",
+            "value": true,
+            "confidence": 0.631
+          },
+          {
+            "key": "dimension:traffic_source",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.293
+          },
+          {
+            "key": "dimension:gender",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.375
+          },
+          {
+            "key": "dimension:age_band",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.282
+          },
+          {
+            "key": "dimension:country",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.375
+          },
+          {
+            "key": "dimension:state",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.34
+          },
+          {
+            "key": "dimension:event_type",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.288
+          },
+          {
+            "key": "dimension:browser",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.375
+          },
+          {
+            "key": "dimension:distribution_center",
+            "type": "noul",
+            "value": true,
+            "confidence": 0.631
+          },
+          {
+            "key": "primary_metric",
+            "type": "choice",
+            "value": "avg_days_to_deliver",
+            "confidence": 0.306,
+            "probabilities": {
+              "revenue": 0.009,
+              "orders": 0.178,
+              "items_sold": 0.024,
+              "gross_margin": 0.009,
+              "gross_margin_pct": 0.009,
+              "avg_order_value": 0.029,
+              "return_rate": 0.009,
+              "customers": 0.009,
+              "new_users": 0.009,
+              "sessions": 0.009,
+              "events": 0.009,
+              "conversion_rate": 0.009,
+              "cart_abandonment": 0.009,
+              "stock_on_hand": 0.009,
+              "inventory_cost": 0.009,
+              "avg_days_to_ship": 0.178,
+              "avg_days_to_deliver": 0.484
+            }
+          },
+          {
+            "key": "primary_dimension",
+            "type": "choice",
+            "value": "order_status",
+            "confidence": 0,
+            "probabilities": {
+              "none": 0.033,
+              "department": 0.033,
+              "category": 0.033,
+              "brand": 0.033,
+              "order_status": 0.317,
+              "traffic_source": 0.033,
+              "gender": 0.033,
+              "age_band": 0.033,
+              "country": 0.033,
+              "state": 0.033,
+              "event_type": 0.033,
+              "browser": 0.033,
+              "distribution_center": 0.317
+            }
+          }
+        ],
+        "ms": 0
+      },
+      {
+        "stage": "tiles",
+        "client": "mock",
+        "request": {
+          "state": {
+            "request": "A dark dashboard for the fulfilment team: days to ship and deliver by distribution center for the last 30 days, dense, daily.",
+            "dashboard_type": "fulfillment operations",
+            "audience": "executive",
+            "time_window": "last 30 days",
+            "tiles": [
+              {
+                "id": "kpi_0",
+                "shows": "Days to deliver headline number"
+              },
+              {
+                "id": "kpi_1",
+                "shows": "Days to ship headline number"
+              },
+              {
+                "id": "kpi_2",
+                "shows": "Orders headline number"
+              },
+              {
+                "id": "kpi_3",
+                "shows": "Average order value headline number"
+              },
+              {
+                "id": "trend_0",
+                "shows": "Days to deliver over time"
+              },
+              {
+                "id": "trend_1",
+                "shows": "Days to ship over time"
+              },
+              {
+                "id": "breakdown_0",
+                "shows": "Days to deliver by Distribution center"
+              },
+              {
+                "id": "detail_0",
+                "shows": "Days to deliver, Days to ship, Orders by Distribution center as a table"
+              }
+            ]
+          },
+          "questions": {
+            "kpi_0:size": {
+              "type": "choice",
+              "instructions": "How much of the row should tile \"kpi_0\" (Days to deliver headline number) take?",
+              "criteria": {
+                "sm": "small: a quarter of the row; stat tiles and simple sparklines",
+                "md": "medium: a third of the row; secondary breakdowns"
+              }
+            },
+            "kpi_0:importance": {
+              "type": "score",
+              "instructions": "How important is tile \"kpi_0\" (Days to deliver headline number) for this request?",
+              "criteria": [
+                "Leave it out: it does not help this request",
+                "Supporting detail: nice to have",
+                "Useful context for the request",
+                "Essential: the request cannot be answered without it"
+              ]
+            },
+            "kpi_1:size": {
+              "type": "choice",
+              "instructions": "How much of the row should tile \"kpi_1\" (Days to ship headline number) take?",
+              "criteria": {
+                "sm": "small: a quarter of the row; stat tiles and simple sparklines",
+                "md": "medium: a third of the row; secondary breakdowns"
+              }
+            },
+            "kpi_1:importance": {
+              "type": "score",
+              "instructions": "How important is tile \"kpi_1\" (Days to ship headline number) for this request?",
+              "criteria": [
+                "Leave it out: it does not help this request",
+                "Supporting detail: nice to have",
+                "Useful context for the request",
+                "Essential: the request cannot be answered without it"
+              ]
+            },
+            "kpi_2:size": {
+              "type": "choice",
+              "instructions": "How much of the row should tile \"kpi_2\" (Orders headline number) take?",
+              "criteria": {
+                "sm": "small: a quarter of the row; stat tiles and simple sparklines",
+                "md": "medium: a third of the row; secondary breakdowns"
+              }
+            },
+            "kpi_2:importance": {
+              "type": "score",
+              "instructions": "How important is tile \"kpi_2\" (Orders headline number) for this request?",
+              "criteria": [
+                "Leave it out: it does not help this request",
+                "Supporting detail: nice to have",
+                "Useful context for the request",
+                "Essential: the request cannot be answered without it"
+              ]
+            },
+            "kpi_3:size": {
+              "type": "choice",
+              "instructions": "How much of the row should tile \"kpi_3\" (Average order value headline number) take?",
+              "criteria": {
+                "sm": "small: a quarter of the row; stat tiles and simple sparklines",
+                "md": "medium: a third of the row; secondary breakdowns"
+              }
+            },
+            "kpi_3:importance": {
+              "type": "score",
+              "instructions": "How important is tile \"kpi_3\" (Average order value headline number) for this request?",
+              "criteria": [
+                "Leave it out: it does not help this request",
+                "Supporting detail: nice to have",
+                "Useful context for the request",
+                "Essential: the request cannot be answered without it"
+              ]
+            },
+            "trend_0:component": {
+              "type": "choice",
+              "instructions": "For tile \"trend_0\" (Days to deliver over time), which presentation serves the reader best?",
+              "criteria": {
+                "line": "Line chart: One metric over time as a single line. The default for trend questions.",
+                "area": "Area chart: One metric over time with a light fill under the line. Emphasises accumulated volume; otherwise the same job as a line."
+              }
+            },
+            "trend_0:size": {
+              "type": "choice",
+              "instructions": "How much of the row should tile \"trend_0\" (Days to deliver over time) take?",
+              "criteria": {
+                "md": "medium: a third of the row; secondary breakdowns",
+                "lg": "large: half the row; the standard chart size",
+                "xl": "extra large: two thirds of the row; the main trend chart",
+                "full": "full width: dense tables, heatmaps, maps and the single hero chart"
+              }
+            },
+            "trend_0:importance": {
+              "type": "score",
+              "instructions": "How important is tile \"trend_0\" (Days to deliver over time) for this request?",
+              "criteria": [
+                "Leave it out: it does not help this request",
+                "Supporting detail: nice to have",
+                "Useful context for the request",
+                "Essential: the request cannot be answered without it"
+              ]
+            },
+            "trend_1:component": {
+              "type": "choice",
+              "instructions": "For tile \"trend_1\" (Days to ship over time), which presentation serves the reader best?",
+              "criteria": {
+                "line": "Line chart: One metric over time as a single line. The default for trend questions.",
+                "area": "Area chart: One metric over time with a light fill under the line. Emphasises accumulated volume; otherwise the same job as a line."
+              }
+            },
+            "trend_1:size": {
+              "type": "choice",
+              "instructions": "How much of the row should tile \"trend_1\" (Days to ship over time) take?",
+              "criteria": {
+                "md": "medium: a third of the row; secondary breakdowns",
+                "lg": "large: half the row; the standard chart size",
+                "xl": "extra large: two thirds of the row; the main trend chart",
+                "full": "full width: dense tables, heatmaps, maps and the single hero chart"
+              }
+            },
+            "trend_1:importance": {
+              "type": "score",
+              "instructions": "How important is tile \"trend_1\" (Days to ship over time) for this request?",
+              "criteria": [
+                "Leave it out: it does not help this request",
+                "Supporting detail: nice to have",
+                "Useful context for the request",
+                "Essential: the request cannot be answered without it"
+              ]
+            },
+            "breakdown_0:component": {
+              "type": "choice",
+              "instructions": "For tile \"breakdown_0\" (Days to deliver by Distribution center), which presentation serves the reader best?",
+              "criteria": {
+                "small_multiples": "Small multiples: One metric over time as a grid of tiny line charts, one per category (up to 12). Use for many categories where a multi-line chart would tangle.",
+                "heatmap": "Heatmap: A grid of category (rows) by time period (columns) shaded by one metric. Use for spotting seasonality or hot spots across many categories.",
+                "bar_ranked": "Ranked bar chart: Horizontal bars ranking categories by one metric, largest first (up to 15 categories, the rest folded into Other). Use for 'which categories are biggest'.",
+                "table": "Table: A sortable table of one or more metrics by one or two categories. Use when exact values matter or there are too many categories for a chart."
+              }
+            },
+            "breakdown_0:size": {
+              "type": "choice",
+              "instructions": "How much of the row should tile \"breakdown_0\" (Days to deliver by Distribution center) take?",
+              "criteria": {
+                "xl": "extra large: two thirds of the row; the main trend chart",
+                "full": "full width: dense tables, heatmaps, maps and the single hero chart",
+                "md": "medium: a third of the row; secondary breakdowns",
+                "lg": "large: half the row; the standard chart size"
+              }
+            },
+            "breakdown_0:importance": {
+              "type": "score",
+              "instructions": "How important is tile \"breakdown_0\" (Days to deliver by Distribution center) for this request?",
+              "criteria": [
+                "Leave it out: it does not help this request",
+                "Supporting detail: nice to have",
+                "Useful context for the request",
+                "Essential: the request cannot be answered without it"
+              ]
+            },
+            "detail_0:size": {
+              "type": "choice",
+              "instructions": "How much of the row should tile \"detail_0\" (Days to deliver, Days to ship, Orders by Distribution center as a table) take?",
+              "criteria": {
+                "lg": "large: half the row; the standard chart size",
+                "xl": "extra large: two thirds of the row; the main trend chart",
+                "full": "full width: dense tables, heatmaps, maps and the single hero chart"
+              }
+            },
+            "detail_0:importance": {
+              "type": "score",
+              "instructions": "How important is tile \"detail_0\" (Days to deliver, Days to ship, Orders by Distribution center as a table) for this request?",
+              "criteria": [
+                "Leave it out: it does not help this request",
+                "Supporting detail: nice to have",
+                "Useful context for the request",
+                "Essential: the request cannot be answered without it"
+              ]
+            }
+          }
+        },
+        "response": {
+          "model": "mock-jev-0",
+          "answers": {
+            "kpi_0:size": {
+              "type": "choice",
+              "choice": "sm",
+              "probabilities": {
+                "sm": 0.679,
+                "md": 0.321
+              },
+              "confidence": 0.358
+            },
+            "kpi_0:importance": {
+              "type": "score",
+              "score": 1.783,
+              "legend": {
+                "0": "Leave it out: it does not help this request",
+                "1": "Supporting detail: nice to have",
+                "2": "Useful context for the request",
+                "3": "Essential: the request cannot be answered without it"
+              },
+              "probabilities": {
+                "0": 0.188,
+                "1": 0.069,
+                "2": 0.512,
+                "3": 0.23
+              },
+              "confidence": 0.282
+            },
+            "kpi_1:size": {
+              "type": "choice",
+              "choice": "sm",
+              "probabilities": {
+                "sm": 0.679,
+                "md": 0.321
+              },
+              "confidence": 0.358
+            },
+            "kpi_1:importance": {
+              "type": "score",
+              "score": 1.783,
+              "legend": {
+                "0": "Leave it out: it does not help this request",
+                "1": "Supporting detail: nice to have",
+                "2": "Useful context for the request",
+                "3": "Essential: the request cannot be answered without it"
+              },
+              "probabilities": {
+                "0": 0.188,
+                "1": 0.069,
+                "2": 0.512,
+                "3": 0.23
+              },
+              "confidence": 0.282
+            },
+            "kpi_2:size": {
+              "type": "choice",
+              "choice": "sm",
+              "probabilities": {
+                "sm": 0.679,
+                "md": 0.321
+              },
+              "confidence": 0.358
+            },
+            "kpi_2:importance": {
+              "type": "score",
+              "score": 1.783,
+              "legend": {
+                "0": "Leave it out: it does not help this request",
+                "1": "Supporting detail: nice to have",
+                "2": "Useful context for the request",
+                "3": "Essential: the request cannot be answered without it"
+              },
+              "probabilities": {
+                "0": 0.188,
+                "1": 0.069,
+                "2": 0.512,
+                "3": 0.23
+              },
+              "confidence": 0.282
+            },
+            "kpi_3:size": {
+              "type": "choice",
+              "choice": "sm",
+              "probabilities": {
+                "sm": 0.679,
+                "md": 0.321
+              },
+              "confidence": 0.358
+            },
+            "kpi_3:importance": {
+              "type": "score",
+              "score": 1.783,
+              "legend": {
+                "0": "Leave it out: it does not help this request",
+                "1": "Supporting detail: nice to have",
+                "2": "Useful context for the request",
+                "3": "Essential: the request cannot be answered without it"
+              },
+              "probabilities": {
+                "0": 0.188,
+                "1": 0.069,
+                "2": 0.512,
+                "3": 0.23
+              },
+              "confidence": 0.282
+            },
+            "trend_0:component": {
+              "type": "choice",
+              "choice": "line",
+              "probabilities": {
+                "line": 0.566,
+                "area": 0.434
+              },
+              "confidence": 0.132
+            },
+            "trend_0:size": {
+              "type": "choice",
+              "choice": "full",
+              "probabilities": {
+                "md": 0.202,
+                "lg": 0.202,
+                "xl": 0.202,
+                "full": 0.394
+              },
+              "confidence": 0.192
+            },
+            "trend_0:importance": {
+              "type": "score",
+              "score": 1.783,
+              "legend": {
+                "0": "Leave it out: it does not help this request",
+                "1": "Supporting detail: nice to have",
+                "2": "Useful context for the request",
+                "3": "Essential: the request cannot be answered without it"
+              },
+              "probabilities": {
+                "0": 0.188,
+                "1": 0.069,
+                "2": 0.512,
+                "3": 0.23
+              },
+              "confidence": 0.282
+            },
+            "trend_1:component": {
+              "type": "choice",
+              "choice": "line",
+              "probabilities": {
+                "line": 0.566,
+                "area": 0.434
+              },
+              "confidence": 0.132
+            },
+            "trend_1:size": {
+              "type": "choice",
+              "choice": "full",
+              "probabilities": {
+                "md": 0.202,
+                "lg": 0.202,
+                "xl": 0.202,
+                "full": 0.394
+              },
+              "confidence": 0.192
+            },
+            "trend_1:importance": {
+              "type": "score",
+              "score": 1.783,
+              "legend": {
+                "0": "Leave it out: it does not help this request",
+                "1": "Supporting detail: nice to have",
+                "2": "Useful context for the request",
+                "3": "Essential: the request cannot be answered without it"
+              },
+              "probabilities": {
+                "0": 0.188,
+                "1": 0.069,
+                "2": 0.512,
+                "3": 0.23
+              },
+              "confidence": 0.282
+            },
+            "breakdown_0:component": {
+              "type": "choice",
+              "choice": "table",
+              "probabilities": {
+                "small_multiples": 0.26,
+                "heatmap": 0.268,
+                "bar_ranked": 0.192,
+                "table": 0.28
+              },
+              "confidence": 0.012
+            },
+            "breakdown_0:size": {
+              "type": "choice",
+              "choice": "full",
+              "probabilities": {
+                "xl": 0.202,
+                "full": 0.394,
+                "md": 0.202,
+                "lg": 0.202
+              },
+              "confidence": 0.192
+            },
+            "breakdown_0:importance": {
+              "type": "score",
+              "score": 1.783,
+              "legend": {
+                "0": "Leave it out: it does not help this request",
+                "1": "Supporting detail: nice to have",
+                "2": "Useful context for the request",
+                "3": "Essential: the request cannot be answered without it"
+              },
+              "probabilities": {
+                "0": 0.188,
+                "1": 0.069,
+                "2": 0.512,
+                "3": 0.23
+              },
+              "confidence": 0.282
+            },
+            "detail_0:size": {
+              "type": "choice",
+              "choice": "full",
+              "probabilities": {
+                "lg": 0.253,
+                "xl": 0.253,
+                "full": 0.493
+              },
+              "confidence": 0.24
+            },
+            "detail_0:importance": {
+              "type": "score",
+              "score": 1.783,
+              "legend": {
+                "0": "Leave it out: it does not help this request",
+                "1": "Supporting detail: nice to have",
+                "2": "Useful context for the request",
+                "3": "Essential: the request cannot be answered without it"
+              },
+              "probabilities": {
+                "0": 0.188,
+                "1": 0.069,
+                "2": 0.512,
+                "3": 0.23
+              },
+              "confidence": 0.282
+            }
+          },
+          "usage": {
+            "input_tokens": 83,
+            "output_tokens": 0
+          }
+        },
+        "decisions": [
+          {
+            "key": "kpi_0:size",
+            "type": "choice",
+            "value": "sm",
+            "confidence": 0.358,
+            "probabilities": {
+              "sm": 0.679,
+              "md": 0.321
+            }
+          },
+          {
+            "key": "kpi_0:importance",
+            "type": "score",
+            "value": 1.783,
+            "confidence": 0.282,
+            "probabilities": {
+              "0": 0.188,
+              "1": 0.069,
+              "2": 0.512,
+              "3": 0.23
+            }
+          },
+          {
+            "key": "kpi_1:size",
+            "type": "choice",
+            "value": "sm",
+            "confidence": 0.358,
+            "probabilities": {
+              "sm": 0.679,
+              "md": 0.321
+            }
+          },
+          {
+            "key": "kpi_1:importance",
+            "type": "score",
+            "value": 1.783,
+            "confidence": 0.282,
+            "probabilities": {
+              "0": 0.188,
+              "1": 0.069,
+              "2": 0.512,
+              "3": 0.23
+            }
+          },
+          {
+            "key": "kpi_2:size",
+            "type": "choice",
+            "value": "sm",
+            "confidence": 0.358,
+            "probabilities": {
+              "sm": 0.679,
+              "md": 0.321
+            }
+          },
+          {
+            "key": "kpi_2:importance",
+            "type": "score",
+            "value": 1.783,
+            "confidence": 0.282,
+            "probabilities": {
+              "0": 0.188,
+              "1": 0.069,
+              "2": 0.512,
+              "3": 0.23
+            }
+          },
+          {
+            "key": "kpi_3:size",
+            "type": "choice",
+            "value": "sm",
+            "confidence": 0.358,
+            "probabilities": {
+              "sm": 0.679,
+              "md": 0.321
+            }
+          },
+          {
+            "key": "kpi_3:importance",
+            "type": "score",
+            "value": 1.783,
+            "confidence": 0.282,
+            "probabilities": {
+              "0": 0.188,
+              "1": 0.069,
+              "2": 0.512,
+              "3": 0.23
+            }
+          },
+          {
+            "key": "trend_0:component",
+            "type": "choice",
+            "value": "line",
+            "confidence": 0.132,
+            "probabilities": {
+              "line": 0.566,
+              "area": 0.434
+            }
+          },
+          {
+            "key": "trend_0:size",
+            "type": "choice",
+            "value": "full",
+            "confidence": 0.192,
+            "probabilities": {
+              "md": 0.202,
+              "lg": 0.202,
+              "xl": 0.202,
+              "full": 0.394
+            }
+          },
+          {
+            "key": "trend_0:importance",
+            "type": "score",
+            "value": 1.783,
+            "confidence": 0.282,
+            "probabilities": {
+              "0": 0.188,
+              "1": 0.069,
+              "2": 0.512,
+              "3": 0.23
+            }
+          },
+          {
+            "key": "trend_1:component",
+            "type": "choice",
+            "value": "line",
+            "confidence": 0.132,
+            "probabilities": {
+              "line": 0.566,
+              "area": 0.434
+            }
+          },
+          {
+            "key": "trend_1:size",
+            "type": "choice",
+            "value": "full",
+            "confidence": 0.192,
+            "probabilities": {
+              "md": 0.202,
+              "lg": 0.202,
+              "xl": 0.202,
+              "full": 0.394
+            }
+          },
+          {
+            "key": "trend_1:importance",
+            "type": "score",
+            "value": 1.783,
+            "confidence": 0.282,
+            "probabilities": {
+              "0": 0.188,
+              "1": 0.069,
+              "2": 0.512,
+              "3": 0.23
+            }
+          },
+          {
+            "key": "breakdown_0:component",
+            "type": "choice",
+            "value": "table",
+            "confidence": 0.012,
+            "probabilities": {
+              "small_multiples": 0.26,
+              "heatmap": 0.268,
+              "bar_ranked": 0.192,
+              "table": 0.28
+            }
+          },
+          {
+            "key": "breakdown_0:size",
+            "type": "choice",
+            "value": "full",
+            "confidence": 0.192,
+            "probabilities": {
+              "xl": 0.202,
+              "full": 0.394,
+              "md": 0.202,
+              "lg": 0.202
+            }
+          },
+          {
+            "key": "breakdown_0:importance",
+            "type": "score",
+            "value": 1.783,
+            "confidence": 0.282,
+            "probabilities": {
+              "0": 0.188,
+              "1": 0.069,
+              "2": 0.512,
+              "3": 0.23
+            }
+          },
+          {
+            "key": "detail_0:size",
+            "type": "choice",
+            "value": "full",
+            "confidence": 0.24,
+            "probabilities": {
+              "lg": 0.253,
+              "xl": 0.253,
+              "full": 0.493
+            }
+          },
+          {
+            "key": "detail_0:importance",
+            "type": "score",
+            "value": 1.783,
+            "confidence": 0.282,
+            "probabilities": {
+              "0": 0.188,
+              "1": 0.069,
+              "2": 0.512,
+              "3": 0.23
+            }
+          }
+        ],
+        "ms": 0
+      },
+      {
+        "stage": "presentation",
+        "client": "mock",
+        "request": {
+          "state": {
+            "request": "A dark dashboard for the fulfilment team: days to ship and deliver by distribution center for the last 30 days, dense, daily.",
+            "audience": "executive",
+            "density": "balanced",
+            "stated_mode_preference": "no_preference",
+            "tile_count": 8,
+            "has_table": true,
+            "environment": {
+              "warehouse_credentials_available": false,
+              "offline": true
+            }
+          },
+          "questions": {
+            "layout": {
+              "type": "choice",
+              "instructions": "Which layout template fits this dashboard?",
+              "criteria": {
+                "kpi_row_grid": "KPI row + grid: Headline stat tiles across the top, then charts packed into a grid below. The conventional overview dashboard.",
+                "hero_focus": "Hero focus: One large main chart with stat tiles down the left side and a few small supporting charts. When one trend is the whole story.",
+                "two_column": "Two columns: Every chart at half width in two even columns, stat tiles inline. Balanced comparison of several equally important views.",
+                "narrative": "Single column narrative: Full-width tiles stacked in reading order, one idea per screen height. For a report that is read top to bottom rather than scanned."
+              }
+            },
+            "theme": {
+              "type": "choice",
+              "instructions": "Which theme preset fits the audience and any stated mode preference?",
+              "criteria": {
+                "daylight": "Daylight (light, comfortable): Light, neutral, comfortable spacing. The safe default for analysts working at a desk.",
+                "midnight": "Midnight (dark, comfortable): Dark surface with the same palette re-stepped for dark mode. For wall screens, dark-mode users and evening monitoring.",
+                "boardroom": "Boardroom (light, spacious): Light, spacious, larger type, fewer tiles per row. For executives and presentations where a few numbers must be readable from a distance.",
+                "ops_dense": "Ops dense (dark, compact): Dark, compact, small type, many tiles per screen. For operators watching many signals at once."
+              }
+            },
+            "number_format": {
+              "type": "choice",
+              "instructions": "How should numbers be formatted?",
+              "criteria": {
+                "compact": "Abbreviated figures such as $1.2M or 34K; scan-friendly",
+                "precise": "Full figures such as $1,234,567; when exact values matter"
+              }
+            },
+            "gridlines": {
+              "type": "noul",
+              "instructions": "The reader benefits from horizontal gridlines to read values off the charts."
+            },
+            "direct_labels": {
+              "type": "noul",
+              "instructions": "The reader wants values written directly on the bars and line ends rather than reading the axis."
+            },
+            "sort_breakdowns": {
+              "type": "choice",
+              "instructions": "How should categories be ordered in breakdown charts?",
+              "criteria": {
+                "by_value": "Largest value first; for ranking questions",
+                "natural": "The category's own order (alphabetical, or ordered bands); for lookup and comparison"
+              }
+            },
+            "connector": {
+              "type": "choice",
+              "instructions": "Which data connector should back this dashboard, given the environment?",
+              "criteria": {
+                "static_snapshot": "Static snapshot: Pre-aggregated JSON cubes extracted from BigQuery and embedded in the dashboard. Works offline, no credentials, data as of the snapshot date.",
+                "bigquery_live": "BigQuery live: Run each tile's query against bigquery-public-data.thelook_ecommerce at view time. Always current, needs a billable GCP project and credentials. (not yet implemented)",
+                "csv_upload": "CSV upload: The viewer supplies a CSV export matching the cube schema. For sharing a dashboard with people who lack warehouse access. (not yet implemented)"
+              }
+            }
+          }
+        },
+        "response": {
+          "model": "mock-jev-0",
+          "answers": {
+            "layout": {
+              "type": "choice",
+              "choice": "kpi_row_grid",
+              "probabilities": {
+                "kpi_row_grid": 0.298,
+                "hero_focus": 0.205,
+                "two_column": 0.292,
+                "narrative": 0.205
+              },
+              "confidence": 0.006
+            },
+            "theme": {
+              "type": "choice",
+              "choice": "ops_dense",
+              "probabilities": {
+                "daylight": 0.17,
+                "midnight": 0.261,
+                "boardroom": 0.17,
+                "ops_dense": 0.4
+              },
+              "confidence": 0.139
+            },
+            "number_format": {
+              "type": "choice",
+              "choice": "compact",
+              "probabilities": {
+                "compact": 0.5,
+                "precise": 0.5
+              },
+              "confidence": 0
+            },
+            "gridlines": {
+              "type": "noul",
+              "noul": 0.2
+            },
+            "direct_labels": {
+              "type": "noul",
+              "noul": 0.2
+            },
+            "sort_breakdowns": {
+              "type": "choice",
+              "choice": "by_value",
+              "probabilities": {
+                "by_value": 0.5,
+                "natural": 0.5
+              },
+              "confidence": 0
+            },
+            "connector": {
+              "type": "choice",
+              "choice": "static_snapshot",
+              "probabilities": {
+                "static_snapshot": 0.461,
+                "bigquery_live": 0.227,
+                "csv_upload": 0.312
+              },
+              "confidence": 0.149
+            }
+          },
+          "usage": {
+            "input_tokens": 29,
+            "output_tokens": 0
+          }
+        },
+        "decisions": [
+          {
+            "key": "theme",
+            "type": "choice",
+            "value": "ops_dense",
+            "confidence": 0.139,
+            "probabilities": {
+              "daylight": 0.17,
+              "midnight": 0.261,
+              "boardroom": 0.17,
+              "ops_dense": 0.4
+            }
+          },
+          {
+            "key": "connector",
+            "type": "choice",
+            "value": "static_snapshot",
+            "confidence": 0.149,
+            "probabilities": {
+              "static_snapshot": 0.461,
+              "bigquery_live": 0.227,
+              "csv_upload": 0.312
+            }
+          },
+          {
+            "key": "layout",
+            "type": "choice",
+            "value": "kpi_row_grid",
+            "confidence": 0.006,
+            "probabilities": {
+              "kpi_row_grid": 0.298,
+              "hero_focus": 0.205,
+              "two_column": 0.292,
+              "narrative": 0.205
+            }
+          },
+          {
+            "key": "number_format",
+            "type": "choice",
+            "value": "compact",
+            "confidence": 0,
+            "probabilities": {
+              "compact": 0.5,
+              "precise": 0.5
+            }
+          },
+          {
+            "key": "gridlines",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.2
+          },
+          {
+            "key": "direct_labels",
+            "type": "noul",
+            "value": false,
+            "confidence": 0.2
+          },
+          {
+            "key": "sort_breakdowns",
+            "type": "choice",
+            "value": "by_value",
+            "confidence": 0,
+            "probabilities": {
+              "by_value": 0.5,
+              "natural": 0.5
+            }
+          }
+        ],
+        "ms": 0
+      }
+    ],
+    "summary": [
+      {
+        "key": "density",
+        "type": "score",
+        "value": 1.3639999999999999,
+        "confidence": 0.364,
+        "probabilities": {
+          "0": 0.212,
+          "1": 0.212,
+          "2": 0.576
+        }
+      },
+      {
+        "key": "archetype",
+        "type": "choice",
+        "value": "fulfillment_operations",
+        "confidence": 0.732,
+        "probabilities": {
+          "executive_overview": 0.038,
+          "sales_performance": 0.038,
+          "customer_acquisition": 0.038,
+          "product_merchandising": 0.038,
+          "fulfillment_operations": 0.77,
+          "web_engagement": 0.038,
+          "inventory_health": 0.038
+        }
+      },
+      {
+        "key": "time_window",
+        "type": "choice",
+        "value": "last_30_days",
+        "confidence": 0.183,
+        "probabilities": {
+          "last_30_days": 0.434,
+          "last_90_days": 0.251,
+          "last_12_months": 0.146,
+          "year_to_date": 0.084,
+          "all_time": 0.084
+        }
+      },
+      {
+        "key": "grain",
+        "type": "choice",
+        "value": "day",
+        "confidence": 0.428,
+        "probabilities": {
+          "day": 0.629,
+          "week": 0.201,
+          "month": 0.085,
+          "quarter": 0.085
+        }
+      },
+      {
+        "key": "compare_prior",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.327
+      },
+      {
+        "key": "audience",
+        "type": "choice",
+        "value": "executive",
+        "confidence": 0,
+        "probabilities": {
+          "executive": 0.333,
+          "analyst": 0.333,
+          "operator": 0.333
+        }
+      },
+      {
+        "key": "mode_preference",
+        "type": "choice",
+        "value": "no_preference",
+        "confidence": 0.084,
+        "probabilities": {
+          "light": 0.213,
+          "dark": 0.351,
+          "no_preference": 0.435
+        }
+      },
+      {
+        "key": "wants_geo",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.4
+      },
+      {
+        "key": "wants_breakdowns",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.34
+      },
+      {
+        "key": "metric:revenue",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.34
+      },
+      {
+        "key": "metric:orders",
+        "type": "noul",
+        "value": true,
+        "confidence": 0.76
+      },
+      {
+        "key": "metric:items_sold",
+        "type": "noul",
+        "value": true,
+        "confidence": 0.55
+      },
+      {
+        "key": "metric:gross_margin",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.356
+      },
+      {
+        "key": "metric:gross_margin_pct",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.4
+      },
+      {
+        "key": "metric:avg_order_value",
+        "type": "noul",
+        "value": true,
+        "confidence": 0.6
+      },
+      {
+        "key": "metric:return_rate",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.4
+      },
+      {
+        "key": "metric:customers",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.433
+      },
+      {
+        "key": "metric:new_users",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.375
+      },
+      {
+        "key": "metric:sessions",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.48
+      },
+      {
+        "key": "metric:events",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.4
+      },
+      {
+        "key": "metric:conversion_rate",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.375
+      },
+      {
+        "key": "metric:cart_abandonment",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.433
+      },
+      {
+        "key": "metric:stock_on_hand",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.356
+      },
+      {
+        "key": "metric:inventory_cost",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.4
+      },
+      {
+        "key": "metric:avg_days_to_ship",
+        "type": "noul",
+        "value": true,
+        "confidence": 0.9
+      },
+      {
+        "key": "metric:avg_days_to_deliver",
+        "type": "noul",
+        "value": true,
+        "confidence": 0.95
+      },
+      {
+        "key": "dimension:department",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.356
+      },
+      {
+        "key": "dimension:category",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.317
+      },
+      {
+        "key": "dimension:brand",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.308
+      },
+      {
+        "key": "dimension:order_status",
+        "type": "noul",
+        "value": true,
+        "confidence": 0.631
+      },
+      {
+        "key": "dimension:traffic_source",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.293
+      },
+      {
+        "key": "dimension:gender",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.375
+      },
+      {
+        "key": "dimension:age_band",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.282
+      },
+      {
+        "key": "dimension:country",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.375
+      },
+      {
+        "key": "dimension:state",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.34
+      },
+      {
+        "key": "dimension:event_type",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.288
+      },
+      {
+        "key": "dimension:browser",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.375
+      },
+      {
+        "key": "dimension:distribution_center",
+        "type": "noul",
+        "value": true,
+        "confidence": 0.631
+      },
+      {
+        "key": "primary_metric",
+        "type": "choice",
+        "value": "avg_days_to_deliver",
+        "confidence": 0.306,
+        "probabilities": {
+          "revenue": 0.009,
+          "orders": 0.178,
+          "items_sold": 0.024,
+          "gross_margin": 0.009,
+          "gross_margin_pct": 0.009,
+          "avg_order_value": 0.029,
+          "return_rate": 0.009,
+          "customers": 0.009,
+          "new_users": 0.009,
+          "sessions": 0.009,
+          "events": 0.009,
+          "conversion_rate": 0.009,
+          "cart_abandonment": 0.009,
+          "stock_on_hand": 0.009,
+          "inventory_cost": 0.009,
+          "avg_days_to_ship": 0.178,
+          "avg_days_to_deliver": 0.484
+        }
+      },
+      {
+        "key": "primary_dimension",
+        "type": "choice",
+        "value": "order_status",
+        "confidence": 0,
+        "probabilities": {
+          "none": 0.033,
+          "department": 0.033,
+          "category": 0.033,
+          "brand": 0.033,
+          "order_status": 0.317,
+          "traffic_source": 0.033,
+          "gender": 0.033,
+          "age_band": 0.033,
+          "country": 0.033,
+          "state": 0.033,
+          "event_type": 0.033,
+          "browser": 0.033,
+          "distribution_center": 0.317
+        }
+      },
+      {
+        "key": "kpi_0:size",
+        "type": "choice",
+        "value": "sm",
+        "confidence": 0.358,
+        "probabilities": {
+          "sm": 0.679,
+          "md": 0.321
+        }
+      },
+      {
+        "key": "kpi_0:importance",
+        "type": "score",
+        "value": 1.783,
+        "confidence": 0.282,
+        "probabilities": {
+          "0": 0.188,
+          "1": 0.069,
+          "2": 0.512,
+          "3": 0.23
+        }
+      },
+      {
+        "key": "kpi_1:size",
+        "type": "choice",
+        "value": "sm",
+        "confidence": 0.358,
+        "probabilities": {
+          "sm": 0.679,
+          "md": 0.321
+        }
+      },
+      {
+        "key": "kpi_1:importance",
+        "type": "score",
+        "value": 1.783,
+        "confidence": 0.282,
+        "probabilities": {
+          "0": 0.188,
+          "1": 0.069,
+          "2": 0.512,
+          "3": 0.23
+        }
+      },
+      {
+        "key": "kpi_2:size",
+        "type": "choice",
+        "value": "sm",
+        "confidence": 0.358,
+        "probabilities": {
+          "sm": 0.679,
+          "md": 0.321
+        }
+      },
+      {
+        "key": "kpi_2:importance",
+        "type": "score",
+        "value": 1.783,
+        "confidence": 0.282,
+        "probabilities": {
+          "0": 0.188,
+          "1": 0.069,
+          "2": 0.512,
+          "3": 0.23
+        }
+      },
+      {
+        "key": "kpi_3:size",
+        "type": "choice",
+        "value": "sm",
+        "confidence": 0.358,
+        "probabilities": {
+          "sm": 0.679,
+          "md": 0.321
+        }
+      },
+      {
+        "key": "kpi_3:importance",
+        "type": "score",
+        "value": 1.783,
+        "confidence": 0.282,
+        "probabilities": {
+          "0": 0.188,
+          "1": 0.069,
+          "2": 0.512,
+          "3": 0.23
+        }
+      },
+      {
+        "key": "trend_0:component",
+        "type": "choice",
+        "value": "line",
+        "confidence": 0.132,
+        "probabilities": {
+          "line": 0.566,
+          "area": 0.434
+        }
+      },
+      {
+        "key": "trend_0:size",
+        "type": "choice",
+        "value": "full",
+        "confidence": 0.192,
+        "probabilities": {
+          "md": 0.202,
+          "lg": 0.202,
+          "xl": 0.202,
+          "full": 0.394
+        }
+      },
+      {
+        "key": "trend_0:importance",
+        "type": "score",
+        "value": 1.783,
+        "confidence": 0.282,
+        "probabilities": {
+          "0": 0.188,
+          "1": 0.069,
+          "2": 0.512,
+          "3": 0.23
+        }
+      },
+      {
+        "key": "trend_1:component",
+        "type": "choice",
+        "value": "line",
+        "confidence": 0.132,
+        "probabilities": {
+          "line": 0.566,
+          "area": 0.434
+        }
+      },
+      {
+        "key": "trend_1:size",
+        "type": "choice",
+        "value": "full",
+        "confidence": 0.192,
+        "probabilities": {
+          "md": 0.202,
+          "lg": 0.202,
+          "xl": 0.202,
+          "full": 0.394
+        }
+      },
+      {
+        "key": "trend_1:importance",
+        "type": "score",
+        "value": 1.783,
+        "confidence": 0.282,
+        "probabilities": {
+          "0": 0.188,
+          "1": 0.069,
+          "2": 0.512,
+          "3": 0.23
+        }
+      },
+      {
+        "key": "breakdown_0:component",
+        "type": "choice",
+        "value": "table",
+        "confidence": 0.012,
+        "probabilities": {
+          "small_multiples": 0.26,
+          "heatmap": 0.268,
+          "bar_ranked": 0.192,
+          "table": 0.28
+        }
+      },
+      {
+        "key": "breakdown_0:size",
+        "type": "choice",
+        "value": "full",
+        "confidence": 0.192,
+        "probabilities": {
+          "xl": 0.202,
+          "full": 0.394,
+          "md": 0.202,
+          "lg": 0.202
+        }
+      },
+      {
+        "key": "breakdown_0:importance",
+        "type": "score",
+        "value": 1.783,
+        "confidence": 0.282,
+        "probabilities": {
+          "0": 0.188,
+          "1": 0.069,
+          "2": 0.512,
+          "3": 0.23
+        }
+      },
+      {
+        "key": "detail_0:size",
+        "type": "choice",
+        "value": "full",
+        "confidence": 0.24,
+        "probabilities": {
+          "lg": 0.253,
+          "xl": 0.253,
+          "full": 0.493
+        }
+      },
+      {
+        "key": "detail_0:importance",
+        "type": "score",
+        "value": 1.783,
+        "confidence": 0.282,
+        "probabilities": {
+          "0": 0.188,
+          "1": 0.069,
+          "2": 0.512,
+          "3": 0.23
+        }
+      },
+      {
+        "key": "theme",
+        "type": "choice",
+        "value": "ops_dense",
+        "confidence": 0.139,
+        "probabilities": {
+          "daylight": 0.17,
+          "midnight": 0.261,
+          "boardroom": 0.17,
+          "ops_dense": 0.4
+        }
+      },
+      {
+        "key": "connector",
+        "type": "choice",
+        "value": "static_snapshot",
+        "confidence": 0.149,
+        "probabilities": {
+          "static_snapshot": 0.461,
+          "bigquery_live": 0.227,
+          "csv_upload": 0.312
+        }
+      },
+      {
+        "key": "layout",
+        "type": "choice",
+        "value": "kpi_row_grid",
+        "confidence": 0.006,
+        "probabilities": {
+          "kpi_row_grid": 0.298,
+          "hero_focus": 0.205,
+          "two_column": 0.292,
+          "narrative": 0.205
+        }
+      },
+      {
+        "key": "number_format",
+        "type": "choice",
+        "value": "compact",
+        "confidence": 0,
+        "probabilities": {
+          "compact": 0.5,
+          "precise": 0.5
+        }
+      },
+      {
+        "key": "gridlines",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.2
+      },
+      {
+        "key": "direct_labels",
+        "type": "noul",
+        "value": false,
+        "confidence": 0.2
+      },
+      {
+        "key": "sort_breakdowns",
+        "type": "choice",
+        "value": "by_value",
+        "confidence": 0,
+        "probabilities": {
+          "by_value": 0.5,
+          "natural": 0.5
+        }
+      }
+    ]
+  }
+}

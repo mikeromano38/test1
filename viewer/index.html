@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Jev dashboard viewer</title>
+<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+<style>
+  :root {
+    --surface: #fcfcfb; --page: #f9f9f7; --text-1: #0b0b0b; --text-2: #52514e; --text-3: #898781;
+    --grid: #e1e0d9; --axis: #c3c2b7; --border: rgba(11,11,11,0.10); --good: #006300; --bad: #d03b3b; --accent: #2a78d6; --spark: #c3c2b7;
+    --font: system-ui, -apple-system, "Segoe UI", sans-serif; --fs: 14px; --radius: 10px; --row-h: 112px; --gap: 14px;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--page); color: var(--text-1); font-family: var(--font); font-size: var(--fs); }
+  .app { display: grid; grid-template-columns: minmax(0, 1fr) auto; min-height: 100vh; }
+  main { padding: 20px 16px 40px; min-width: 0; }
+  header.top { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 10px; }
+  header.top h1 { font-size: 1.45em; margin: 0; font-weight: 650; letter-spacing: -0.01em; }
+  header.top .sub { color: var(--text-2); margin-top: 2px; }
+  .filters { display: flex; gap: 8px; flex-wrap: wrap; margin: 10px 0 16px; }
+  .chip { border: 1px solid var(--border); background: var(--surface); border-radius: 999px; padding: 4px 10px; color: var(--text-2); font-size: 0.9em; }
+  .chip b { color: var(--text-1); font-weight: 600; }
+  .grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-auto-rows: var(--row-h); gap: var(--gap); }
+  .tile { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 14px; display: flex; flex-direction: column; min-width: 0; overflow: hidden; }
+  .tile-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px; }
+  .tile-head h2 { font-size: 0.95em; margin: 0; font-weight: 600; color: var(--text-1); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .tile-head .meta { color: var(--text-3); font-size: 0.8em; white-space: nowrap; }
+  .tile-head button { border: 1px solid var(--border); background: transparent; color: var(--text-2); border-radius: 6px; padding: 2px 8px; font: inherit; font-size: 0.8em; cursor: pointer; }
+  .tile-body { flex: 1; min-height: 0; position: relative; }
+  .tile-body .vis { width: 100%; height: 100%; }
+  .tile-body .vis > .vega-embed { width: 100%; }
+  .tile-body .vis details, .tile-body .vis summary { display: none; }
+  .kpi { display: flex; flex-direction: column; justify-content: space-between; height: 100%; }
+  .kpi .value { font-size: 1.9em; font-weight: 600; letter-spacing: -0.01em; line-height: 1.1; }
+  .kpi .delta { font-size: 0.85em; color: var(--text-2); margin-top: 4px; display: flex; gap: 6px; align-items: center; }
+  .kpi .delta .dir { font-weight: 700; }
+  .kpi .delta .up { color: var(--good); } .kpi .delta .down { color: var(--bad); }
+  .kpi svg { width: 100%; height: 28px; display: block; }
+  table.data { width: 100%; border-collapse: collapse; font-size: 0.9em; }
+  table.data th, table.data td { text-align: left; padding: 5px 8px; border-bottom: 1px solid var(--grid); white-space: nowrap; }
+  table.data th { color: var(--text-2); font-weight: 600; position: sticky; top: 0; background: var(--surface); cursor: pointer; }
+  table.data td.num, table.data th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .scroll { overflow: auto; height: 100%; }
+  aside.log { width: 340px; border-left: 1px solid var(--border); background: var(--surface); padding: 16px; overflow: auto; max-height: 100vh; position: sticky; top: 0; font-size: 0.85em; }
+  aside.log h3 { margin: 0 0 4px; font-size: 1.05em; }
+  aside.log .client { color: var(--text-3); margin-bottom: 12px; }
+  aside.log details { margin-bottom: 8px; }
+  aside.log summary { cursor: pointer; font-weight: 600; color: var(--text-2); }
+  .dec { display: grid; grid-template-columns: 1fr auto; gap: 2px 8px; padding: 4px 0; border-bottom: 1px solid var(--grid); }
+  .dec .k { color: var(--text-3); font-size: 0.9em; grid-column: 1 / -1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .dec .v { font-weight: 600; }
+  .dec .c { color: var(--text-3); font-variant-numeric: tabular-nums; }
+  .bar { grid-column: 1 / -1; height: 3px; background: var(--grid); border-radius: 2px; overflow: hidden; }
+  .bar i { display: block; height: 100%; background: var(--accent); }
+  .toggle-log { position: fixed; right: 12px; bottom: 12px; border: 1px solid var(--border); background: var(--surface); color: var(--text-2); border-radius: 999px; padding: 6px 12px; font: inherit; cursor: pointer; }
+  .hidden { display: none !important; }
+  .empty { color: var(--text-3); padding: 40px; text-align: center; }
+  @media (max-width: 900px) { .app { grid-template-columns: 1fr; } aside.log { width: auto; position: static; max-height: none; border-left: 0; border-top: 1px solid var(--border); } .grid { grid-template-columns: repeat(6, minmax(0, 1fr)); } .tile { grid-column: span 6 !important; } }
+</style>
+</head>
+<body>
+<script>/*__INLINE_SPEC__*/</script>
+<div class="app">
+  <main>
+    <header class="top">
+      <div><h1 id="title">Loading…</h1><div class="sub" id="subtitle"></div></div>
+      <div class="sub" id="source"></div>
+    </header>
+    <div class="filters" id="filters"></div>
+    <div class="grid" id="grid"></div>
+  </main>
+  <aside class="log" id="log"></aside>
+</div>
+<button class="toggle-log" id="toggleLog">Decisions</button>
+<script>
+(async function () {
+  const params = new URLSearchParams(location.search);
+  let spec = window.__DASHBOARD_SPEC__;
+  if (!spec) {
+    const url = params.get("spec") || "/out/dashboard.json";
+    try { spec = await (await fetch(url)).json(); }
+    catch (e) { document.getElementById("grid").innerHTML = `<div class="empty">Could not load ${url}. Run <code>npm run generate</code> then <code>npm run serve</code>.</div>`; return; }
+  }
+  function applyTheme(t) {
+    const r = document.documentElement.style, k = t.tokens;
+    r.setProperty("--surface", k.surface); r.setProperty("--page", k.page); r.setProperty("--text-1", k.textPrimary); r.setProperty("--text-2", k.textSecondary); r.setProperty("--text-3", k.textMuted);
+    r.setProperty("--grid", k.grid); r.setProperty("--axis", k.axis); r.setProperty("--border", k.border); r.setProperty("--good", k.deltaGood); r.setProperty("--bad", k.deltaBad);
+    r.setProperty("--accent", k.categorical[0]); r.setProperty("--spark", k.emphasisGray); r.setProperty("--font", t.fontFamily); r.setProperty("--fs", t.baseFontPx + "px"); r.setProperty("--radius", t.radiusPx + "px");
+    document.documentElement.style.colorScheme = t.mode;
+  }
+
+  function fmt(v, format, nf) {
+    if (v === null || v === undefined || Number.isNaN(v)) return "–";
+    const compact = (x) => { const a = Math.abs(x); if (a >= 1e9) return (x / 1e9).toFixed(2) + "B"; if (a >= 1e6) return (x / 1e6).toFixed(2) + "M"; if (a >= 1e4) return (x / 1e3).toFixed(1) + "K"; return a >= 100 ? Math.round(x).toLocaleString("en-US") : x.toFixed(a >= 10 ? 1 : 2); };
+    switch (format) {
+      case "percent": return (v * 100).toFixed(1) + "%";
+      case "days": return v.toFixed(1) + " d";
+      case "currency": return "$" + (nf === "compact" ? compact(v) : Math.round(v).toLocaleString("en-US"));
+      default: return nf === "compact" ? compact(v) : Math.round(v).toLocaleString("en-US");
+    }
+  }
+
+  function sparkline(points) {
+    const vals = points.map((p) => p.value).filter((v) => v !== null);
+    if (vals.length < 2) return "";
+    const min = Math.min(...vals), max = Math.max(...vals), w = 100, h = 28;
+    const pts = points.map((p, i) => [(i / (points.length - 1)) * w, p.value === null ? null : h - 3 - ((p.value - min) / (max - min || 1)) * (h - 6)]).filter((p) => p[1] !== null);
+    const d = pts.map((p, i) => (i ? "L" : "M") + p[0].toFixed(1) + " " + p[1].toFixed(1)).join(" ");
+    const last = pts[pts.length - 1];
+    return `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none"><path d="${d}" fill="none" stroke="var(--spark)" stroke-width="1.5" vector-effect="non-scaling-stroke"/><circle cx="${last[0].toFixed(1)}" cy="${last[1].toFixed(1)}" r="2.5" fill="var(--accent)" stroke="var(--surface)" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>`;
+  }
+
+  function tableHtml(columns, rows, nf) {
+    const isNum = (c) => rows.some((r) => typeof r[c.key] === "number");
+    let sortKey = null, dir = -1;
+    const wrap = document.createElement("div"); wrap.className = "scroll";
+    const draw = () => {
+      const sorted = sortKey ? [...rows].sort((a, b) => (a[sortKey] > b[sortKey] ? 1 : a[sortKey] < b[sortKey] ? -1 : 0) * dir) : rows;
+      wrap.innerHTML = `<table class="data"><thead><tr>${columns.map((c) => `<th class="${isNum(c) ? "num" : ""}" data-k="${c.key}">${c.label}${sortKey === c.key ? (dir < 0 ? " ↓" : " ↑") : ""}</th>`).join("")}</tr></thead><tbody>${sorted.map((r) => `<tr>${columns.map((c) => `<td class="${isNum(c) ? "num" : ""}">${typeof r[c.key] === "number" ? fmt(r[c.key], c.format || "number", nf) : r[c.key] ?? "–"}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
+      wrap.querySelectorAll("th").forEach((th) => th.addEventListener("click", () => { const k = th.dataset.k; dir = sortKey === k ? -dir : -1; sortKey = k; draw(); }));
+    };
+    draw();
+    return wrap;
+  }
+
+  function columnsFor(tile) {
+    const keys = Object.keys(tile.data[0] || {});
+    return keys.map((k) => ({ key: k, label: k === "period" ? "Period" : k.replace(/_/g, " "), format: tile.query.metrics.includes(k) ? guessFormat(k) : undefined }));
+  }
+  const FORMATS = { revenue: "currency", gross_margin: "currency", avg_order_value: "currency", inventory_cost: "currency", gross_margin_pct: "percent", return_rate: "percent", conversion_rate: "percent", avg_days_to_ship: "days", avg_days_to_deliver: "days" };
+  const guessFormat = (k) => FORMATS[k] || "number";
+
+  async function render(spec) {
+    applyTheme(spec.theme);
+    document.title = spec.title + " · Jev dashboard";
+    document.getElementById("title").textContent = spec.title;
+    document.getElementById("subtitle").textContent = spec.subtitle;
+    document.getElementById("source").textContent = `${spec.source.connector} · ${spec.source.dataset} · as of ${spec.source.asOf}`;
+    const f = spec.filters;
+    document.getElementById("filters").innerHTML = [
+      `Window <b>${f.window.replace(/_/g, " ")}</b> (${f.start} → ${f.end})`, `Grain <b>${f.grain}</b>`, `Compare prior <b>${f.comparePrior ? "yes" : "no"}</b>`,
+      `Layout <b>${spec.layout.template}</b>`, `Theme <b>${spec.theme.id}</b>`, `Numbers <b>${spec.presentation.numberFormat}</b>`,
+    ].map((s) => `<span class="chip">${s}</span>`).join("");
+    document.documentElement.style.setProperty("--row-h", spec.layout.rowHeightPx + "px");
+    document.documentElement.style.setProperty("--gap", spec.layout.gapPx + "px");
+
+    const grid = document.getElementById("grid");
+    grid.innerHTML = "";
+    const nf = spec.presentation.numberFormat;
+    for (const tile of spec.tiles) {
+      const el = document.createElement("section");
+      el.className = "tile";
+      el.style.gridColumn = `${tile.placement.colStart} / span ${tile.placement.colSpan}`;
+      el.style.gridRow = `${tile.placement.rowStart} / span ${tile.placement.rowSpan}`;
+      const canTable = !tile.kpi && !tile.table;
+      el.innerHTML = `<div class="tile-head"><h2 title="${tile.title}">${tile.title}</h2><span class="meta">${tile.component}${canTable ? ' <button data-toggle>table</button>' : ""}</span></div><div class="tile-body"></div>`;
+      grid.appendChild(el);
+      const body = el.querySelector(".tile-body");
+      if (tile.kpi) {
+        const k = tile.kpi;
+        const up = k.delta !== null && k.delta > 0, flat = k.delta === null || k.delta === 0;
+        const good = flat ? "" : (up === (k.goodDirection === "up")) ? "up" : "down";
+        const arrow = flat ? "→" : up ? "↑" : "↓";
+        body.innerHTML = `<div class="kpi"><div><div class="value">${fmt(k.value, k.format, nf)}</div>${k.prior !== null ? `<div class="delta"><span class="dir ${good}">${arrow} ${k.deltaPct !== null ? (Math.abs(k.deltaPct) * 100).toFixed(1) + "%" : fmt(k.delta, k.format, nf)}</span><span>vs prior period (${fmt(k.prior, k.format, nf)})</span></div>` : ""}</div>${sparkline(k.spark)}</div>`;
+      } else if (tile.table) {
+        body.appendChild(tableHtml(tile.table.columns, tile.table.rows, nf));
+      } else if (tile.vegaLite) {
+        const vis = document.createElement("div"); vis.className = "vis"; body.appendChild(vis);
+        const tbl = tableHtml(columnsFor(tile), tile.data, nf); tbl.classList.add("hidden"); body.appendChild(tbl);
+        el.querySelector("[data-toggle]").addEventListener("click", (e) => { vis.classList.toggle("hidden"); tbl.classList.toggle("hidden"); e.target.textContent = vis.classList.contains("hidden") ? "chart" : "table"; });
+        try { await vegaEmbed(vis, tile.vegaLite, { actions: false, renderer: "svg" }); }
+        catch (err) { vis.innerHTML = `<div class="empty">chart error: ${err.message}</div>`; console.error(tile.id, err); }
+      }
+    }
+    renderLog(spec);
+  }
+
+  function renderLog(spec) {
+    const log = document.getElementById("log");
+    const d = spec.decisions;
+    let html = `<h3>Decision log</h3><div class="client">client: ${d.client} · ${d.summary.length} decisions in ${d.stages.length} calls</div>`;
+    for (const s of d.stages) {
+      html += `<details ${s.stage === "scope" ? "open" : ""}><summary>${s.stage} · ${s.decisions.length} decisions · ${s.ms} ms · ${s.response.usage ? s.response.usage.input_tokens + " tokens" : ""}</summary>`;
+      for (const dec of s.decisions) {
+        const conf = dec.confidence ?? 0;
+        const val = typeof dec.value === "number" ? dec.value.toFixed(2) : String(dec.value);
+        html += `<div class="dec"><span class="k" title="${dec.key}">${dec.key}</span><span class="v">${val}</span><span class="c">${dec.type === "noul" ? "p=" : "conf="}${conf.toFixed(2)}</span><span class="bar"><i style="width:${Math.round(conf * 100)}%"></i></span></div>`;
+      }
+      html += `</details>`;
+    }
+    log.innerHTML = html;
+    document.getElementById("toggleLog").addEventListener("click", () => log.classList.toggle("hidden"));
+  }
+
+  render(spec);
+})();
+</script>
+</body>
+</html>

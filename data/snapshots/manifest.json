@@ -1,0 +1,63 @@
+{
+  "source": "synthetic-placeholder (thelook_ecommerce schema; replace with `npm run extract`)",
+  "dataset": "thelook_ecommerce",
+  "asOf": "2026-09-25",
+  "generatedAt": "2026-09-26T20:17:30.633Z",
+  "cubes": [
+    {
+      "id": "sales_daily_dept",
+      "file": "sales_daily_dept.json",
+      "rows": 7300
+    },
+    {
+      "id": "sales_daily_category",
+      "file": "sales_daily_category.json",
+      "rows": 26280
+    },
+    {
+      "id": "sales_monthly_brand",
+      "file": "sales_monthly_brand.json",
+      "rows": 2050
+    },
+    {
+      "id": "sales_monthly_geo",
+      "file": "sales_monthly_geo.json",
+      "rows": 1475
+    },
+    {
+      "id": "sales_monthly_customer",
+      "file": "sales_monthly_customer.json",
+      "rows": 1250
+    },
+    {
+      "id": "users_monthly",
+      "file": "users_monthly.json",
+      "rows": 10671
+    },
+    {
+      "id": "web_daily",
+      "file": "web_daily.json",
+      "rows": 3650
+    },
+    {
+      "id": "web_monthly_browser",
+      "file": "web_monthly_browser.json",
+      "rows": 125
+    },
+    {
+      "id": "events_monthly_type",
+      "file": "events_monthly_type.json",
+      "rows": 750
+    },
+    {
+      "id": "inventory_monthly",
+      "file": "inventory_monthly.json",
+      "rows": 6500
+    },
+    {
+      "id": "fulfillment_daily",
+      "file": "fulfillment_daily.json",
+      "rows": 7300
+    }
+  ]
+}
